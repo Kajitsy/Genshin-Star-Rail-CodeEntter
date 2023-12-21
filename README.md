@@ -2,10 +2,8 @@
 Genshin/Star Rail CodeEntter is a Firefox/Chromium browser extension that allows you to automatically enter codes for the Genshin Impact/Honkai Star Rail game and get rewards. You can also automatically get rewards for daily marks in HoyoLab
 
 # How it works?
-Install [extension](Not yet) from the Firefox add-on store.
-I have no idea how to publish extensions to the Chrome Store, but for now, use these extensions for FireFox:
-[HSR CodeEnter](addons.mozilla.org/addon/hsr-codeenter/)
-[Genshin CodeEnter](addons.mozilla.org/addon/genshin-codeenter/)
+Install [extension](https://addons.mozilla.org/ru/firefox/addon/genshin-star-rail-codeentter/) from the Firefox add-on store.
+I have no idea how to publish extensions to the Chrome Store
 (so far, this version of the extension is not available in stores... and there is no firefox version in general, use my previous ones)
 
 Chromium Version: you will have to log in to your account through the extension, at least for me
