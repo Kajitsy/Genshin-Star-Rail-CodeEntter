@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Genshin/Star Rail CodeEntter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "icons": {
@@ -10,20 +10,23 @@
   "permissions": [
     "activeTab",
     "cookies",
-    "storage"
+    "storage",
+    "alarms"
   ],
   "host_permissions": [
-    "*://*.hoyoverse.com/"
+    "*://*.hoyoverse.com/",
+    "*://*.mihoyo.com/*",
+    "*://*.hoyolab.com/*"
   ],
   "action": {
     "default_icon": "/pictures/icon.png",
-    "default_title": "__MSG_extensionDescription__"
+    "default_title": "CodeEntter"
   },
   "options_ui": {
     "page": "options.html",
     "open_in_tab": false
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "script_imports.js"
   }
 }
