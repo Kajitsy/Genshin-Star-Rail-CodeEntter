@@ -11,7 +11,7 @@ FireFox Version: coming soon.
 
 Click on the extension icon, enter the promotional code, you can also share it with friends, a site with a promotional offer will open in a pop-up window where you can select the account region and enter the promotional code in one button.
 
-From 1.0.1(FirefoxVersionStore 2.0.0) the function of automatic collection of daily rewards is available!
+From 1.0.1(FirefoxVersionStore 2.0.1) the function of automatic collection of daily rewards is available!
 Check your in-game mail and claim your rewards!
 # I don't know why I decided to combine them?
 I just sometimes had to enter promo codes both ways, and with my number of extensions, it was problematic to find the right one...
