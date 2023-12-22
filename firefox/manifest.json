@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
   "name": "Genshin/Star Rail CodeEntter",
-  "version": "1.0.1",
+  "version": "2.0.1",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "icons": {
-    "512": "/pictures/icon.png"
+    "1024": "/pictures/icon.png"
   },
   "permissions": [
     "activeTab",
@@ -25,6 +25,10 @@
     "open_in_tab": false
   },
   "background": {
-    "scripts": ["options_background.js", "genshincheck.js", "hsrcheck.js"]
+    "scripts": [
+      "options_background.js", 
+      "genshincheck.js", 
+      "hsrcheck.js"
+    ]
   }
 }
