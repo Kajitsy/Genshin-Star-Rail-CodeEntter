@@ -4,11 +4,12 @@ Genshin/Star Rail CodeEntter is a Firefox/Chromium browser extension that allows
 
 # How it works?
 Install [extension](https://addons.mozilla.org/ru/firefox/addon/genshin-star-rail-codeentter/) from the Firefox add-on store.
-I have no idea how to publish extensions to the Chrome Store
-(so far, this version of the extension is not available in stores... and there is no firefox version in general, use my previous ones)
 
-Chromium Version: you will have to log in to your account through the extension, at least for me
-FireFox Version: coming soon.
+I have no idea how to publish extensions to the Chrome Store
+
+Chromium Version: you will have to log in to your account through the extension, at least for me.
+
+FireFox Version: just login to your account.
 
 Click on the extension icon, enter the promotional code, you can also share it with friends, a site with a promotional offer will open in a pop-up window where you can select the account region and enter the promotional code in one button.
 
