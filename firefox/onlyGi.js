@@ -54,7 +54,7 @@ function displayOverlay() {
   overlay.style.justifyContent = 'center';
   overlay.style.alignItems = 'center';
   overlay.style.fontSize = '1em';
-  overlay.textContent = 'Ссылка скопирована';
+  overlay.textContent = 'The Link Has Been Copied';
   overlay.style.display = 'flex';
   document.body.appendChild(overlay);
 

@@ -1,15 +1,14 @@
+if (typeof browser === "undefined") {
+	browser = chrome;
+}
+
 const HSRHOSTS = [
 	{
 		apiHost: "sg-public-api.hoyolab.com",
 		page: "act.hoyolab.com/bbs/event/signin/hkrpg/index.html"
 	}
 ];
-
-var currentHosts = HSRHOSTS;
-
-browser.runtime.onInstalled.addListener(() => {
-	browser.alarms.create("hsr_checker", {when: Date.now(), periodInMinutes: 1});
-});
+var currentHSRHosts = HSRHOSTS;
 
 function getCurrDay() {
 	var now = new Date();
@@ -19,9 +18,9 @@ function getCurrDay() {
 }
 
 function request(i, currDay) {
-	var host = currentHosts[i];
+	var host = currentHSRHosts[i];
 	if (typeof host === "undefined") {
-		currentHosts = HSRHOSTS;
+		currentHSRHosts = HSRHOSTS;
 		return;
 	}
 	fetch("https://" + host.apiHost + "/event/luna/os/sign", {
@@ -38,7 +37,7 @@ function request(i, currDay) {
 	.then(data => {
 		if(data.retcode == 0 || data.retcode == -5003) {
 			browser.storage.local.set({hsr_lastCheked:  currDay});
-			currentHosts = [host];
+			currentHSRHosts = [host];
 		} else {
 			console.log("badrequest", data);
 			request(i + 1);
@@ -64,3 +63,5 @@ browser.alarms.onAlarm.addListener(alarm => {
 		check();
 	}
 });
+
+browser.alarms.create("hsr_checker", {when: Date.now(), periodInMinutes: 1});

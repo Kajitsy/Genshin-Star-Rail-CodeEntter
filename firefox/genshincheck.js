@@ -1,3 +1,7 @@
+if (typeof browser === "undefined") {
+	browser = chrome;
+}
+
 const GIHOSTS = [
 	{
 		apiHost: "sg-hk4e-api.hoyolab.com",
@@ -9,11 +13,7 @@ const GIHOSTS = [
 	}
 ];
 
-var currentHosts = GIHOSTS;
-
-browser.runtime.onInstalled.addListener(() => {
-	browser.alarms.create("gi_checker", {when: Date.now(), periodInMinutes: 1});
-});
+var currentGIHosts = GIHOSTS;
 
 function getCurrDay() {
 	var now = new Date();
@@ -23,9 +23,9 @@ function getCurrDay() {
 }
 
 function request(i, currDay) {
-	var host = currentHosts[i];
+	var host = currentGIHosts[i];
 	if (typeof host === "undefined") {
-		currentHosts = GIHOSTS;
+		currentGIHosts = GIHOSTS;
 		return;
 	}
 	fetch("https://" + host.apiHost + "/event/sol/sign?act_id=e202102251931481", {
@@ -39,7 +39,7 @@ function request(i, currDay) {
 	.then(data => {
 		if(data.retcode == 0 || data.retcode == -5003) {
 			browser.storage.local.set({gi_lastCheked:  currDay});
-			currentHosts = [host];
+			currentGIHosts = [host];
 		} else {
 			console.log("badrequest", data);
 			request(i + 1);
@@ -65,3 +65,5 @@ browser.alarms.onAlarm.addListener(alarm => {
 		check();
 	}
 });
+
+browser.alarms.create("gi_checker", {when: Date.now(), periodInMinutes: 1});
