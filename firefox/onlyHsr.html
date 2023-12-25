@@ -9,8 +9,12 @@
     --input-color: rgba(0, 0, 0, 0.5);
     --input-text-color: white;
   }
+  @font-face {
+    font-family: 'SDK_SC_Web';
+    src: url('HSRfont.woff2') format('woff2');
+  }
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'SDK_SC_Web';
     padding: 10px;
     background-image: url('/pictures/backgroundHSR.png');
     background-size: cover;
@@ -23,6 +27,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    z-index: 2;
   }
   #code {
     box-sizing: border-box;
@@ -32,16 +37,18 @@
     border-radius: 10px;
     padding: 10px;
     width: 100%;
+    font-family: 'SDK_SC_Web';
   }
   #buttons-container {
     display: flex;
     justify-content: space-between;
+    font-family: 'SDK_SC_Web';
   }
   #submit, #share {
     width: 48%;
     margin-top: 10px;
   }
-    button {
+  button {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -52,8 +59,10 @@
     color: var(--button-text-color);
     padding: 10px;
     transition: transform 0.3s ease;
+    z-index: 2;
+    font-family: 'SDK_SC_Web';
   }
-  #submit:hover, #share:hover, #options:hover {
+  #submit:hover, #share:hover{
     transform: scale(1.2);
     border-radius: 10px;
     display: flex;
@@ -63,6 +72,22 @@
   }
   #frame {
     border: none;
+    z-index: 2;
+  }
+  @keyframes snowfall {
+  from {
+    transform: translateY(-100vh);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+  }
+  .snowflake {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
   }
 </style>
 </head>
@@ -71,7 +96,7 @@
     <input type="text" id="code" placeholder="Enter code here">
   </div>
   <div id="buttons-container">
-    <button id="submit">__MSG_submi__</button>
+    <button id="submit">__MSG_submit__</button>
     <button id="share">__MSG_share__</button>
   </div>
   <iframe id="frame" src="" width="756" height="550" style="display: none;"></iframe>

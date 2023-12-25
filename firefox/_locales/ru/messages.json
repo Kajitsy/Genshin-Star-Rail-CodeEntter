@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Благодаря Genshin/Star Rail CodeEntter вы сможете быстро вводить промокоды для Genshin Impact и Honkai Star Rail, a также можете поделиться ссылкой на этот кодик :) FirefoxVersion 2.0.2"
+    "message": "Благодаря Genshin/Star Rail CodeEntter вы сможете быстро вводить промокоды для Genshin Impact и Honkai Star Rail, a также можете поделиться ссылкой на этот кодик :) FirefoxVersion 2.1.0"
   },
   "submit": {
     "message": "Ввести"
@@ -9,10 +9,10 @@
     "message": "Поделиться"
   },
   "labelgi": {
-    "message": "Только Genshin Impact:"
+    "message": "Только Genshin Impact"
   },
   "labelHsr": {
-    "message": "Только Honkai Star Rail:"
+    "message": "Только Honkai Star Rail"
   },
   "options": {
     "message": "Настройки"
@@ -37,5 +37,8 @@
   },
   "buttonTextColort": {
     "message": "Цвет текста:"
+  },
+  "labelSnow": {
+    "message": "Снег?"
   }
 }

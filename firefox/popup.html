@@ -9,8 +9,12 @@
     --input-color: rgba(0, 0, 0, 0.5);
     --input-text-color: white;
   }
+  @font-face {
+    font-family: 'SDK_SC_Web';
+    src: url('GIfont.woff2') format('woff2');
+  }
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'SDK_SC_Web';
     padding: 10px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -22,6 +26,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    z-index: 2;
   }
   #code {
     box-sizing: border-box;
@@ -31,14 +36,8 @@
     border-radius: 10px;
     padding: 10px;
     width: 100%;
-  }
-  #options {
-    width: 100%;
-    margin-left: 5px;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
+    z-index: 2;
+    font-family: 'SDK_SC_Web';
   }
   #buttons-container {
     display: flex;
@@ -59,6 +58,8 @@
     color: var(--button-text-color);
     padding: 10px;
     transition: transform 0.3s ease;
+    z-index: 2;
+    font-family: 'SDK_SC_Web';
   }
   #submitGI:hover, #submitHSR:hover, #shareGI:hover, #shareHSR:hover, #options:hover {
     transform: scale(1.2);
@@ -70,6 +71,22 @@
   }
   #frame {
     border: none;
+    z-index: 2;
+  }
+  @keyframes snowfall {
+    from {
+      transform: translateY(-100vh);
+    }
+    to {
+      transform: translateY(100vh);
+    }
+  }
+  .snowflake {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
   }
 </style>
 </head>

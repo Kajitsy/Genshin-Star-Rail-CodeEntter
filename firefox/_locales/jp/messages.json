@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Genshin/Star Rail CodeEntterを使用すると、Genshin ImpactとHonkai Star Railのプロモーションコードをすばやく入力でき、このコードへのリンクを共有することもできます:) FirefoxVersion 2.0.2"
+    "message": "Genshin/Star Rail CodeEntterを使用すると、Genshin ImpactとHonkai Star Railのプロモーションコードをすばやく入力でき、このコードへのリンクを共有することもできます:) FirefoxVersion 2.1.0"
   },
   "submit": {
     "message": "入力"
@@ -9,10 +9,10 @@
     "message": "共有"
   },
   "labelgi": {
-    "message": "Genshin Impactのみ:"
+    "message": "Genshin Impactのみ"
   },
   "labelHsr": {
-    "message": "Honkai Star Railのみ:"
+    "message": "Honkai Star Railのみ"
   },
   "options": {
     "message": "設定"
@@ -37,5 +37,8 @@
   },
   "buttonTextColort": {
     "message": "テキストの色："
+  },
+  "labelSnow": {
+    "message": "雪?"
   }
 }
