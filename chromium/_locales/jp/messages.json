@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Genshin/Star Rail CodeEntterを使用すると、Genshin ImpactとHonkai Star Railのプロモーションコードをすばやく入力でき、このコードへのリンクを共有することもできます:) ChromiumVersion 1.0.2 https://github.com/Kajitsy/Genshin-Star-Rail-CodeEntter"
+    "message": "Genshin/Star Rail CodeEntterを使用すると、Genshin ImpactとHonkai Star Railのプロモーションコードをすばやく入力でき、このコードへのリンクを共有することもできます ChromiumVersion 2.1.1"
   },
   "submit": {
     "message": "入力"
@@ -9,10 +9,10 @@
     "message": "共有"
   },
   "labelgi": {
-    "message": "Genshin Impactのみ:"
+    "message": "Genshin Impactのみ"
   },
   "labelHsr": {
-    "message": "Honkai Star Railのみ:"
+    "message": "Honkai Star Railのみ"
   },
   "options": {
     "message": "設定"

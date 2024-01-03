@@ -9,10 +9,14 @@
     --input-color: rgba(0, 0, 0, 0.5);
     --input-text-color: white;
   }
+  @font-face {
+    font-family: 'SDK_SC_Web';
+    src: url('GIfont.woff2') format('woff2');
+  }
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'SDK_SC_Web';
     padding: 10px;
-    background-image: url('/pictures/backgroundHSR.png');
+    background-image: url('/pictures/backgroundGI.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -23,6 +27,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    z-index: 2;
   }
   #code {
     box-sizing: border-box;
@@ -31,24 +36,18 @@
     border: none;
     border-radius: 10px;
     padding: 10px;
-  }
-  #options {
     width: 100%;
-    margin-left: 5px;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
+    font-family: 'SDK_SC_Web';
   }
   #buttons-container {
     display: flex;
     justify-content: space-between;
   }
   #submit, #share {
-    width: 48%;
-    margin-top: 10px;
+    width: 140px;
+    margin: 5px;
   }
-    button {
+  button {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -59,9 +58,11 @@
     color: var(--button-text-color);
     padding: 10px;
     transition: transform 0.3s ease;
+    z-index: 2;
+    font-family: 'SDK_SC_Web';
   }
   #submit:hover, #share:hover, #options:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -70,16 +71,16 @@
   }
   #frame {
     border: none;
+    z-index: 2;
   }
 </style>
 </head>
 <body>
   <div id="input-container">
     <input type="text" id="code" placeholder="Enter code here">
-    <button id="options">__MSG_options__</button>
   </div>
   <div id="buttons-container">
-    <button id="submit">__MSG_submi__</button>
+    <button id="submit">__MSG_submit__</button>
     <button id="share">__MSG_share__</button>
   </div>
   <iframe id="frame" src="" width="756" height="550" style="display: none;"></iframe>

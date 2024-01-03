@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    @font-face {
+    font-family: 'SDK_SC_Web';
+    src: url('GIfont.woff2') format('woff2');
+    } 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'SDK_SC_Web';
       padding: 10px;
       background-image: url('/pictures/backgroundOptions.png');
       background-size: cover;
@@ -12,19 +17,22 @@
       background-position: center;
       overflow: hidden;
     }
+    
     label {
       display: flex;
       align-items: center;
       margin-bottom: 10px;
-      border-radius: 10px
+      border-radius: 10px;
     }
+    
     input[type="color"] {
       display: block;
       width: 100%;
       height: 40px;
       margin-bottom: 20px;
-      border-radius: 10px
+      border-radius: 10px;
     }
+    
     button {
       padding: 10px 20px;
       background-color: #4CAF50;
@@ -33,25 +41,37 @@
       cursor: pointer;
       text-align: center;
       transition: transform 0.3s ease;
-      border-radius: 10px
+      border-radius: 10px;
+      font-family: 'SDK_SC_Web';
     }
+    
     button:hover {
       transform: scale(1.1);
-      border-radius: 10px
+      border-radius: 10px;
     }
+    
     .checkbox-label {
       display: flex;
       align-items: center;
+      margin-bottom: 10px;
+      border-radius: 10px;
     }
+    
     .checkbox-label input {
-      margin-left: 10px;
+      margin: 10;
     }
+    
+    .checkbox-label label{
+      margin-bottom: 0;
+    }
+    
     .tooltip {
       display: inline-block;
       position: relative;
       border-bottom: 1px dotted black;
       margin-left: 4px;
     }
+    
     .tooltip .tooltiptext {
       visibility: hidden;
       width: 120px;
@@ -68,10 +88,12 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
+    
     .tooltip:hover .tooltiptext {
       visibility: visible;
       opacity: 1;
     }
+    
     @media (prefers-color-scheme: dark) {
       body {
         background-color: rgb(28, 27, 34);
@@ -81,19 +103,23 @@
   </style>
 </head>
 <body>
-  <label for="buttonColor" id="buttonColort">__MSG_buttonColor__</label>
-  <input type="color" id="buttonColor">
-  <label for="buttonTextColor" id="buttonTextColort">__MSG_buttonTextColor__</label>
-  <input type="color" id="buttonTextColor">
-  <div class="checkbox-label">
-    <label id="labelGi">__MSG_labelGi__</label>
-    <input type="checkbox" id="onlyGi">
+  <div id="current-settings" class="settings-section">
+    <div class="color-choice">
+      <label for="buttonColor" id="buttonColort">__MSG_buttonColor__</label>
+      <input type="color" id="buttonColor">
+    </div>
+    <div class="color-choice">
+      <label for="buttonTextColor" id="buttonTextColort">__MSG_buttonTextColor__</label>
+      <input type="color" id="buttonTextColor">
+    </div>
+    <div class="checkbox-label">
+      <label id="labelHsr">__MSG_labelHsr__</label>
+      <input type="checkbox" id="onlyHsr" style="margin-right: 10%;">
+      <label id="labelGi">__MSG_labelGi__</label>
+      <input type="checkbox" id="onlyGi">
+    </div>
+    <button id="reset">__MSG_reset__</button>
   </div>
-  <div class="checkbox-label">
-    <label id="labelHsr">__MSG_labelHsr__</label>
-    <input type="checkbox" id="onlyHsr">
-  </div>
-  <button id="reset">__MSG_reset__</button>
   <script src="options.js"></script>
 </body>
 </html>

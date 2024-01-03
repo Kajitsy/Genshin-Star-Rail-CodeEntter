@@ -1,7 +1,6 @@
 if (typeof browser === "undefined") {
 	browser = chrome;
 }
-
 ['submit', 'share', 'options'].forEach(function (buttonId) {
   const buttonElement = document.getElementById(buttonId);
   if (buttonElement) {

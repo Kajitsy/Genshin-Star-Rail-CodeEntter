@@ -1,50 +1,54 @@
-chrome.storage.onChanged.addListener(function(changes, areaName) {
+if (typeof browser === "undefined") {
+	browser = chrome;
+  browser.browserAction = chrome.action;
+}
+browser.storage.onChanged.addListener(function(changes, areaName) {
   if (areaName === 'local' && 'onlyGi' in changes) {
     if (changes.onlyGi.newValue) {
-      chrome.action.setPopup({
+      browser.browserAction.setPopup({
         popup: 'onlyGi.html'
       });
     } else {
-      chrome.action.setPopup({
+      browser.browserAction.setPopup({
         popup: 'popup.html'
       });
     }
   }
 });
 
-chrome.storage.onChanged.addListener(function(changes, areaName) {
+browser.storage.onChanged.addListener(function(changes, areaName) {
   if (areaName === 'local' && 'onlyHsr' in changes) {
     if (changes.onlyHsr.newValue) {
-      chrome.action.setPopup({
+      browser.browserAction.setPopup({
         popup: 'onlyHsr.html'
       });
     } else {
-      chrome.action.setPopup({
+      browser.browserAction.setPopup({
         popup: 'popup.html'
       });
     }
   }
 });
 
-chrome.storage.local.get('onlyGi', function(result) {
+browser.storage.local.get('onlyGi', function(result) {
   if (result.onlyGi) {
-    chrome.action.setPopup({
+    browser.browserAction.setPopup({
       popup: 'onlyGi.html'
     });
   } else {
-    chrome.action.setPopup({
+    browser.browserAction.setPopup({
       popup: 'popup.html'
     });
   }
 });
 
-chrome.storage.local.get('onlyHsr', function(result) {
+browser.storage.local.get('onlyHsr', function(result) {
   if (result.onlyHsr) {
-    chrome.action.setPopup({
+    browser.browserAction.setPopup({
       popup: 'onlyHsr.html'
     });
   } else {
-    chrome.action.setPopup({
+    browser.browserAction.setPopup({
       popup: 'popup.html'
     });
   }

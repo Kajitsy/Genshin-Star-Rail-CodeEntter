@@ -1,7 +1,6 @@
 if (typeof browser === "undefined") {
 	browser = chrome;
 }
-
 document.getElementById('labelGi').textContent = browser.i18n.getMessage("labelGi");
 document.getElementById('labelHsr').textContent = browser.i18n.getMessage("labelHsr");
 document.getElementById('reset').textContent = browser.i18n.getMessage("reset");
@@ -52,7 +51,7 @@ document.getElementById('reset').addEventListener('click', function() {
     buttonColor: defaultButtonColor,
     buttonTextColor: defaultButtonTextColor,
     onlyHsr: defaultOnlyHsr,
-    onlyGi: defaultOnlyGi
+    onlyGi: defaultOnlyGi,
   }, function() {
     updateButtonColors(defaultButtonColor, defaultButtonTextColor);
   });

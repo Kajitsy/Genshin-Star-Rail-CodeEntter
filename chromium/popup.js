@@ -1,7 +1,6 @@
 if (typeof browser === "undefined") {
 	browser = chrome;
 }
-
 document.body.style.backgroundImage = "url(/pictures/background.png)";
 ['submitGI', 'shareGI', 'submitHSR', 'shareHSR', 'options'].forEach(function (buttonId) {
   const buttonElement = document.getElementById(buttonId);
@@ -39,10 +38,6 @@ document.body.style.backgroundImage = "url(/pictures/background.png)";
           displayOverlay();
           break;
 
-        case 'options':
-          window.location.href = 'options.html';
-          break;
-
         default:
           break;
       }
@@ -55,7 +50,6 @@ document.body.style.backgroundImage = "url(/pictures/background.png)";
         document.getElementById('shareGI').style.display = 'none';
         document.getElementById('submitHSR').style.display = 'none';
         document.getElementById('shareHSR').style.display = 'none';
-        document.getElementById('options').style.display = 'none';
       }
     });
   }
@@ -76,6 +70,7 @@ function displayOverlay() {
   overlay.style.fontSize = '1em';
   overlay.textContent = 'The Link Has Been Copied';
   overlay.style.display = 'flex';
+  overlay.style.zIndex ='2';
   document.body.appendChild(overlay);
 
   setTimeout(function () {
