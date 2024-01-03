@@ -1,42 +1,4 @@
 document.body.style.backgroundImage = "url(/pictures/background.png)";
-browser.storage.local.get('snowEnable', function(result) {
-  if (result.snowEnable) {
-    function createSnowflake() {
-      const snowflake = document.createElement('div');
-      snowflake.className = 'snowflake';
-      const size = Math.random() * 3 + 2 + 'px';
-      snowflake.style.width = size;
-      snowflake.style.height = size;
-      snowflake.style.position = 'absolute';
-      snowflake.style.background = 'white';
-      snowflake.style.borderRadius = '50%';
-      snowflake.style.pointerEvents = 'none';
-
-      const startPositionLeft = Math.random() * window.innerWidth;
-      const duration = Math.random() * 2 + 3 + 's';
-      const delay = Math.random() * 2 + 's';
-
-      snowflake.style.left = startPositionLeft + 'px';
-      snowflake.style.animation = `snowfall ${duration} linear ${delay} infinite`;
-
-      document.body.appendChild(snowflake);
-
-      snowflake.addEventListener('animationiteration', () => {
-        snowflake.style.left = Math.random() * window.innerWidth + 'px';
-      });
-    }
-
-    function generateSnowfall() {
-      for (let i = 0; i < 50; i++) {
-        createSnowflake();
-      }
-    }
-    generateSnowfall();
-    console.log("snowEnable");
-  } else {
-    console.log("snowDisable");
-  }
-});
 ['submitGI', 'shareGI', 'submitHSR', 'shareHSR', 'options'].forEach(function (buttonId) {
   const buttonElement = document.getElementById(buttonId);
   if (buttonElement) {
