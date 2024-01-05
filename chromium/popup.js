@@ -2,7 +2,7 @@ if (typeof browser === "undefined") {
 	browser = chrome;
 }
 document.body.style.backgroundImage = "url(/pictures/background.png)";
-['submitGI', 'shareGI', 'submitHSR', 'shareHSR', 'options'].forEach(function (buttonId) {
+['submitGI', 'shareGI', 'submitHSR', 'shareHSR'].forEach(function (buttonId) {
   const buttonElement = document.getElementById(buttonId);
   if (buttonElement) {
     buttonElement.textContent = browser.i18n.getMessage(buttonId);

@@ -100,25 +100,79 @@
         color: white;
       }
     }
+    .settings-section {
+      display: block;
+    }
+    #onlyGi-settings, #onlyHsr-settings {
+      display: none;
+    }
+    #settingsSectionSelector {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
+  <div class="checkbox-label">
+    <label id="labelHsr">labelHsr</label>
+    <input type="checkbox" id="onlyHsr" style="margin-right: 10%;">
+    <label id="labelGi">labelGi</label>
+    <input type="checkbox" id="onlyGi" style="margin-right: 10%;">
+    <label id="labelBacksettings">labelBacksettings</label>
+    <input type="checkbox" id="backsettings">
+  </div>
+  <select id="settingsSectionSelector">
+      <option value="current-settings">Main Popup Settings</option>
+      <option value="onlyGi-settings">GI Popup Settings</option>
+      <option value="onlyHsr-settings">HSR Popup Settings</option>
+  </select>
   <div id="current-settings" class="settings-section">
     <div class="color-choice">
-      <label for="buttonColor" id="buttonColort">__MSG_buttonColor__</label>
+      <label id="buttonColort">buttonColor</label>
       <input type="color" id="buttonColor">
     </div>
     <div class="color-choice">
-      <label for="buttonTextColor" id="buttonTextColort">__MSG_buttonTextColor__</label>
-      <input type="color" id="buttonTextColor">
+       <label id="buttonTextColort">buttonTextColor</label>
+       <input type="color" id="buttonTextColor">
+     </div>
+     <button id="resetpopup">resetpopup</button>
+  </div>
+  <div id="onlyGi-settings" class="settings-section">
+    <div class="color-choice">
+      <label id="buttonColorGit">buttonColorGi</label>
+      <input type="color" id="buttonColorGi">
+    </div>
+    <div class="color-choice">
+      <label id="buttonTextColorGit">buttonTextColorGi</label>
+      <input type="color" id="buttonTextColorGi">
     </div>
     <div class="checkbox-label">
-      <label id="labelHsr">__MSG_labelHsr__</label>
-      <input type="checkbox" id="onlyHsr" style="margin-right: 10%;">
-      <label id="labelGi">__MSG_labelGi__</label>
-      <input type="checkbox" id="onlyGi">
+      <label id="labelBackgroundGi">labelBackgroundGi</label>
+      <input type="checkbox" id="BackgroundGi">
     </div>
-    <button id="reset">__MSG_reset__</button>
+    <div class="color-choice">
+      <label id="labelBackgroundColorGi">labelBackgroundColorGi</label>
+      <input type="color" id="BackgroundColorGi">
+    </div>
+    <button id="resetGi">resetGi</button>
+  </div>
+  <div id="onlyHsr-settings" class="settings-section">
+    <div class="color-choice">
+      <label id="buttonColorHsrt">buttonColorHsr</label>
+      <input type="color" id="buttonColorHsr">
+    </div>
+    <div class="color-choice">
+      <label id="buttonTextColorHsrt">buttonTextColorHsr</label>
+      <input type="color" id="buttonTextColorHsr">
+    </div>
+    <div class="checkbox-label">
+      <label id="labelBackgroundHsr">labelBackgroundHsr</label>
+      <input type="checkbox" id="BackgroundHsr">
+    </div>
+    <div class="color-choice">
+      <label id="labelBackgroundColorHsr">labelBackgroundColorHsr</label>
+      <input type="color" id="BackgroundColorHsr">
+    </div>
+    <button id="resetHsr">resetGi</button>
   </div>
   <script src="options.js"></script>
 </body>

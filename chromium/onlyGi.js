@@ -1,7 +1,7 @@
 if (typeof browser === "undefined") {
 	browser = chrome;
 }
-['submit', 'share', 'options'].forEach(function (buttonId) {
+['submit', 'share'].forEach(function (buttonId) {
   const buttonElement = document.getElementById(buttonId);
   if (buttonElement) {
     buttonElement.textContent = browser.i18n.getMessage(buttonId);
@@ -24,10 +24,6 @@ if (typeof browser === "undefined") {
           displayOverlay();
           break;
 
-        case 'options':
-          window.location.href = 'options.html';
-          break;
-
         default:
           break;
       }
@@ -38,7 +34,6 @@ if (typeof browser === "undefined") {
         document.getElementById('code').style.display = 'none';
         document.getElementById('submit').style.display = 'none';
         document.getElementById('share').style.display = 'none';
-        document.getElementById('options').style.display = 'none';
       }
     });
   }
@@ -66,11 +61,22 @@ function displayOverlay() {
   }, 2000);
 }
 
-browser.storage.local.get(['buttonColor', 'buttonTextColor']).then(function (result) {
-  if (result.buttonColor) {
-    document.documentElement.style.setProperty('--button-color', result.buttonColor);
+browser.storage.local.get(['buttonColorGi', 'buttonTextColorGi', 'BackgroundGi', 'BackgroundColorGi']).then(function (result) {
+  if (result.buttonColorGi) {
+    document.documentElement.style.setProperty('--button-color', result.buttonColorGi);
   }
-  if (result.buttonTextColor) {
-    document.documentElement.style.setProperty('--button-text-color', result.buttonTextColor);
+  if (result.buttonTextColorGi) {
+    document.documentElement.style.setProperty('--button-text-color', result.buttonTextColorGi);
+  }
+  if (result.BackgroundGi) {
+    document.body.style.background = '#4e4b54';
+    document.body.style.background = result.BackgroundColorGi;
+  } 
+  else {
+    document.body.style.background = 'url("/pictures/backgroundGi.png")';
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundRepeat = 'no-repeat';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.overflow = 'hidden';
   }
 });

@@ -1,9 +1,9 @@
 {
   "extensionDescription": {
-    "message": "Con Genshin/Star Rail CodeEntter puedes ingresar rápidamente códigos promocionales para Genshin Impact y Honkai Star Rail, y también puedes compartir un enlace a este código ChromiumVersion 2.1.1"
+    "message": "Con Genshin/Star Rail CodeEntter, puedes ingresar rápidamente códigos promocionales para Genshin Impact y Honkai Star Rail, ¡y también compartir un enlace a esta herramienta :) ChromiumVersion 2.2.0"
   },
   "submit": {
-    "message": "Ingresar"
+    "message": "Enviar"
   },
   "share": {
     "message": "Compartir"
@@ -15,7 +15,7 @@
     "message": "Solo Honkai Star Rail"
   },
   "options": {
-    "message": "Configuraciones"
+    "message": "Configuración"
   },
   "submitGI": {
     "message": "Genshin"
@@ -30,12 +30,21 @@
     "message": "Compartir HSR"
   },
   "reset": {
-    "message": "Restablecer"
+    "message": "Reiniciar"
   },
   "buttonColort": {
-    "message": "Color del botón:"
+    "message": "Color de botones"
   },
   "buttonTextColort": {
-    "message": "Color del texto:"
+    "message": "Color de texto"
+  },
+  "labelBacksettings": {
+    "message": "Usar color en lugar de fondo en la configuración"
+  },
+  "labelBackground": {
+    "message": "Usar color en lugar de fondo"
+  },
+  "labelBackgroundColor": {
+    "message": "Color de fondo (si está habilitado)"
   }
 }
