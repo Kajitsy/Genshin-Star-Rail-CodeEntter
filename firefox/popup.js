@@ -1,5 +1,5 @@
 document.body.style.backgroundImage = "url(/pictures/background.png)";
-['submitGI', 'shareGI', 'submitHSR', 'shareHSR', 'options'].forEach(function (buttonId) {
+['submitGI', 'shareGI', 'submitHSR', 'shareHSR'].forEach(function (buttonId) {
   const buttonElement = document.getElementById(buttonId);
   if (buttonElement) {
     buttonElement.textContent = browser.i18n.getMessage(buttonId);
@@ -35,10 +35,6 @@ document.body.style.backgroundImage = "url(/pictures/background.png)";
           displayOverlay();
           break;
 
-        case 'options':
-          window.location.href = 'options.html';
-          break;
-
         default:
           break;
       }
@@ -51,7 +47,6 @@ document.body.style.backgroundImage = "url(/pictures/background.png)";
         document.getElementById('shareGI').style.display = 'none';
         document.getElementById('submitHSR').style.display = 'none';
         document.getElementById('shareHSR').style.display = 'none';
-        document.getElementById('options').style.display = 'none';
       }
     });
   }
