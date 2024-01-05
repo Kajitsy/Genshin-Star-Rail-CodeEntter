@@ -70,7 +70,7 @@ browser.storage.local.get(['buttonColorGi', 'buttonTextColorGi', 'BackgroundGi',
     document.body.style.background = result.BackgroundColorGi;
   } 
   else {
-    document.body.style.background = 'url("/pictures/backgroundGi.png")';
+    document.body.style.background = 'url("/pictures/backgroundGI.png")';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.backgroundPosition = 'center';

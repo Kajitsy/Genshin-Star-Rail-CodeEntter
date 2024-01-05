@@ -68,7 +68,7 @@ browser.storage.local.get(['buttonColorHsr', 'buttonTextColorHsr', 'BackgroundHs
     document.body.style.background = result.BackgroundColorHsr;
   } 
   else {
-    document.body.style.background = 'url("/pictures/BackgroundHsr.png")';
+    document.body.style.background = 'url("/pictures/backgroundHSR.png")';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.backgroundPosition = 'center';
