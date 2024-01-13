@@ -38,9 +38,6 @@
   "buttonTextColort": {
     "message": "Цвет текста"
   },
-  "labelBacksettings": {
-    "message": "Использовать цвет вместо фона в настройках"
-  },
   "labelBackground": {
     "message": "Использовать цвет вместо фона"
   },
