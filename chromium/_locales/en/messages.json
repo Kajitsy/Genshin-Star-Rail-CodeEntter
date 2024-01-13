@@ -38,9 +38,6 @@
   "buttonTextColort": {
     "message": "Text Color"
   },
-  "labelBacksettings": {
-    "message": "Use color instead of background in settings"
-  },
   "labelBackground": {
     "message": "Use color instead of background"
   },
