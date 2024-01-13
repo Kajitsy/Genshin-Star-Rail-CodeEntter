@@ -38,9 +38,6 @@
   "buttonTextColort": {
     "message": "テキストの色"
   },
-  "labelBacksettings": {
-    "message": "設定で背景の代わりに色を使用する"
-  },
   "labelBackground": {
     "message": "背景の代わりに色を使用する"
   },
