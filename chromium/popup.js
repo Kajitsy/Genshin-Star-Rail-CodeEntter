@@ -78,11 +78,11 @@ function displayOverlay() {
   }, 2000);
 }
 
-browser.storage.local.get(['buttonColor', 'buttonTextColor']).then(function (result) {
-  if (result.buttonColor) {
-    document.documentElement.style.setProperty('--button-color', result.buttonColor);
+browser.storage.local.get(['buttonColorMain', 'buttonTextColorMain']).then(function (result) {
+  if (result.buttonColorMain) {
+    document.documentElement.style.setProperty('--button-color', result.buttonColorMain);
   }
-  if (result.buttonTextColor) {
-    document.documentElement.style.setProperty('--button-text-color', result.buttonTextColor);
+  if (result.buttonTextColorMain) {
+    document.documentElement.style.setProperty('--button-text-color', result.buttonTextColorMain);
   }
 });

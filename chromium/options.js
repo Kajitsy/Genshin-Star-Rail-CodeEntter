@@ -3,7 +3,6 @@ if (typeof browser === "undefined") {
 }
 document.getElementById('labelGi').textContent = browser.i18n.getMessage("labelGi");
 document.getElementById('labelHsr').textContent = browser.i18n.getMessage("labelHsr");
-document.getElementById('labelBacksettings').textContent = browser.i18n.getMessage("labelBacksettings");
 document.getElementById('labelBackgroundGi').textContent = browser.i18n.getMessage("labelBackground");
 document.getElementById('labelBackgroundColorGi').textContent = browser.i18n.getMessage("labelBackgroundColor");
 document.getElementById('labelBackgroundHsr').textContent = browser.i18n.getMessage("labelBackground");
@@ -17,12 +16,37 @@ document.getElementById('buttonColorHsrt').textContent = browser.i18n.getMessage
 document.getElementById('buttonTextColort').textContent = browser.i18n.getMessage("buttonTextColort");
 document.getElementById('buttonTextColorGit').textContent = browser.i18n.getMessage("buttonTextColort");
 document.getElementById('buttonTextColorHsrt').textContent = browser.i18n.getMessage("buttonTextColort");
-document.getElementById('settingsSectionSelector').addEventListener('change', function () {
-  var selectedSection = this.value;
-  showSettingsSection(selectedSection);
-});
+// function toggleBackgroundColorHsr(BackgroundHsr) {
+//   if (BackgroundHsr) {
+//     labelBackgroundColorHsr.style.display = 'block';
+//     BackgroundColorHsr.style.display = 'block';
+//   } else {
+//     labelBackgroundColorHsr.style.display = 'none';
+//     BackgroundColorHsr.style.display = 'none';
+//   }
+// }
+// function toggleBackgroundColorGi(BackgroundGi) {
+//   if (BackgroundGi) {
+//     labelBackgroundColorGi.style.display = 'block';
+//     BackgroundColorGi.style.display = 'block';
+//   } else {
+//     labelBackgroundColorGi.style.display = 'none';
+//     BackgroundColorGi.style.display = 'none';
+//   }
+// }
+// function updateButtonColors(buttonColor, buttonTextColor) {
+//   var buttons = document.getElementsByTagName('button');
+//   for (var i = 0; i < buttons.length; i++) {
+//     if (buttonColor) {
+//       buttons[i].style.backgroundColor = buttonColor;
+//     }
+//     if (buttonTextColor) {
+//       buttons[i].style.color = buttonTextColor;
+//     }
+//   }
+// }
 function showSettingsSection(section) {
-  var sections = ['current-settings', 'onlyGi-settings', 'onlyHsr-settings'];
+  var sections = ['global-settings','main-popup-settings', 'onlyGi-settings', 'onlyHsr-settings'];
   sections.forEach(function (s) {
       var element = document.getElementById(s);
       if (element) {
@@ -30,14 +54,31 @@ function showSettingsSection(section) {
       }
   });
 }
-document.getElementById('buttonColor').addEventListener('input', function() {
-  var buttonColor = document.getElementById('buttonColor').value;
-  browser.storage.local.set({
-    buttonColor: buttonColor
-  }, function() {
-    updateButtonColors(buttonColor, null);
+function updateDcWorkIconColor() {
+  if (dcwork = true) {
+    dcWorkIcon.style.backgroundColor = 'green';
+  } else if (dcwork = false) {
+    dcWorkIcon.style.backgroundColor = 'red';
+  } else {
+    dcWorkIcon.style.backgroundColor = 'yellow';
+  }
+}
+function updateIconColorOnChange() {
+  browser.storage.local.get('dcwork', function(result) {
+    dcwork = result.dcwork;
+    updateDcWorkIconColor();
   });
+}
+document.getElementById('settingsSectionSelector').addEventListener('change', function () {
+  var selectedSection = this.value;
+  showSettingsSection(selectedSection);
 });
+document.getElementById('buttonColorMain').addEventListener('input', function() {
+  var buttonColorMain = document.getElementById('buttonColorMain').value;
+  browser.storage.local.set({
+    buttonColorMain: buttonColorMain
+  }
+)});
 document.getElementById('buttonColorGi').addEventListener('input', function() {
   var buttonColorGi = document.getElementById('buttonColorGi').value;
   browser.storage.local.set({
@@ -50,14 +91,12 @@ document.getElementById('buttonColorHsr').addEventListener('input', function() {
     buttonColorHsr: buttonColorHsr
   });
 });
-document.getElementById('buttonTextColor').addEventListener('input', function() {
-  var buttonTextColor = document.getElementById('buttonTextColor').value;
+document.getElementById('buttonTextColorMain').addEventListener('input', function() {
+  var buttonTextColorMain = document.getElementById('buttonTextColorMain').value;
   browser.storage.local.set({
-    buttonTextColor: buttonTextColor
-  }, function() {
-    updateButtonColors(null, buttonTextColor);
-  });
-});
+    buttonTextColorMain: buttonTextColorMain
+  }
+)});
 document.getElementById('buttonTextColorGi').addEventListener('input', function() {
   var buttonTextColorGi = document.getElementById('buttonTextColorGi').value;
   browser.storage.local.set({
@@ -94,31 +133,26 @@ document.getElementById('onlyGi').addEventListener('change', function() {
     onlyGi: onlyGi
   });
 });
-document.getElementById('backsettings').addEventListener('change', function() {
-  var backsettings = document.getElementById('backsettings').checked;
-  updateBackground(backsettings);
-  browser.storage.local.set({
-    backsettings: backsettings
-  });
-});
 document.getElementById('BackgroundGi').addEventListener('change', function() {
   var BackgroundGi = document.getElementById('BackgroundGi').checked;
+  // toggleBackgroundColorGi(BackgroundGi);
   browser.storage.local.set({
     BackgroundGi: BackgroundGi
   });
 });
 document.getElementById('BackgroundHsr').addEventListener('change', function() {
   var BackgroundHsr = document.getElementById('BackgroundHsr').checked;
+  // toggleBackgroundColorHsr(BackgroundHsr);
   browser.storage.local.set({
     BackgroundHsr: BackgroundHsr
   });
 });
 document.getElementById('resetpopup').addEventListener('click', function() {
-  document.getElementById('buttonColor').value = '#9a609a';
-  document.getElementById('buttonTextColor').value = '#ffffff';
+  document.getElementById('buttonColorMain').value = '#9a609a';
+  document.getElementById('buttonTextColorMain').value = '#ffffff';
   browser.storage.local.set({
-    buttonColor: '#9a609a',
-    buttonTextColor: '#ffffff',
+    buttonColorMain: '#9a609a',
+    buttonTextColorMain: '#ffffff',
   });
 });
 document.getElementById('resetGi').addEventListener('click', function() {
@@ -129,11 +163,7 @@ document.getElementById('resetGi').addEventListener('click', function() {
     buttonColorGi: '#a89f96',
     buttonTextColorGi: '#ffffff',
     BackgroundColorGi: '#4e4b54'
-  },
-  function() {
-    updateButtonColors(buttonColorGi, buttonTextColorGi);
-  });
-});
+  })});
 document.getElementById('resetHsr').addEventListener('click', function() {
   document.getElementById('buttonColorHsr').value = '#004080';
   document.getElementById('buttonTextColorHsr').value = '#ffffff';
@@ -142,39 +172,15 @@ document.getElementById('resetHsr').addEventListener('click', function() {
     buttonColorHsr: '#004080',
     buttonTextColorHsr: '#ffffff',
     BackgroundColorHsr: '#1e274e'
-  },
-  function() {
-    updateButtonColors(buttonColorHsr, buttonTextColorHsr);
-  });
-});
-function updateButtonColors(buttonColor, buttonTextColor) {
-  var buttons = document.getElementsByTagName('button');
-  for (var i = 0; i < buttons.length; i++) {
-    if (buttonColor) {
-      buttons[i].style.backgroundColor = buttonColor;
-    }
-    if (buttonTextColor) {
-      buttons[i].style.color = buttonTextColor;
-    }
-  }
-}
-function updateBackground(backsettings) {
-  var body = document.body;
-  if (backsettings) {
-    body.style.background = '#292a2d';
-  } else {
-    body.style.background = 'url("/pictures/backgroundOptions.png")';
-    body.style.backgroundSize = 'cover';
-    body.style.backgroundRepeat = 'no-repeat';
-    body.style.backgroundPosition = 'center';
-    body.style.overflow = 'hidden';
-  }
-}
-browser.storage.local.get(['BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi', 'BackgroundColorGi', 'backsettings', 'buttonColor', 'buttonColorGi', 'buttonColorHsr', 'buttonTextColor', 'buttonTextColorGi', 'buttonTextColorHsr', 'onlyHsr', 'onlyGi'], function(result) {
-  var buttonColor = result.buttonColor ? result.buttonColor : '#9a609a';
+  })});
+dcWorkIcon.style.border = '2px solid #000';
+document.body.appendChild(dcWorkIcon);
+
+browser.storage.local.get(['BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi', 'BackgroundColorGi', 'buttonColorMain', 'buttonColorGi', 'buttonColorHsr', 'buttonTextColorMain', 'buttonTextColorGi', 'buttonTextColorHsr', 'onlyHsr', 'onlyGi'], function(result) {
+  var buttonColorMain = result.buttonColorMain ? result.buttonColorMain : '#9a609a';
   var buttonColorGi = result.buttonColorGi ? result.buttonColorGi : '#a89f96';
   var buttonColorHsr = result.buttonColorHsr ? result.buttonColorHsr : '#004080';
-  var buttonTextColor = result.buttonTextColor ? result.buttonTextColor : '#ffffff';
+  var buttonTextColorMain = result.buttonTextColorMain ? result.buttonTextColorMain : '#ffffff';
   var buttonTextColorGi = result.buttonTextColorGi ? result.buttonTextColorGi : '#ffffff';
   var buttonTextColorHsr = result.buttonTextColorHsr ? result.buttonTextColorHsr : '#ffffff';
   var BackgroundColorGi = result.BackgroundColorGi ? result.BackgroundColorGi: '#4e4b54';
@@ -183,11 +189,10 @@ browser.storage.local.get(['BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi'
   var onlyGi = result.onlyGi ? result.onlyGi : false;
   var BackgroundGi = result.BackgroundGi ? result.BackgroundGi: false;
   var BackgroundHsr = result.BackgroundHsr ? result.BackgroundHsr: false;
-  var backsettings = result.backsettings ? result.backsettings : false;
-  document.getElementById('buttonColor').value = buttonColor;
+  document.getElementById('buttonColorMain').value = buttonColorMain;
   document.getElementById('buttonColorGi').value = buttonColorGi;
   document.getElementById('buttonColorHsr').value = buttonColorHsr;
-  document.getElementById('buttonTextColor').value = buttonTextColor;
+  document.getElementById('buttonTextColorMain').value = buttonTextColorMain;
   document.getElementById('buttonTextColorGi').value = buttonTextColorGi;
   document.getElementById('buttonTextColorHsr').value = buttonTextColorHsr;
   document.getElementById('BackgroundColorGi').value = BackgroundColorGi;
@@ -196,7 +201,13 @@ browser.storage.local.get(['BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi'
   document.getElementById('onlyGi').checked = onlyGi;
   document.getElementById('BackgroundGi').checked = BackgroundGi;
   document.getElementById('BackgroundHsr').checked = BackgroundHsr;
-  document.getElementById('backsettings').checked = backsettings;
-  updateBackground(backsettings, BackgroundColorGi, BackgroundColorHsr);
-  updateButtonColors(buttonColor, buttonTextColor, buttonColorGi, buttonTextColorGi, buttonColorHsr, buttonTextColorHsr);
 });
+browser.storage.onChanged.addListener(function(changes, areaName) {
+  if (areaName === 'local' && 'dcwork' in changes) {
+    dcwork = changes.dcwork.newValue;
+    updateDcWorkIconColor();
+  }
+});
+updateIconColorOnChange();
+// toggleBackgroundColorHsr();
+// toggleBackgroundColorGi();

@@ -16,7 +16,7 @@ const HOSTS = [
 ];
 var currentHSRHosts = HSRHOSTS;
 var currentHosts = HOSTS;
-
+var dcwork;
 function getCurrDay() {
 	var now = new Date();
 	now.setMinutes(now.getMinutes() + now.getTimezoneOffset());
@@ -52,11 +52,12 @@ function request(i, currDay) {
 	.then(data => {
 		if(data.retcode == 0 || data.retcode == -5003) {
 			chrome.storage.local.set({dc_lastCheked:  currDay});
+			dcwork = true;
 			currentHosts = [host];
 			currentHSRHosts = [hsrhost];
 			console.log("success", data);
-
 		} else if(data.retcode == -10002) {
+			dcwork = false;
 			console.log("badrequest", data);
 			request(i + 1);
 		} else {
@@ -65,6 +66,7 @@ function request(i, currDay) {
 		}
 	})
 	.catch(error => {
+		dcwork = false;
 		console.log("error", error);
 		request(i + 1);
 	});

@@ -9,13 +9,10 @@
     src: url('GIfont.woff2') format('woff2');
     } 
     body {
+      background-color: rgb(35, 34, 43);
       font-family: 'SDK_SC_Web';
       padding: 10px;
-      background-image: url('/pictures/backgroundOptions.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      overflow: hidden;
+      min-height: 100vh;
     }
     
     label {
@@ -35,7 +32,7 @@
     
     button {
       padding: 10px 20px;
-      background-color: #4CAF50;
+      background-color: #9d9ca3;
       color: white;
       border: none;
       cursor: pointer;
@@ -93,7 +90,14 @@
       visibility: visible;
       opacity: 1;
     }
-    
+    #dcWorkIcon{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+    }
     @media (prefers-color-scheme: dark) {
       body {
         background-color: rgb(28, 27, 34);
@@ -103,7 +107,7 @@
     .settings-section {
       display: block;
     }
-    #onlyGi-settings, #onlyHsr-settings {
+    #main-popup-settings, #onlyGi-settings, #onlyHsr-settings {
       display: none;
     }
     #settingsSectionSelector {
@@ -112,27 +116,30 @@
   </style>
 </head>
 <body>
-  <div class="checkbox-label">
-    <label id="labelHsr">labelHsr</label>
-    <input type="checkbox" id="onlyHsr" style="margin-right: 10%;">
-    <label id="labelGi">labelGi</label>
-    <input type="checkbox" id="onlyGi" style="margin-right: 10%;">
-    <label id="labelBacksettings">labelBacksettings</label>
-    <input type="checkbox" id="backsettings">
-  </div>
   <select id="settingsSectionSelector">
-      <option value="current-settings">Main Popup Settings</option>
+      <option value="global-settings">Global Settings</option>
+      <option value="main-popup-settings">Main Popup Settings</option>
       <option value="onlyGi-settings">GI Popup Settings</option>
       <option value="onlyHsr-settings">HSR Popup Settings</option>
   </select>
-  <div id="current-settings" class="settings-section">
+  <div id="global-settings" class="settings-section">
+    <div class="checkbox-label">
+      <label id="labelHsr">labelHsr</label>
+      <input type="checkbox" id="onlyHsr">
+    </div>
+    <div class="checkbox-label">
+      <label id="labelGi">labelGi</label>
+      <input type="checkbox" id="onlyGi">
+    </div>
+  </div>
+  <div id="main-popup-settings" class="settings-section">
     <div class="color-choice">
       <label id="buttonColort">buttonColor</label>
-      <input type="color" id="buttonColor">
+      <input type="color" id="buttonColorMain">
     </div>
     <div class="color-choice">
        <label id="buttonTextColort">buttonTextColor</label>
-       <input type="color" id="buttonTextColor">
+       <input type="color" id="buttonTextColorMain">
      </div>
      <button id="resetpopup">resetpopup</button>
   </div>
@@ -172,7 +179,10 @@
       <label id="labelBackgroundColorHsr">labelBackgroundColorHsr</label>
       <input type="color" id="BackgroundColorHsr">
     </div>
-    <button id="resetHsr">resetGi</button>
+    <button id="resetHsr">resetHsr</button>
+  </div>
+  <div id="dcWorkIcon">
+    <label id="labelDailyCheckerWork"></label>
   </div>
   <script src="options.js"></script>
 </body>
