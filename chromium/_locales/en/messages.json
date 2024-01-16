@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "With Genshin/Star Rail CodeEntter, you can quickly input promo codes for Genshin Impact and Honkai Star Rail, and also share a link to this tool :) ChromiumVersion 2.2.2"
+    "message": "Quick entry of Genshin Impact/Honkai: Star Rail promo codes | 2.2.2.1"
   },
   "submit": {
     "message": "Submit"
@@ -43,5 +43,8 @@
   },
   "labelBackgroundColor": {
     "message": "Background Color (if enabled)"
+  },
+  "displayOverlay" :{
+    "message": "Link copied"
   }
 }

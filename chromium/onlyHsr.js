@@ -38,22 +38,10 @@ if (typeof browser === "undefined") {
 });
 
 function displayOverlay() {
-  const overlay = document.createElement('div');
-  overlay.style.position = 'fixed';
-  overlay.style.top = 0;
-  overlay.style.left = 0;
-  overlay.style.width = '100%';
-  overlay.style.height = '100%';
-  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-  overlay.style.color = 'white';
-  overlay.style.display = 'flex';
-  overlay.style.justifyContent = 'center';
-  overlay.style.alignItems = 'center';
-  overlay.style.fontSize = '1em';
-  overlay.textContent = 'The Link Has Been Copied';
+  const overlay = document.getElementById('displayOverlay');
+  overlay.textContent = browser.i18n.getMessage("displayOverlay")
   overlay.style.display = 'flex';
   document.body.appendChild(overlay);
-
   setTimeout(function () {
     overlay.style.display = 'none';
   }, 2000);

@@ -57,10 +57,9 @@ function showSettingsSection(section) {
 function updateDcWorkIconColor() {
   if (dcwork = true) {
     dcWorkIcon.style.backgroundColor = 'green';
-  } else if (dcwork = false) {
+  }  
+  else {
     dcWorkIcon.style.backgroundColor = 'red';
-  } else {
-    dcWorkIcon.style.backgroundColor = 'yellow';
   }
 }
 function updateIconColorOnChange() {
