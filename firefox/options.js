@@ -13,35 +13,6 @@ document.getElementById('buttonColorHsrt').textContent = browser.i18n.getMessage
 document.getElementById('buttonTextColort').textContent = browser.i18n.getMessage("buttonTextColort");
 document.getElementById('buttonTextColorGit').textContent = browser.i18n.getMessage("buttonTextColort");
 document.getElementById('buttonTextColorHsrt').textContent = browser.i18n.getMessage("buttonTextColort");
-// function toggleBackgroundColorHsr(BackgroundHsr) {
-//   if (BackgroundHsr) {
-//     labelBackgroundColorHsr.style.display = 'block';
-//     BackgroundColorHsr.style.display = 'block';
-//   } else {
-//     labelBackgroundColorHsr.style.display = 'none';
-//     BackgroundColorHsr.style.display = 'none';
-//   }
-// }
-// function toggleBackgroundColorGi(BackgroundGi) {
-//   if (BackgroundGi) {
-//     labelBackgroundColorGi.style.display = 'block';
-//     BackgroundColorGi.style.display = 'block';
-//   } else {
-//     labelBackgroundColorGi.style.display = 'none';
-//     BackgroundColorGi.style.display = 'none';
-//   }
-// }
-// function updateButtonColors(buttonColor, buttonTextColor) {
-//   var buttons = document.getElementsByTagName('button');
-//   for (var i = 0; i < buttons.length; i++) {
-//     if (buttonColor) {
-//       buttons[i].style.backgroundColor = buttonColor;
-//     }
-//     if (buttonTextColor) {
-//       buttons[i].style.color = buttonTextColor;
-//     }
-//   }
-// }
 function showSettingsSection(section) {
   var sections = ['global-settings','main-popup-settings', 'onlyGi-settings', 'onlyHsr-settings'];
   sections.forEach(function (s) {
@@ -49,21 +20,6 @@ function showSettingsSection(section) {
       if (element) {
           element.style.display = s === section ? 'block' : 'none';
       }
-  });
-}
-function updateDcWorkIconColor() {
-  if (dcwork = true) {
-    dcWorkIcon.style.backgroundColor = 'green';
-  } else if (dcwork = false) {
-    dcWorkIcon.style.backgroundColor = 'red';
-  } else {
-    dcWorkIcon.style.backgroundColor = 'yellow';
-  }
-}
-function updateIconColorOnChange() {
-  browser.storage.local.get('dcwork', function(result) {
-    dcwork = result.dcwork;
-    updateDcWorkIconColor();
   });
 }
 document.getElementById('settingsSectionSelector').addEventListener('change', function () {
@@ -199,12 +155,3 @@ browser.storage.local.get(['BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi'
   document.getElementById('BackgroundGi').checked = BackgroundGi;
   document.getElementById('BackgroundHsr').checked = BackgroundHsr;
 });
-browser.storage.onChanged.addListener(function(changes, areaName) {
-  if (areaName === 'local' && 'dcwork' in changes) {
-    dcwork = changes.dcwork.newValue;
-    updateDcWorkIconColor();
-  }
-});
-updateIconColorOnChange();
-// toggleBackgroundColorHsr();
-// toggleBackgroundColorGi();
