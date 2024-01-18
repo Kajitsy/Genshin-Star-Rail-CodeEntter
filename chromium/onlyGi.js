@@ -5,21 +5,19 @@ if (typeof browser === "undefined") {
   const buttonElement = document.getElementById(buttonId);
   if (buttonElement) {
     buttonElement.textContent = browser.i18n.getMessage(buttonId);
-
+    
     buttonElement.addEventListener('click', function () {
       const code = document.getElementById('code').value;
+      const locales = navigator.language.slice(0, 2);
       let url;
-
       switch (buttonId) {
         case 'submit':
-          const locales = navigator.language.slice(0, 2);
           url = `https://genshin.hoyoverse.com/${locales}/gift?code=${code}`;
           document.getElementById('frame').src = url;
           break;
 
         case 'share':
-          const shareLocales = navigator.language.slice(0, 2);
-          url = `https://genshin.hoyoverse.com/${shareLocales}/gift?code=${code}`;
+          url = `https://genshin.hoyoverse.com/${locales}/gift?code=${code}`;
           navigator.clipboard.writeText(url);
           displayOverlay();
           break;
@@ -27,7 +25,6 @@ if (typeof browser === "undefined") {
         default:
           break;
       }
-
       if (buttonId === 'submit') {
         const frame = document.getElementById('frame');
         frame.style.display = 'block';
@@ -48,8 +45,32 @@ function displayOverlay() {
     overlay.style.display = 'none';
   }, 2000);
 }
-
-browser.storage.local.get(['buttonColorGi', 'buttonTextColorGi', 'BackgroundGi', 'BackgroundColorGi']).then(function (result) {
+function createSnowflake() {
+  const snowflake = document.createElement('div');
+  snowflake.className = 'snowflake';
+  snowflake.innerHTML = '❄';
+  const size = Math.random() * 3 + 2;
+  const fontSize = size > 5 ? 5 : size;
+  snowflake.style.fontSize = fontSize + 'rem';
+  snowflake.style.position = 'absolute';
+  snowflake.style.color = 'white';
+  snowflake.style.pointerEvents = 'none';
+  const startPositionLeft = Math.random() * window.innerWidth;
+  const duration = Math.random() * 4 + 3 + 's';
+  const delay = Math.random() * 10 + 's';
+  snowflake.style.left = startPositionLeft + 'px';
+  snowflake.style.animation = `snowfall ${duration} linear ${delay} infinite`;
+  document.body.appendChild(snowflake);
+  snowflake.addEventListener('animationiteration', () => {
+    snowflake.style.left = Math.random() * window.innerWidth + 'px';
+  });
+}
+function generateSnowfall() {
+  for (let i = 0; i < 20; i++) {
+    createSnowflake();
+  }
+}
+browser.storage.local.get(['snowDisable', 'buttonColorGi', 'buttonTextColorGi', 'BackgroundGi', 'BackgroundColorGi']).then(function (result) {
   if (result.buttonColorGi) {
     document.documentElement.style.setProperty('--button-color', result.buttonColorGi);
   }
@@ -66,5 +87,20 @@ browser.storage.local.get(['buttonColorGi', 'buttonTextColorGi', 'BackgroundGi',
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.backgroundPosition = 'center';
     document.body.style.overflow = 'hidden';
+  }
+  if (result.snowDisable){
+    console.log("Snow Disable");
+  }
+  else {
+    console.log("Snow Enable");
+    generateSnowfall();
+  }
+});
+browser.storage.local.get(['roundingDisable']).then(function (result) {
+  if (result.roundingDisable) {
+  document.documentElement.style.setProperty('--border-radius', '10px')
+  }
+  else {
+    document.documentElement.style.setProperty('--border-radius', '20px')
   }
 });

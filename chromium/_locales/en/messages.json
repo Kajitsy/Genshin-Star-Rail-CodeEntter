@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Quick entry of Genshin Impact/Honkai: Star Rail promo codes | 2.2.2.1"
+    "message": "Quick entry of Genshin Impact/Honkai: Star Rail promo codes | 2.2.3"
   },
   "submit": {
     "message": "Submit"
@@ -32,10 +32,10 @@
   "reset": {
     "message": "Reset"
   },
-  "buttonColort": {
+  "labelButtonColor": {
     "message": "Button Color"
   },
-  "buttonTextColort": {
+  "labelTextColor": {
     "message": "Text Color"
   },
   "labelBackground": {
@@ -46,5 +46,23 @@
   },
   "displayOverlay" :{
     "message": "Link copied"
+  },
+  "labelGlobal": {
+    "message": "Global settings"
+  },
+  "labelMainPopup": {
+    "message": "Main popup settings"
+  },
+  "labelOnlyGi": {
+    "message": "Popup settings, only Genshin Impact"
+  },
+  "labelOnlyHsr": {
+    "message": "Popup settings, Honkai Star Rail only"
+  },
+  "labelRounding": {
+    "message": "Disable roundings"
+  },
+  "labelSnow": {
+    "message": "Turn off the snowfall"
   }
 }

@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Con Genshin/Star Rail CodeEnter, puedes ingresar rápidamente códigos promocionales para Genshin Impact y Honkai Star Rail, ¡y también compartir un enlace a esta herramienta :) FirefoxVersion 2.2.2"
+    "message": "Entrada rápida de los códigos promocionales de Genshin Impact/Honkai: Star Rail | 2.2.3"
   },
   "submit": {
     "message": "Enviar"
@@ -32,10 +32,10 @@
   "reset": {
     "message": "Reiniciar"
   },
-  "buttonColort": {
+  "labelButtonColor": {
     "message": "Color de botones"
   },
-  "buttonTextColort": {
+  "labelTextColor": {
     "message": "Color de texto"
   },
   "labelBackground": {
@@ -43,5 +43,26 @@
   },
   "labelBackgroundColor": {
     "message": "Color de fondo (si está habilitado)"
+  },
+  "displayOverlay" :{
+    "message": "Enlace copiado"
+  },
+  "labelGlobal": {
+    "message": "Configuración global"
+  },
+  "labelMainPopup": {
+    "message": "Configuración de la ventana principal"
+  },
+  "labelOnlyGi": {
+    "message": "Ajustes de ventana, sólo Genshin Impact"
+  },
+  "labelOnlyHsr": {
+    "message": "Ajustes de ventana, sólo Honkai Star Rail"
+  },
+  "labelRounding": {
+    "message": "Desactivar el redondeo"
+  },
+  "labelSnow": {
+    "message": "Apagar la nevada"
   }
 }

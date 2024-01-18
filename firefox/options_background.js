@@ -1,7 +1,6 @@
 async function updatePopup() {
   const resultGi = await browser.storage.local.get('onlyGi');
   const resultHsr = await browser.storage.local.get('onlyHsr');
-
   if (resultGi.onlyGi) {
     browser.browserAction.setPopup({
       popup: 'onlyGi.html'
@@ -16,11 +15,9 @@ async function updatePopup() {
     });
   }
 }
-
 browser.storage.onChanged.addListener(async function(changes, areaName) {
   if (areaName === 'local' && ('onlyGi' in changes || 'onlyHsr' in changes)) {
     await updatePopup();
   }
 });
-
 updatePopup();

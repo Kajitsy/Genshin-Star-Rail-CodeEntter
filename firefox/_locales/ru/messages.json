@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Благодаря Genshin/Star Rail CodeEntter вы сможете быстро вводить промокоды для Genshin Impact и Honkai Star Rail, a также можете поделиться ссылкой на этот кодик :) FirefoxVersion 2.2.2"
+    "message": "Быстрый ввод промокодов Genshin Impact/Honkai: Star Rail | 2.2.3"
   },
   "submit": {
     "message": "Ввести"
@@ -8,7 +8,7 @@
   "share": {
     "message": "Поделиться"
   },
-  "labelgi": {
+  "labelGi": {
     "message": "Только Genshin Impact"
   },
   "labelHsr": {
@@ -32,10 +32,10 @@
   "reset": {
     "message": "Сбросить"
   },
-  "buttonColort": {
+  "labelButtonColor": {
     "message": "Цвет кнопок"
   },
-  "buttonTextColort": {
+  "labelTextColor": {
     "message": "Цвет текста"
   },
   "labelBackground": {
@@ -43,5 +43,26 @@
   },
   "labelBackgroundColor": {
     "message": "Цвет фона (если включено)"
+  },
+  "displayOverlay": {
+    "message": "Ссылка скопирована"
+  },
+  "labelGlobal": {
+    "message": "Глобальные настройки"
+  },
+  "labelMainPopup": {
+    "message": "Настройки основного окна"
+  },
+  "labelOnlyGi": {
+    "message": "Настройки окна, только Genshin Impact"
+  },
+  "labelOnlyHsr": {
+    "message": "Настройки окна, только Honkai Star Rail"
+  },
+  "labelRounding": {
+    "message": "Отключить закругления"
+  },
+  "labelSnow": {
+    "message": "Отключить снегопад"
   }
 }

@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     @font-face {
-      font-family: 'SDK_SC_Web';
-      src: url('GIfont.woff2') format('woff2');
+    font-family: 'SDK_SC_Web';
+    src: url('GIfont.woff2') format('woff2');
     } 
     body {
       background-color: rgb(35, 34, 43);
       font-family: 'SDK_SC_Web';
       padding: 10px;
       min-height: 100vh;
+      font-size: 13px;
     }
     
     label {
@@ -38,13 +39,13 @@
       cursor: pointer;
       text-align: center;
       transition: transform 0.3s ease;
-      border-radius: 10px;
+      border-radius: var(--border-radius);
       font-family: 'SDK_SC_Web';
     }
     
     button:hover {
-      transform: scale(1.1);
-      border-radius: 10px;
+      transform: scale(1.05);
+      border-radius: var(--border-radius);
     }
     
     .checkbox-label {
@@ -62,42 +63,6 @@
       margin-bottom: 0;
     }
     
-    .tooltip {
-      display: inline-block;
-      position: relative;
-      border-bottom: 1px dotted black;
-      margin-left: 4px;
-    }
-    
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 120px;
-      background-color: #555;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px 0;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%; 
-      left: 50%;
-      margin-left: -60px; 
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-    #dcWorkIcon{
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-    }
     @media (prefers-color-scheme: dark) {
       body {
         background-color: rgb(28, 27, 34);
@@ -112,15 +77,17 @@
     }
     #settingsSectionSelector {
       margin-bottom: 20px;
+      font-family: 'SDK_SC_Web';
+      font-size: 13px;
     }
   </style>
 </head>
 <body>
   <select id="settingsSectionSelector">
-      <option value="global-settings">Global Settings</option>
-      <option value="main-popup-settings">Main Popup Settings</option>
-      <option value="onlyGi-settings">GI Popup Settings</option>
-      <option value="onlyHsr-settings">HSR Popup Settings</option>
+      <option value="global-settings" id="labelGlobal-settings">labelGlobal</option>
+      <option value="main-popup-settings" id="labelMainPopup-settings">labelMainPopup</option>
+      <option value="onlyGi-settings" id="labelOnlyGi-settings">labelOnlyGi</option>
+      <option value="onlyHsr-settings" id="labelOnlyHsr-settings">labelOnlyHsr</option>
   </select>
   <div id="global-settings" class="settings-section">
     <div class="checkbox-label">
@@ -131,25 +98,33 @@
       <label id="labelGi">labelGi</label>
       <input type="checkbox" id="onlyGi">
     </div>
+    <div class="checkbox-label">
+      <label id="labelRounding">labelRounding</label>
+      <input type="checkbox" id="roundingDisable">
+    </div>
+    <div class="checkbox-label">
+      <label id="labelSnow">labelSnow</label>
+      <input type="checkbox" id="snowDisable">
+    </div>
   </div>
   <div id="main-popup-settings" class="settings-section">
     <div class="color-choice">
-      <label id="buttonColort">buttonColor</label>
+      <label id="labelButtonColor">labelButtonColor</label>
       <input type="color" id="buttonColorMain">
     </div>
     <div class="color-choice">
-       <label id="buttonTextColort">buttonTextColor</label>
+       <label id="labelTextColor">labelTextColor</label>
        <input type="color" id="buttonTextColorMain">
      </div>
      <button id="resetpopup">resetpopup</button>
   </div>
   <div id="onlyGi-settings" class="settings-section">
     <div class="color-choice">
-      <label id="buttonColorGit">buttonColorGi</label>
+      <label id="labelButtonColorGi">labelButtonColor</label>
       <input type="color" id="buttonColorGi">
     </div>
     <div class="color-choice">
-      <label id="buttonTextColorGit">buttonTextColorGi</label>
+      <label id="labelTextColorGi">labelTextColor</label>
       <input type="color" id="buttonTextColorGi">
     </div>
     <div class="checkbox-label">
@@ -164,11 +139,11 @@
   </div>
   <div id="onlyHsr-settings" class="settings-section">
     <div class="color-choice">
-      <label id="buttonColorHsrt">buttonColorHsr</label>
+      <label id="labelButtonColorHsr">labelButtonColor</label>
       <input type="color" id="buttonColorHsr">
     </div>
     <div class="color-choice">
-      <label id="buttonTextColorHsrt">buttonTextColorHsr</label>
+      <label id="labelTextColorHsr">labelTextColor</label>
       <input type="color" id="buttonTextColorHsr">
     </div>
     <div class="checkbox-label">

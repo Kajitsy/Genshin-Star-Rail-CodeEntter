@@ -29,10 +29,10 @@
   "reset": {
     "message": "リセット"
   },
-  "buttonColort": {
+  "labelButtonColor": {
     "message": "ボタンの色"
   },
-  "buttonTextColort": {
+  "labelTextColor": {
     "message": "テキストの色"
   },
   "labelBackground": {
@@ -43,5 +43,23 @@
   },
   "displayOverlay" :{
     "message": "コピーされたリンク"
+  },
+  "labelGlobal": {
+    "message": "グローバル設定"
+  },
+  "labelMainPopup": {
+    "message": "メインウィンドウの設定"
+  },
+  "labelOnlyGi": {
+    "message": "ウィンドウの設定のみ Genshin Impact"
+  },
+  "labelOnlyHsr": {
+    "message": "ウィンドウの設定のみ Honkai Star Rail"
+  },
+  "labelRounding": {
+    "message": "丸めを無効にする"
+  },
+  "labelSnow": {
+    "message": "降雪のスイッチを切る"
   }
 }

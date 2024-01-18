@@ -6,7 +6,6 @@
     buttonElement.addEventListener('click', function () {
       const code = document.getElementById('code').value;
       let url;
-
       switch (buttonId) {
         case 'submit':
           url = `https://hsr.hoyoverse.com/gift?code=${code}`;
@@ -43,7 +42,6 @@ function displayOverlay() {
     overlay.style.display = 'none';
   }, 2000);
 }
-
 browser.storage.local.get(['buttonColorHsr', 'buttonTextColorHsr', 'BackgroundHsr', 'BackgroundColorHsr']).then(function (result) {
   if (result.buttonColorHsr) {
     document.documentElement.style.setProperty('--button-color', result.buttonColorHsr);
@@ -61,5 +59,13 @@ browser.storage.local.get(['buttonColorHsr', 'buttonTextColorHsr', 'BackgroundHs
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.backgroundPosition = 'center';
     document.body.style.overflow = 'hidden';
+  }
+});
+browser.storage.local.get(['roundingDisable']).then(function (result) {
+  if (result.roundingDisable) {
+  document.documentElement.style.setProperty('--border-radius', '10px')
+  }
+  else {
+    document.documentElement.style.setProperty('--border-radius', '20px')
   }
 });
