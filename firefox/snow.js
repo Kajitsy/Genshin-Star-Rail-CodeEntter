@@ -25,9 +25,7 @@ function createSnowflake() {
   }
   browser.storage.local.get(['snowDisable']).then(function (result) {
     if (result.snowDisable){
-      console.log("Snow Disable");
     } else {
-      console.log("Snow Enable");
       generateSnowfall();
       }
   })
