@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Quick entry of Genshin Impact/Honkai: Star Rail promo codes | 2.2.3"
+    "message": "Quick entry of Genshin Impact/Honkai: Star Rail promo codes | 2.2.4"
   },
   "submit": {
     "message": "Submit"
@@ -61,6 +61,9 @@
   },
   "labelRounding": {
     "message": "Disable roundings"
+  },
+  "labelIcon": {
+    "message": "Disable icon change"
   },
   "labelSnow": {
     "message": "Turn off the snowfall"

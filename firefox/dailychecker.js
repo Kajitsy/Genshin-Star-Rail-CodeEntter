@@ -4,6 +4,8 @@ function getCurrDay() {
 	now.setHours(now.getHours() + 8);
 	return Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
 }
+var HSRwork;
+var GIwork;
 function GIrequest() {
 	var currDay = getCurrDay();
 	fetch("https://sg-hk4e-api.hoyolab.com/event/sol/sign?act_id=e202102251931481", {
@@ -18,12 +20,17 @@ function GIrequest() {
 		if (data.retcode == 0 || data.retcode == -5003) {
 			console.log("GIsuccess", data);
 			browser.storage.local.set({dc_lastCheked: currDay});
-		} else if (data.retcode == -10002) {
-			console.log("GIbadrequest", data);
-		} else {
+			GIwork = true;
+			} else {
 			console.log("GIwarning", data);
+			browser.storage.local.set({dc_lastCheked: currDay});
+			GIwork = false;
 		}
 	})
+	.catch(error => {
+		console.log("GIbadrequest", error);
+		GIwork = false;
+	});
 }
 function HSRrequest() {
 	var currDay = getCurrDay();
@@ -39,12 +46,34 @@ function HSRrequest() {
 		if (data.retcode == 0 || data.retcode == -5003) {
 			console.log("HSRsuccess", data);
 			browser.storage.local.set({dc_lastCheked: currDay});
-		} else if (data.retcode == -10002) {
-			console.log("HSRbadrequest", data);
+			HSRwork = true;
 		} else {
 			console.log("HSRwarning", data);
+			browser.storage.local.set({dc_lastCheked: currDay});
+			HSRwork = false;
 		}
 	})
+	.catch(error => {
+		console.log("HSRbadrequest", error);
+		HSRwork = false;
+	});
+}
+function icon(){
+	browser.storage.local.get(['iconDisable']).then(function (result) {
+		if (result.iconDisable) {
+			browser.browserAction.setIcon({path: "/pictures/icon.png"});
+		} else {
+			if (GIwork == true && HSRwork == true) {
+				browser.browserAction.setIcon({path: "/pictures/icon.png"});
+			} else if (GIwork == true && HSRwork == false) {
+				browser.browserAction.setIcon({path: "/pictures/icon_warn.png"});
+			} else if (GIwork == false && HSRwork == true) {
+				browser.browserAction.setIcon({path: "/pictures/icon_warn.png"});
+			} else {
+				browser.browserAction.setIcon({path: "/pictures/icon_error.png"});
+			}
+		}
+	  })
 }
 function check() {
 	browser.storage.local.get({dc_lastCheked: null}).then(storage => {
@@ -52,6 +81,7 @@ function check() {
 		if (storage.dc_lastCheked != currDay) {
 			HSRrequest();
 			GIrequest();
+			setTimeout(icon, 5000);
 		}
 	});
 }
