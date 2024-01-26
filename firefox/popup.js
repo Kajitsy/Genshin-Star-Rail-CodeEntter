@@ -59,8 +59,6 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
         document.body.style.background = result.BackgroundColorHsr;
       } 
       else {
-        document.documentElement.style.setProperty('--button-text-color', '#ffffff');
-        document.documentElement.style.setProperty('--button-color', '#004080');
         document.body.style.background = 'url("/pictures/backgroundHSR.png")';
         document.body.style.backgroundSize = 'cover';
         document.body.style.backgroundRepeat = 'no-repeat';
@@ -115,8 +113,6 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
         document.body.style.background = result.BackgroundColorGi;
       } 
       else {
-        document.documentElement.style.setProperty('--button-text-color', '#ffffff');
-        document.documentElement.style.setProperty('--button-color', '#a89f96');
         document.body.style.background = 'url("/pictures/backgroundGI.png")';
         document.body.style.backgroundSize = 'cover';
         document.body.style.backgroundRepeat = 'no-repeat';
