@@ -1,11 +1,17 @@
 {
   "extensionDescription": {
-    "message": "Быстрый ввод промокодов Genshin Impact/Honkai: Star Rail | 2.2.4"
+    "message": "Быстрый ввод промокодов Genshin Impact/Honkai: Star Rail | 2.2.4.4"
   },
-  "submit": {
+  "sthsr": {
     "message": "Ввести"
   },
-  "share": {
+  "stgi": {
+    "message": "Ввести"
+  },
+  "sehsr": {
+    "message": "Поделиться"
+  },
+  "segi": {
     "message": "Поделиться"
   },
   "labelGi": {

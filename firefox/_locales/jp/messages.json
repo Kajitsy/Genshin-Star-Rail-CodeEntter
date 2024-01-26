@@ -1,8 +1,14 @@
 {
-  "submit": {
+  "sthsr": {
     "message": "送信"
   },
-  "share": {
+  "stgi": {
+    "message": "送信"
+  },
+  "sehsr": {
+    "message": "共有"
+  },
+  "segi": {
     "message": "共有"
   },
   "labelgi": {

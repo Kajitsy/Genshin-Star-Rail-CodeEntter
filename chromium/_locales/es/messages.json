@@ -1,14 +1,20 @@
 {
   "extensionDescription": {
-    "message": "Entrada rápida de los códigos promocionales de Genshin Impact/Honkai: Star Rail | 2.2.4"
+    "message": "Entrada rápida de los códigos promocionales de Genshin Impact/Honkai: Star Rail | 2.2.4.4"
   },
-  "submit": {
+  "sthsr": {
     "message": "Enviar"
+  },
+  "stgi": {
+    "message": "Enviar"
+  },
+  "sehsr": {
+    "message": "Compartir"
   },
   "share": {
     "message": "Compartir"
   },
-  "labelgi": {
+  "segi": {
     "message": "Solo Genshin Impact"
   },
   "labelHsr": {

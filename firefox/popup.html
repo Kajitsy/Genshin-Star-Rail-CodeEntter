@@ -9,10 +9,6 @@
     --input-color: rgba(0, 0, 0, 0.5);
     --input-text-color: white;
   }
-  @font-face {
-    font-family: 'SDK_SC_Web';
-    src: url('GIfont.woff2') format('woff2');
-  }
   body {
     font-family: var(--);
     padding: 10px;
@@ -21,6 +17,8 @@
     background-position: center;
     overflow: hidden;
     background-image: url(./pictures/background.png);
+    max-height: 560px;
+    min-width: 300px;
   }
   #input-container {
     display: flex;
@@ -45,10 +43,6 @@
     display: flex;
     justify-content: space-between;
   }
-  #submitGI, #submitHSR, #shareGI, #shareHSR {
-    width: 48%;
-    margin-top: 10px;
-  }
   button {
     cursor: pointer;
     display: flex;
@@ -63,8 +57,10 @@
     z-index: 2;
     font-family: 'SDK_SC_Web';
     box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
+    width: 48%;
+    margin-top: 10px;
   }
-  #submitGI:hover, #submitHSR:hover, #shareGI:hover, #shareHSR:hover, #options:hover {
+  button:hover {
     transform: scale(1.05);
     border-radius: 10px;
     display: flex;
@@ -90,6 +86,9 @@
     z-index: 2;
     font-family: 'SDK_SC_Web';
   }
+  #hsr-popup, #gi-popup {
+    display: none;
+  }
   @keyframes snowfall {
     from {
       transform: translateY(-100vh);
@@ -106,16 +105,30 @@
   <div id="input-container">
     <input type="text" id="code">
   </div>
-  <div id="buttons-container">
-    <button id="submitGI">__MSG_submitGI__</button>
-    <button id="submitHSR">__MSG_submitHSR__</button>
+  <div id="main-popup">
+    <div id="buttons-container">
+      <button id="submitGI">__MSG_submitGI__</button>
+      <button id="submitHSR">__MSG_submitHSR__</button>
+    </div>
+    <div id="buttons-container">
+      <button id="shareGI">__MSG_shareGI__</button>
+      <button id="shareHSR">__MSG_shareHSR__</button>
+    </div>
   </div>
-  <div id="buttons-container">
-    <button id="shareGI">__MSG_shareGI__</button>
-    <button id="shareHSR">__MSG_shareHSR__</button>
+  <div id="hsr-popup">
+    <div id="buttons-container">
+      <button id="sthsr">submit</button>
+      <button id="sehsr">share</button>
+    </div>
   </div>
-  <iframe id="frame" src="" width="756" height="550" style="display: none;"></iframe>
+  <div id="gi-popup">
+    <div id="buttons-container">
+      <button id="stgi">submit</button>
+      <button id="segi">share</button>
+    </div>
+  </div>
   <div id="displayOverlay"></div>
+  <iframe id="frame" src="" width="756" height="550" style="display: none;"></iframe>
   <script src="popup.js"></script>
   <script src="snow.js"></script>
 </body>

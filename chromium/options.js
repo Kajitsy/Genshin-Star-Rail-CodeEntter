@@ -223,4 +223,10 @@ browser.storage.local.get(['iconDisable','roundingDisable', 'snowDisable', 'Back
       element.value = elements[id];
     }
   }  
+  if (result.buttonColorGi & result.buttonColorHsr) {
+  } else if (result.buttonColorHsr) {} 
+  else if (result.buttonColorGi) {} 
+  else {
+    browser.storage.local.set({buttonColorGi: '#a89f96', buttonColorHsr: '#004080'})
+  }
 });
