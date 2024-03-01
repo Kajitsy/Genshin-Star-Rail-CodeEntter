@@ -6,8 +6,13 @@ const frame = document.getElementById('frame');
 const codeElement = document.getElementById('code');
 const overlay = document.getElementById('displayOverlay');
 const font = document.styleSheets[0];
-const HSRfont = "@font-face {font-family: 'SDK_SC_Web'; src: url('HSRfont.woff2') format('woff2');}";
-const GIfont = "@font-face {font-family: 'SDK_SC_Web'; src: url('GIfont.woff2') format('woff2');}";
+browser.storage.local.get(['mainFont']).then(function (result) {
+  if (result.mainFont) {
+    mainFont= "@font-face {font-family: 'SDK_SC_Web'; src: url('HSRfont.woff2') format('woff2');}";
+  } else {
+    mainFont = "@font-face {font-family: 'SDK_SC_Web'; src: url('GIfont.woff2') format('woff2');}";
+  }
+})
 function displayOverlay() {
   overlay.textContent = browser.i18n.getMessage("displayOverlay")
   overlay.style.display = 'flex';
@@ -17,7 +22,7 @@ function displayOverlay() {
 }
 browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
   if (result.onlyHsr) {
-    font.insertRule(HSRfont, font.cssRules.length);
+    font.insertRule("@font-face {font-family: 'SDK_SC_Web'; src: url('HSRfont.woff2') format('woff2');}", font.cssRules.length);
     document.getElementById("main-popup").style.display = "none";
     document.getElementById("hsr-popup").style.display = "block";
     buttonIds.forEach((buttonId) => {
@@ -70,7 +75,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
       }
     });
   } else if (result.onlyGi) {
-    font.insertRule(GIfont, font.cssRules.length);
+    font.insertRule("@font-face {font-family: 'SDK_SC_Web'; src: url('GIfont.woff2') format('woff2');}", font.cssRules.length);
     document.getElementById("main-popup").style.display = "none";
     document.getElementById("gi-popup").style.display = "block";
     buttonIds.forEach((buttonId) => {
@@ -124,7 +129,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
       }
     });
   } else {
-    font.insertRule(GIfont, font.cssRules.length);
+    font.insertRule(mainFont, font.cssRules.length);
     buttonIds.forEach((buttonId) => {
       const buttonElement = document.getElementById(buttonId);
       buttonElement.textContent = browser.i18n.getMessage(buttonId);

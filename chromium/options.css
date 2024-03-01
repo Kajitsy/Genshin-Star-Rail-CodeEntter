@@ -1,0 +1,105 @@
+@font-face {
+font-family: 'SDK_SC_Web';
+src: url('GIfont.woff2') format('woff2');
+} 
+body {
+    background-color: #ffffff;
+    font-family: 'SDK_SC_Web';
+    padding: 10px;
+    min-height: 50vh;
+    font-size: 13px;
+  }
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+input[type="color"] {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #9d9ca3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-radius: var(--border-radius);
+    font-family: 'SDK_SC_Web';
+}
+button:hover {
+    transform: scale(1.05);
+    border-radius: var(--border-radius);
+}
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.checkbox-label input {
+    margin: 10;
+}
+.checkbox-label label{
+    margin-bottom: 0;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+      background-color: #292a2d;
+      color: white;
+    }
+  }
+.settings-section {
+    display: block;
+}
+#main-popup-settings, #onlyGi-settings, #onlyHsr-settings {
+    display: none;
+}
+#settingsSectionSelector {
+    margin-bottom: 20px;
+    font-family: 'SDK_SC_Web';
+    font-size: 13px;
+}
+toggle-switch-container {
+    display: flex;
+    align-items: center;
+}
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 24px;
+}
+.toggle-switch input[type="checkbox"] {
+    display: none;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #292a2d;
+}
+.slider:before {
+    position: absolute;
+    content: "Genshin";
+    height: 20px;
+    width: 57px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #a89f96;
+    transition: 0.2s;
+}
+input:checked + .slider:before {
+    content: "Star Rail";
+    transform: translateX(26px);
+    width: 62px;
+    background-color: #004080;
+}

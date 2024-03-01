@@ -1,7 +1,6 @@
 const labels = {
   'labelGi': 'labelGi',
   'labelHsr': 'labelHsr',
-  'labelSnow': 'labelSnow',
   'labelIcon': 'labelIcon',
   'labelRounding': 'labelRounding',
   'labelBackgroundGi': 'labelBackground',
@@ -20,7 +19,8 @@ const labels = {
   'labelGlobal-settings': 'labelGlobal',
   'labelMainPopup-settings': 'labelMainPopup',
   'labelOnlyGi-settings': 'labelOnlyGi',
-  'labelOnlyHsr-settings': 'labelOnlyHsr'
+  'labelOnlyHsr-settings': 'labelOnlyHsr',
+  'labelFont': 'labelFont'
 };
 for (let id in labels) {
   document.getElementById(id).textContent = browser.i18n.getMessage(labels[id]);
@@ -86,12 +86,6 @@ document.getElementById('BackgroundColorHsr').addEventListener('input', function
     BackgroundColorHsr: BackgroundColorHsr
   });
 });
-document.getElementById('snowDisable').addEventListener('change', function() {
-  var snowDisable = document.getElementById('snowDisable').checked;
-  browser.storage.local.set({
-    snowDisable: snowDisable
-  });
-});
 document.getElementById('iconDisable').addEventListener('change', function() {
   var iconDisable = document.getElementById('iconDisable').checked;
   browser.storage.local.set({
@@ -114,6 +108,12 @@ document.getElementById('BackgroundHsr').addEventListener('change', function() {
   var BackgroundHsr = document.getElementById('BackgroundHsr').checked;
   browser.storage.local.set({
     BackgroundHsr: BackgroundHsr
+  });
+});
+document.getElementById('mainFont').addEventListener('change', function() {
+  var mainFont = document.getElementById('mainFont').checked;
+  browser.storage.local.set({
+    mainFont: mainFont
   });
 });
 document.getElementById('resetpopup').addEventListener('click', function() {
@@ -150,7 +150,7 @@ browser.storage.local.get(['roundingDisable']).then(function (result) {
     document.documentElement.style.setProperty('--border-radius', '20px')
   }
 });
-browser.storage.local.get(['iconDisable','roundingDisable', 'snowDisable', 'BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi', 'BackgroundColorGi', 'buttonColorMain', 'buttonColorGi', 'buttonColorHsr', 'buttonTextColorMain', 'buttonTextColorGi', 'buttonTextColorHsr', 'onlyHsr', 'onlyGi'], function(result) {
+browser.storage.local.get(['mainFont', 'iconDisable', 'roundingDisable', 'BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi', 'BackgroundColorGi', 'buttonColorMain', 'buttonColorGi', 'buttonColorHsr', 'buttonTextColorMain', 'buttonTextColorGi', 'buttonTextColorHsr', 'onlyHsr', 'onlyGi'], function(result) {
   const defaults = {
     'buttonColorMain': '#9a609a',
     'buttonColorGi': '#a89f96',
@@ -163,10 +163,10 @@ browser.storage.local.get(['iconDisable','roundingDisable', 'snowDisable', 'Back
     'onlyHsr': false,
     'onlyGi': false,
     'iconDisable': false,
-    'snowDisable': false,
     'roundingDisable': false,
     'BackgroundGi': false,
-    'BackgroundHsr': false
+    'BackgroundHsr': false,
+    'mainFont': false
   };
   for (let key in defaults) {
     window[key] = result[key] ? result[key] : defaults[key];
@@ -206,11 +206,11 @@ browser.storage.local.get(['iconDisable','roundingDisable', 'snowDisable', 'Back
     'BackgroundColorHsr': BackgroundColorHsr,
     'onlyHsr': onlyHsr,
     'onlyGi': onlyGi,
-    'snowDisable': snowDisable,
     'iconDisable': iconDisable,
     'roundingDisable': roundingDisable,
     'BackgroundHsr': BackgroundHsr,
-    'BackgroundGi': BackgroundGi
+    'BackgroundGi': BackgroundGi,
+    'mainFont': mainFont
   };
   for (let id in elements) {
     let element = document.getElementById(id);

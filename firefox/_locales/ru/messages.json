@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Быстрый ввод промокодов Genshin Impact/Honkai: Star Rail | 2.2.4.6"
+    "message": "Быстрый ввод промокодов Genshin Impact/Honkai: Star Rail | 2.2.4.7"
   },
   "sthsr": {
     "message": "Ввести"
@@ -71,7 +71,7 @@
   "labelIcon": {
     "message": "Отключить смену иконок"
   },
-  "labelSnow": {
-    "message": "Отключить снегопад"
+  "labelFont": {
+    "message": "Шрифт"
   }
 }

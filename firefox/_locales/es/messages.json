@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Entrada rápida de los códigos promocionales de Genshin Impact/Honkai: Star Rail | 2.2.4.6"
+    "message": "Entrada rápida de los códigos promocionales de Genshin Impact/Honkai: Star Rail | 2.2.4.7"
   },
   "sthsr": {
     "message": "Enviar"
@@ -71,7 +71,7 @@
   "labelIcon": {
     "message": "Desactivar el cambio de icono"
   },
-  "labelSnow": {
-    "message": "Apagar la nevada"
+  "labelFont": {
+    "message": "Fuente"
   }
 }

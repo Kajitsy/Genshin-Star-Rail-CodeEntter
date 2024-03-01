@@ -3,76 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    @font-face {
-    font-family: 'SDK_SC_Web';
-    src: url('GIfont.woff2') format('woff2');
-    } 
-    body {
-      background-color: #ffffff;
-      font-family: 'SDK_SC_Web';
-      padding: 10px;
-      min-height: 100vh;
-      font-size: 13px;
-    }
-    label {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      border-radius: 10px;
-    }
-    input[type="color"] {
-      display: block;
-      width: 100%;
-      height: 40px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #9d9ca3;
-      color: white;
-      border: none;
-      cursor: pointer;
-      text-align: center;
-      transition: transform 0.3s ease;
-      border-radius: var(--border-radius);
-      font-family: 'SDK_SC_Web';
-    }
-    button:hover {
-      transform: scale(1.05);
-      border-radius: var(--border-radius);
-    }
-    .checkbox-label {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      border-radius: 10px;
-    }
-    .checkbox-label input {
-      margin: 10;
-    }
-    .checkbox-label label{
-      margin-bottom: 0;
-    }
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: rgb(35, 34, 43);
-        color: white;
-      }
-    }
-    .settings-section {
-      display: block;
-    }
-    #main-popup-settings, #onlyGi-settings, #onlyHsr-settings {
-      display: none;
-    }
-    #settingsSectionSelector {
-      margin-bottom: 20px;
-      font-family: 'SDK_SC_Web';
-      font-size: 13px;
-    }
-  </style>
+  <link rel="stylesheet" href="options.css">
 </head>
 <body>
   <select id="settingsSectionSelector">
@@ -98,10 +29,6 @@
       <label id="labelIcon">labelIcon</label>
       <input type="checkbox" id="iconDisable">
     </div>
-    <div class="checkbox-label">
-      <label id="labelSnow">labelSnow</label>
-      <input type="checkbox" id="snowDisable">
-    </div>
   </div>
   <div id="main-popup-settings" class="settings-section">
     <div class="color-choice">
@@ -109,9 +36,16 @@
       <input type="color" id="buttonColorMain">
     </div>
     <div class="color-choice">
-       <label id="labelTextColor">labelTextColor</label>
-       <input type="color" id="buttonTextColorMain">
-     </div>
+      <label id="labelTextColor">labelTextColor</label>
+      <input type="color" id="buttonTextColorMain">
+    </div>
+    <div class="toggle-switch-container">
+      <p id="labelFont">Font:</p>
+      <label class="toggle-switch">
+          <input type="checkbox" id="mainFont">
+          <span class="slider"></span>
+      </label>
+    </div>
      <button id="resetpopup">resetpopup</button>
   </div>
   <div id="onlyGi-settings" class="settings-section">

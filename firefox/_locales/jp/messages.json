@@ -68,7 +68,7 @@
   "labelIcon": {
     "message": "アイコンの変更を無効にする"
   },
-  "labelSnow": {
-    "message": "降雪のスイッチを切る"
+  "labelFont": {
+    "message": "フォント"
   }
 }
