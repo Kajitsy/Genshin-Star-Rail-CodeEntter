@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Entrada rápida de los códigos promocionales de Genshin Impact/Honkai: Star Rail | 2.2.4.7"
+    "message": "Entrada rápida de los códigos promocionales de Genshin Impact/Honkai: Star Rail | 2.2.5"
   },
   "sthsr": {
     "message": "Enviar"
@@ -59,12 +59,6 @@
   "labelMainPopup": {
     "message": "Configuración de la ventana principal"
   },
-  "labelOnlyGi": {
-    "message": "Ajustes de ventana, sólo Genshin Impact"
-  },
-  "labelOnlyHsr": {
-    "message": "Ajustes de ventana, sólo Honkai Star Rail"
-  },
   "labelRounding": {
     "message": "Desactivar el redondeo"
   },
@@ -73,5 +67,14 @@
   },
   "labelFont": {
     "message": "Fuente"
+  },
+  "labelOnlyGi": {
+    "message": "Modo Genshin Impact"
+  },
+  "labelOnlyHsr": {
+    "message": "Modo Honkai Star Rail"
+  },
+  "labelBirthday": {
+    "message": "Desactivar la personalización del cumpleaños del personaje"
   }
 }

@@ -20,7 +20,9 @@ const labels = {
   'labelMainPopup-settings': 'labelMainPopup',
   'labelOnlyGi-settings': 'labelOnlyGi',
   'labelOnlyHsr-settings': 'labelOnlyHsr',
-  'labelFont': 'labelFont'
+  'labelFont': 'labelFont',
+  'labelMainBirthday': 'labelBirthday',
+  'labelGIBirthday': 'labelBirthday'
 };
 for (let id in labels) {
   document.getElementById(id).textContent = browser.i18n.getMessage(labels[id]);
@@ -92,6 +94,18 @@ document.getElementById('iconDisable').addEventListener('change', function() {
     iconDisable: iconDisable
   });
 });
+document.getElementById('mainBirthdayDisable').addEventListener('change', function() {
+  var mainBirthdayDisable = document.getElementById('mainBirthdayDisable').checked;
+  browser.storage.local.set({
+    mainBirthdayDisable: mainBirthdayDisable
+  });
+});
+document.getElementById('giBirthdayDisable').addEventListener('change', function() {
+  var giBirthdayDisable = document.getElementById('giBirthdayDisable').checked;
+  browser.storage.local.set({
+    giBirthdayDisable: giBirthdayDisable
+  });
+});
 document.getElementById('roundingDisable').addEventListener('change', function() {
   var roundingDisable = document.getElementById('roundingDisable').checked;
   browser.storage.local.set({
@@ -150,7 +164,7 @@ browser.storage.local.get(['roundingDisable']).then(function (result) {
     document.documentElement.style.setProperty('--border-radius', '20px')
   }
 });
-browser.storage.local.get(['mainFont', 'iconDisable', 'roundingDisable', 'BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi', 'BackgroundColorGi', 'buttonColorMain', 'buttonColorGi', 'buttonColorHsr', 'buttonTextColorMain', 'buttonTextColorGi', 'buttonTextColorHsr', 'onlyHsr', 'onlyGi'], function(result) {
+browser.storage.local.get(['giBirthdayDisable', 'mainBirthdayDisable', 'mainFont', 'iconDisable', 'roundingDisable', 'BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi', 'BackgroundColorGi', 'buttonColorMain', 'buttonColorGi', 'buttonColorHsr', 'buttonTextColorMain', 'buttonTextColorGi', 'buttonTextColorHsr', 'onlyHsr', 'onlyGi'], function(result) {
   const defaults = {
     'buttonColorMain': '#9a609a',
     'buttonColorGi': '#a89f96',
@@ -163,6 +177,8 @@ browser.storage.local.get(['mainFont', 'iconDisable', 'roundingDisable', 'Backgr
     'onlyHsr': false,
     'onlyGi': false,
     'iconDisable': false,
+    'mainBirthdayDisable': false,
+    'giBirthdayDisable': false,
     'roundingDisable': false,
     'BackgroundGi': false,
     'BackgroundHsr': false,
@@ -207,6 +223,8 @@ browser.storage.local.get(['mainFont', 'iconDisable', 'roundingDisable', 'Backgr
     'onlyHsr': onlyHsr,
     'onlyGi': onlyGi,
     'iconDisable': iconDisable,
+    'mainBirthdayDisable': mainBirthdayDisable,
+    'giBirthdayDisable': giBirthdayDisable,
     'roundingDisable': roundingDisable,
     'BackgroundHsr': BackgroundHsr,
     'BackgroundGi': BackgroundGi,

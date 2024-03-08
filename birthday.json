@@ -1,3 +1,315 @@
 {
-    "03-03": "ToDay"
+    "01-03": {
+        "character": "wanderer",
+        "buttonColor": "17326f",
+        "element": "anemo"
+    }, 
+    "01-09": {
+        "character": "thoma",
+        "element": "pyro"
+    },
+    "01-10": {
+        "character": "chevreuse",
+        "element": "pyro"
+    },
+    "01-18": {
+        "character": "diona",
+        "element": "cryo"
+    },
+    "01-22": {
+        "character": "kirara",
+        "element": "dendro"
+    },
+    "01-24": {
+        "character": "rosaria",
+        "element": "cryo"
+    },
+    "02-02": {
+        "character": "lyney",
+        "element": "pyro"
+    },
+    "02-11": {
+        "character": "alhaitham",
+        "element": "dendro"
+    },
+    "02-14": {
+        "character": "beidou",
+        "element": "electro"
+    },
+    "02-22": {
+        "character": "kokomi",
+        "element": "hydro"
+    },
+    "02-29": {
+        "character": "bennett",
+        "buttonColor": "#b36952",
+        "element": "pyro"
+    },
+    "03-03": {
+        "character": "qiqi",
+        "element": "cryo"
+    },
+    "03-06": {
+        "character": "yaoyao",
+        "element": "dendro"
+    },
+    "03-10": {
+        "character": "shenhe",
+        "element": "cryo"
+    },
+    "03-14": {
+        "character": "jean",
+        "element": "anemo"
+    },
+    "03-21": {
+        "character": "noelle",
+        "element": "geo"
+    },
+    "03-26": {
+        "character": "ayato",
+        "element": "hydro"
+    },
+    "04-04": {
+        "character": "aloy",
+        "element": "cryo"
+    },
+    "04-07": {
+        "character": "dehya",
+        "element": "pyro"
+    },
+    "04-10": {
+        "character": "charlotte",
+        "element": "cryo"
+    },
+    "04-11": {
+        "character": "xianyun",
+        "element": "anemo"
+    },
+    "04-17": {
+        "character": "xiao",
+        "element": "anemo"
+    },
+    "04-20": {
+        "character": "yelan",
+        "element": "hydro"
+    },
+    "04-25": {
+        "character": "baizhu",
+        "element": "dendro"
+    },
+    "04-30": {
+        "character": "diluc",
+        "element": "pyro"
+    },
+    "05-03": {
+        "character": "candace",
+        "element": "hydro"
+    },
+    "05-08": {
+        "character": "collei",
+        "element": "dendro"
+    },
+    "05-18": {
+        "character": "gorou",
+        "element": "geo"
+    },
+    "05-21": {
+        "character": "yunjin",
+        "element": "geo"
+    },
+    "06-01": {
+        "character": "itto",
+        "element": "geo"
+    },
+    "06-09": {
+        "character": "lisa",
+        "element": "electro"
+    },
+    "06-16": {
+        "character": "venti",
+        "buttonColor": "#147a7e",
+        "element": "anemo"
+    },
+    "06-21": {
+        "character": "yoimiya"
+    },
+    "06-23": {
+        "character": "cyno",
+        "element": "electro"
+    },
+    "06-26": {
+        "character": "raiden",
+        "buttonColor": "#565783",
+        "element": "electro"
+    },
+    "06-27": {
+        "character": "yaemiko",
+        "element": "electro"
+    },
+    "07-05": {
+        "character": "barbara",
+        "element": "hydro"
+    },
+    "07-09": {
+        "character": "kaveh",
+        "element": "dendro"
+    },
+    "07-14": {
+        "character": "sara",
+        "element": "electro"
+    },
+    "07-15": {
+        "character": "hutao",
+        "element": "pyro"
+    },
+    "07-20": {
+        "character": "tartaglia",
+        "element": "hydro"
+    },
+    "07-24": {
+        "character": "heizou",
+        "element": "anemo"
+    },
+    "07-27": {
+        "character": "klee",
+        "element": "pyro"
+    },
+    "07-28": {
+        "character": "yanfei",
+        "element": "pyro"
+    },
+    "08-10": {
+        "character": "amber",
+        "element": "pyro"
+    },
+    "08-11": {
+        "character": "mika",
+        "element": "cryo"
+    },
+    "08-16": {
+        "character": "navia",
+        "element": "geo"
+    },
+    "08-17": {
+        "character": "chiori",
+        "element": "geo"
+    },
+    "08-20": {
+        "character": "faruzan",
+        "element": "anemo"
+    },
+    "08-26": {
+        "character": "ningguang",
+        "element": "geo"
+    },
+    "08-31": {
+        "character": "mona",
+        "buttonColor": "#493f80",
+        "element": "hydro"
+    },
+    "09-07": {
+        "character": "chongyun",
+        "element": "cryo"
+    },
+    "09-09": {
+        "character": "razor",
+        "element": "electro"
+    },
+    "09-13": {
+        "character": "albedo",
+        "element": "geo"
+    },
+    "09-24": {
+        "character": "freminet",
+        "element": "cryo"
+    },
+    "09-28": {
+        "character": "ayaka",
+        "element": "cryo"
+    },
+    "10-09": {
+        "character": "xingqiu",
+        "element": "hydro"
+    },
+    "10-13": {
+        "character": "furina",
+        "buttonColor": "#17277b",
+        "element": "hydro"
+    },
+    "10-16": {
+        "character": "xinyan",
+        "element": "pyro"
+    },
+    "10-19": {
+        "character": "sayu",
+        "element": "anemo"
+    },
+    "10-25": {
+        "character": "eula",
+        "buttonColor": "#2b303c",
+        "element": "cryo"
+    },
+    "10-27": {
+        "character": "nahida",
+        "buttonColor": "#bad5b5",
+        "element": "dendro"
+    },
+    "10-29": {
+        "character": "kazuha",
+        "buttonColor": "#618579",
+        "element": "anemo"
+    },
+    "11-02": {
+        "character": "xiangling",
+        "element": "pyro"
+    },
+    "11-20": {
+        "character": "keqing",
+        "element": "electro"
+    },
+    "11-23": {
+        "character": "wriothesley",
+        "element": "cryo"
+    },
+    "11-26": {
+        "character": "sucrose",
+        "element": "anemo"
+    },
+    "11-30": {
+        "character": "kaeya",
+        "element": "cryo"
+    },
+    "12-02": {
+        "character": "ganyu",
+        "buttonColor": "#5084d4",
+        "element": "cryo"
+    },
+    "12-03": {
+        "character": "nilou"
+    },
+    "12-18": {
+        "character": "neuvillette",
+        "element": "hydro"
+    },
+    "12-19": {
+        "character": "layla",
+        "element": "hydro"
+    },
+    "12-21": {
+        "character": "dori",
+        "element": "electro"
+    },
+    "12-22": {
+        "character": "gaming",
+        "element": "pyro"
+    },
+    "12-29": {
+        "character": "tighnari",
+        "element": "dendro"
+    },
+    "12-31": {
+        "character": "zhongli",
+        "buttonColor": "#635047",
+        "element": "geo"
+    }
 }

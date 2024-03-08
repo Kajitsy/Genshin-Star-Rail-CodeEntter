@@ -56,12 +56,6 @@
   "labelMainPopup": {
     "message": "メインウィンドウの設定"
   },
-  "labelOnlyGi": {
-    "message": "ウィンドウの設定のみ Genshin Impact"
-  },
-  "labelOnlyHsr": {
-    "message": "ウィンドウの設定のみ Honkai Star Rail"
-  },
   "labelRounding": {
     "message": "丸めを無効にする"
   },
@@ -70,5 +64,14 @@
   },
   "labelFont": {
     "message": "フォント"
+  },
+  "labelOnlyGi": {
+    "message": "Genshin Impactモード"
+  },
+  "labelOnlyHsr": {
+    "message": "Honkai Star Railモード"
+  },
+  "labelBirthday": {
+    "message": "キャラクターの誕生日のカスタマイズを無効にする"
   }
 }

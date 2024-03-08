@@ -125,6 +125,59 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
         document.body.style.overflow = 'hidden';
       }
     });
+    browser.storage.local.get(['giBirthdayDisable']).then((result) => {
+      if (!result.giBirthdayDisable) {     
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
+        today = mm + '-' + dd;
+        fetch('https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/birthday.json')
+            .then(response => response.json())
+            .then(birthdayData => {
+              if (birthdayData[today]) {
+                let characterData = birthdayData[today];
+                let bgUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/background_birthday/' + characterData.character + '.webp';
+                function createEffect() {
+                  const effect = document.createElement('div');
+                  effect.className = 'effect';
+                  let effectUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/background_birthday/element/' + characterData.element + '.png';
+                  effect.innerHTML = '<img src="' + effectUrl + '"style="width: 30px; height: 30px;">';
+                  effect.style.position = 'absolute';
+                  effect.style.pointerEvents = 'none';
+                  const startPositionLeft = Math.random() * window.innerWidth;
+                  const duration = Math.random() * 4 + 3 + 's';
+                  const delay = Math.random() * 10 + 's';
+                  effect.style.left = startPositionLeft + 'px';
+                  effect.style.animation = `snowfall ${duration} linear ${delay} infinite`;
+                  document.body.appendChild(effect);
+                  effect.addEventListener('animationiteration', () => {
+                    effect.style.left = Math.random() * window.innerWidth + 'px';
+                  });
+                }
+                function generateEffect() {
+                  for (let i = 0; i < 5; i++) {
+                    createEffect();
+                  }
+                } 
+                if (characterData.element) {
+                  generateEffect()
+                }
+                document.body.style.background = 'url(' + bgUrl + ')';
+                document.body.style.backgroundSize = 'cover';
+                document.body.style.backgroundRepeat = 'no-repeat';
+                document.body.style.backgroundPosition = 'center';
+                document.body.style.overflow = 'hidden';
+                if (characterData.buttonColor) {
+                  document.documentElement.style.setProperty('--button-color', characterData.buttonColor);
+                } else if (characterData.buttonColor && characterData.buttonTextColor) {
+                  document.documentElement.style.setProperty('--button-color', characterData.buttonColor);
+                  document.documentElement.style.setProperty('--button-text-color', characterData.buttonTextColor);
+                }
+              }
+          })
+        .catch(err => console.error(err));
+      }
+    });
   } else {
     font.insertRule(mainFont, font.cssRules.length);
     buttonIds.forEach((buttonId) => {
@@ -175,7 +228,60 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
       if (result.buttonTextColorMain) {
         document.documentElement.style.setProperty('--button-text-color', result.buttonTextColorMain);
       }
-    });    
+    });
+    browser.storage.local.get(['mainBirthdayDisable']).then((result) => {
+      if (!result.mainBirthdayDisable) {     
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
+        today = mm + '-' + dd;
+        fetch('https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/birthday.json')
+            .then(response => response.json())
+            .then(birthdayData => {
+              if (birthdayData[today]) {
+                let characterData = birthdayData[today];
+                let bgUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/background_birthday/' + characterData.character + '.webp';
+                function createEffect() {
+                  const effect = document.createElement('div');
+                  effect.className = 'effect';
+                  let effectUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/background_birthday/element/' + characterData.element + '.png';
+                  effect.innerHTML = '<img src="' + effectUrl + '"style="width: 30px; height: 30px;">';
+                  effect.style.position = 'absolute';
+                  effect.style.pointerEvents = 'none';
+                  const startPositionLeft = Math.random() * window.innerWidth;
+                  const duration = Math.random() * 4 + 3 + 's';
+                  const delay = Math.random() * 10 + 's';
+                  effect.style.left = startPositionLeft + 'px';
+                  effect.style.animation = `snowfall ${duration} linear ${delay} infinite`;
+                  document.body.appendChild(effect);
+                  effect.addEventListener('animationiteration', () => {
+                    effect.style.left = Math.random() * window.innerWidth + 'px';
+                  });
+                }
+                function generateEffect() {
+                  for (let i = 0; i < 10; i++) {
+                    createEffect();
+                  }
+                } 
+                if (characterData.element) {
+                  generateEffect()
+                }
+                document.body.style.background = 'url(' + bgUrl + ')';
+                document.body.style.backgroundSize = 'cover';
+                document.body.style.backgroundRepeat = 'no-repeat';
+                document.body.style.backgroundPosition = 'center';
+                document.body.style.overflow = 'hidden';
+                if (characterData.buttonColor) {
+                  document.documentElement.style.setProperty('--button-color', characterData.buttonColor);
+                } else if (characterData.buttonColor && characterData.buttonTextColor) {
+                  document.documentElement.style.setProperty('--button-color', characterData.buttonColor);
+                  document.documentElement.style.setProperty('--button-text-color', characterData.buttonTextColor);
+                }
+              }
+          })
+        .catch(err => console.error(err));
+      }
+    });
   }
 })
 browser.storage.local.get(['roundingDisable']).then((result) => {

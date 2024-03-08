@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Быстрый ввод промокодов Genshin Impact/Honkai: Star Rail | 2.2.4.7"
+    "message": "Быстрый ввод промокодов Genshin Impact/Honkai: Star Rail | 2.2.5"
   },
   "sthsr": {
     "message": "Ввести"
@@ -59,12 +59,6 @@
   "labelMainPopup": {
     "message": "Настройки основного окна"
   },
-  "labelOnlyGi": {
-    "message": "Настройки окна, только Genshin Impact"
-  },
-  "labelOnlyHsr": {
-    "message": "Настройки окна, только Honkai Star Rail"
-  },
   "labelRounding": {
     "message": "Отключить закругления"
   },
@@ -73,5 +67,14 @@
   },
   "labelFont": {
     "message": "Шрифт"
+  },
+  "labelOnlyGi": {
+    "message": "Режим Genshin Impact"
+  },
+  "labelOnlyHsr": {
+    "message": "Режим Honkai Star Rail"
+  },
+  "labelBirthday": {
+    "message": "Отключить кастомизацию ко дню рождения персонажа"
   }
 }

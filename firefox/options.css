@@ -51,7 +51,7 @@ button:hover {
 }
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: rgb(35, 34, 43);
+        background-color: #23222b;
         color: white;
     }
     }
@@ -85,7 +85,6 @@ toggle-switch-container {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #23222b;
 }
 .slider:before {
     position: absolute;
