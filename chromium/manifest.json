@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Genshin/Star Rail CodeEntter",
-  "version": "2.2.4.7",
+  "version": "2.2.5",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "icons": {
