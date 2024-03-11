@@ -74,6 +74,7 @@
     },
     "04-04": {
         "character": "aloy",
+        "buttonColor": "#a68361",
         "element": "cryo"
     },
     "04-07": {
