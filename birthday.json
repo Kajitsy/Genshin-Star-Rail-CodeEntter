@@ -1,7 +1,7 @@
 {
     "01-03": {
         "character": "wanderer",
-        "buttonColor": "17326f",
+        "buttonColor": "#17326f",
         "element": "anemo"
     }, 
     "01-09": {
@@ -59,14 +59,17 @@
     },
     "03-14": {
         "character": "jean",
+        "buttonColor": "#197f83",
         "element": "anemo"
     },
     "03-21": {
         "character": "noelle",
+        "buttonColor": "#936613",
         "element": "geo"
     },
     "03-26": {
         "character": "ayato",
+        "buttonColor": "#64a0c9",
         "element": "hydro"
     },
     "04-04": {
