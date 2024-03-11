@@ -79,54 +79,67 @@
     },
     "04-07": {
         "character": "dehya",
+        "buttonColor": "#4d160b",
         "element": "pyro"
     },
     "04-10": {
         "character": "charlotte",
+        "buttonColor": "#a8967a",
         "element": "cryo"
     },
     "04-11": {
         "character": "xianyun",
+        "buttonColor": "#134a5a",
         "element": "anemo"
     },
     "04-17": {
         "character": "xiao",
+        "buttonColor": "#244953",
         "element": "anemo"
     },
     "04-20": {
         "character": "yelan",
+        "buttonColor": "#54c4e9",
         "element": "hydro"
     },
     "04-25": {
         "character": "baizhu",
+        "buttonColor": "#51ab9a",
         "element": "dendro"
     },
     "04-30": {
         "character": "diluc",
+        "buttonColor": "#e59044",
         "element": "pyro"
     },
     "05-03": {
         "character": "candace",
+        "buttonColor": "#4d70c9",
         "element": "hydro"
     },
     "05-08": {
         "character": "collei",
+        "buttonColor": "#7da65d",
         "element": "dendro"
     },
     "05-18": {
         "character": "gorou",
+        "buttonColor": "#d4a760",
         "element": "geo"
     },
     "05-21": {
         "character": "yunjin",
+        "buttonColor": "#5e4d8e",
         "element": "geo"
     },
     "06-01": {
         "character": "itto",
+        "buttonColor": "#332f39",
         "element": "geo"
     },
     "06-09": {
         "character": "lisa",
+        "buttonColor": "#61417c",
         "element": "electro"
     },
     "06-16": {
@@ -135,10 +148,13 @@
         "element": "anemo"
     },
     "06-21": {
-        "character": "yoimiya"
+        "character": "yoimiya",
+        "buttonColor": "#d87544",
+        "element": "pyro"
     },
     "06-23": {
         "character": "cyno",
+        "buttonColor": "#282256",
         "element": "electro"
     },
     "06-26": {
@@ -148,6 +164,7 @@
     },
     "06-27": {
         "character": "yaemiko",
+        "buttonColor": "#ca4c52",
         "element": "electro"
     },
     "07-05": {
