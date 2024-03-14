@@ -58,23 +58,26 @@
         "element": "cryo"
     },
     "03-14": {
-        "character": "Jean",
+        "character": "jean",
         "characterRU": "Джинн",
         "buttonColor": "#197f83",
         "element": "anemo"
     },
     "03-21": {
         "character": "noelle",
+        "characterRU": "Ноэлль",
         "buttonColor": "#936613",
         "element": "geo"
     },
     "03-26": {
         "character": "ayato",
+        "characterEN": "Kamisato Ayato",
         "buttonColor": "#64a0c9",
         "element": "hydro"
     },
     "04-04": {
         "character": "aloy",
+        "characterRU": "Элой",
         "buttonColor": "#a68361",
         "element": "cryo"
     },
