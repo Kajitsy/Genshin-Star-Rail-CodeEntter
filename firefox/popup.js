@@ -131,16 +131,16 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
         let dd = String(today.getDate()).padStart(2, '0');
         let mm = String(today.getMonth() + 1).padStart(2, '0');
         today = mm + '-' + dd;
-        fetch('https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/birthday.json')
+        fetch('https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/beta/birthday.json')
             .then(response => response.json())
             .then(birthdayData => {
               if (birthdayData[today]) {
                 let characterData = birthdayData[today];
-                let bgUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/background_birthday/' + characterData.character + '.webp';
+                let bgUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/beta/background_birthday/' + characterData.character + '.webp';
                 function createEffect() {
                   const effect = document.createElement('div');
                   effect.className = 'effect';
-                  let effectUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/background_birthday/element/' + characterData.element + '.png';
+                  let effectUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/beta/background_birthday/element/' + characterData.element + '.png';
                   effect.innerHTML = '<img src="' + effectUrl + '"style="width: 30px; height: 30px;">';
                   effect.style.position = 'absolute';
                   effect.style.pointerEvents = 'none';
@@ -236,16 +236,16 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
         let dd = String(today.getDate()).padStart(2, '0');
         let mm = String(today.getMonth() + 1).padStart(2, '0');
         today = mm + '-' + dd;
-        fetch('https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/birthday.json')
+        fetch('https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/beta/birthday.json')
             .then(response => response.json())
             .then(birthdayData => {
               if (birthdayData[today]) {
                 let characterData = birthdayData[today];
-                let bgUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/background_birthday/' + characterData.character + '.webp';
+                let bgUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/beta/background_birthday/' + characterData.character + '.webp';
                 function createEffect() {
                   const effect = document.createElement('div');
                   effect.className = 'effect';
-                  let effectUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/main/background_birthday/element/' + characterData.element + '.png';
+                  let effectUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/beta/background_birthday/element/' + characterData.element + '.png';
                   effect.innerHTML = '<img src="' + effectUrl + '"style="width: 30px; height: 30px;">';
                   effect.style.position = 'absolute';
                   effect.style.pointerEvents = 'none';
