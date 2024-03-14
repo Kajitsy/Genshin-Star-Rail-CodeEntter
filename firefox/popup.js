@@ -136,7 +136,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
             .then(birthdayData => {
               if (birthdayData[today]) {
                 let characterData = birthdayData[today];
-                let bgUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/beta/birthday_elements/backgroung/' + characterData.character + '.webp';
+                let bgUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/beta/birthday_elements/backgroungs/' + characterData.character + '.webp';
                 function createEffect() {
                   const effect = document.createElement('div');
                   effect.className = 'effect';
@@ -255,7 +255,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
               .then(birthdayData => {
                 if (birthdayData[today]) {
                   let characterData = birthdayData[today];
-                  let bgUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/beta/birthday_elements/backgroung/' + characterData.character + '.webp';
+                  let bgUrl = 'https://raw.githubusercontent.com/Kajitsy/Genshin-Star-Rail-CodeEntter/beta/birthday_elements/backgroungs/' + characterData.character + '.webp';
                   function createEffect() {
                     const effect = document.createElement('div');
                     effect.className = 'effect';
