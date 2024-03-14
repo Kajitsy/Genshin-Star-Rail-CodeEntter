@@ -58,7 +58,8 @@
         "element": "cryo"
     },
     "03-14": {
-        "character": "jean",
+        "character": "Jean",
+        "characterRU": "Джинн",
         "buttonColor": "#197f83",
         "element": "anemo"
     },
