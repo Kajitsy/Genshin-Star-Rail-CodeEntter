@@ -145,7 +145,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
                   effect.style.position = 'absolute';
                   effect.style.pointerEvents = 'none';
                   const startPositionLeft = Math.random() * window.innerWidth;
-                  const duration = Math.random() * 4 + 3 + 's';
+                  const duration = Math.random() * 8 + 3 + 's';
                   const delay = Math.random() * 10 + 's';
                   effect.style.left = startPositionLeft + 'px';
                   effect.style.animation = `snowfall ${duration} linear ${delay} infinite`;
@@ -159,9 +159,10 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
                     createEffect();
                   }
                 } 
+                setTimeout(function() {
                 if (characterData.element) {
                   generateEffect()
-                }
+                }}, 1000)
                 document.body.style.background = 'url(' + bgUrl + ')';
                 document.body.style.backgroundSize = 'cover';
                 document.body.style.backgroundRepeat = 'no-repeat';
@@ -249,7 +250,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
                   effect.style.position = 'absolute';
                   effect.style.pointerEvents = 'none';
                   const startPositionLeft = Math.random() * window.innerWidth;
-                  const duration = Math.random() * 4 + 3 + 's';
+                  const duration = Math.random() * 6 + 3 + 's';
                   const delay = Math.random() * 10 + 's';
                   effect.style.left = startPositionLeft + 'px';
                   effect.style.animation = `snowfall ${duration} linear ${delay} infinite`;
@@ -263,9 +264,10 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
                     createEffect();
                   }
                 } 
-                if (characterData.element) {
-                  generateEffect()
-                }
+                setTimeout(function() {
+                  if (characterData.element) {
+                    generateEffect()
+                  }}, 1000)
                 document.body.style.background = 'url(' + bgUrl + ')';
                 document.body.style.backgroundSize = 'cover';
                 document.body.style.backgroundRepeat = 'no-repeat';
