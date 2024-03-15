@@ -179,24 +179,26 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
                   document.documentElement.style.setProperty('--button-color', characterData.buttonColor);
                   document.documentElement.style.setProperty('--button-text-color', characterData.buttonTextColor);
                 }
-                if (navigator.language === 'ru-RU' && characterData.characterRU) {
-                  const label = document.getElementById("labelBirthdayPopup");
-                  label.textContent = browser.i18n.getMessage("labelBirthdayPopup") + characterData.characterRU;                  
-                  label.style.display = 'inline-block';
-                  document.documentElement.style.setProperty('--display', 'inline-block');
-                  label.addEventListener('mouseover', function() {
-                    label.style.display = 'block';
-                    label.textContent = browser.i18n.getMessage("labelNotClickable");
-                    document.documentElement.style.setProperty('--display', 'block');
-                  });
-                  label.addEventListener('mouseout', function(){
-                    document.documentElement.style.setProperty('--display', 'inline-block');                
-                    label.textContent = browser.i18n.getMessage("labelBirthdayPopup") + characterData.characterRU;
-                  })
-                } else {
-
+                const label = document.getElementById("labelBirthdayPopup");
+                var characterLANG = characterData.characterEN;
+                if (navigator.language === 'ru' && characterData.characterRU) {
+                    characterLANG = characterData.characterRU;
+                } else if (navigator.language === 'es' && characterData.characterES) {
+                    characterLANG = characterData.characterES;
+                } else if (navigator.language === 'ja' && characterData.characterJA) {
+                    characterLANG = characterData.characterJA;
                 }
-              }
+                label.textContent = browser.i18n.getMessage("labelBirthdayPopup") + characterLANG + "!";                  
+                label.style.display = 'flex';
+                var width = label.offsetWidth;
+                label.addEventListener('mouseover', function() {
+                    document.documentElement.style.setProperty('--width-labelBirthdayPopupHover', width)
+                    label.textContent = browser.i18n.getMessage("labelNotClickable");
+                });
+                label.addEventListener('mouseout', function() {            
+                    label.textContent = browser.i18n.getMessage("labelBirthdayPopup") + characterLANG + "!";
+                });
+            }
             })
         .catch(err => console.error(err));
       }
@@ -306,11 +308,12 @@ browser.storage.local.get(['onlyHsr', 'onlyGi']).then(function (result) {
                   }
                   const label = document.getElementById("labelBirthdayPopup");
                   var characterLANG = characterData.characterEN;
-                  if (navigator.language === 'ru-RU' && characterData.characterRU) {
+                  console.log(navigator.language)
+                  if (navigator.language === 'ru' && characterData.characterRU) {
                       characterLANG = characterData.characterRU;
-                  } else if (navigator.language === 'es-ES' && characterData.characterES) {
+                  } else if (navigator.language === 'es' && characterData.characterES) {
                       characterLANG = characterData.characterES;
-                  } else if (navigator.language === 'ja-JP' && characterData.characterJA) {
+                  } else if (navigator.language === 'ja' && characterData.characterJA) {
                       characterLANG = characterData.characterJA;
                   }
                   label.textContent = browser.i18n.getMessage("labelBirthdayPopup") + characterLANG + "!";                  
