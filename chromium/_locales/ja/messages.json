@@ -73,5 +73,11 @@
   },
   "labelBirthday": {
     "message": "キャラクターの誕生日のカスタマイズを無効にする"
+  },
+  "labelBirthdayPopup": {
+    "message": "お誕生日おめでとう、"
+  },
+  "labelNotClickable": {
+    "message": "これは押せません"
   }
 }

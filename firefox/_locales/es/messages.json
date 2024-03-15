@@ -76,5 +76,11 @@
   },
   "labelBirthday": {
     "message": "Desactivar la personalización del cumpleaños del personaje"
+  },
+  "labelBirthdayPopup": {
+    "message": "Feliz cumpleaños, "
+  },
+  "labelNotClickable": {
+    "message": "Esto no se presiona"
   }
 }

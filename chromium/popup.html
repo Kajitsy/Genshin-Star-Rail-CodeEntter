@@ -10,9 +10,8 @@
     --input-text-color: white;
   }
   body {
-    font-family: var(--);
     padding: 10px;
-    background-image: url(./pictures/background.png);
+    background: url("/pictures/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -62,7 +61,6 @@
   }
   button:hover {
     transform: scale(1.05);
-    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,18 +84,40 @@
     z-index: 2;
     font-family: 'SDK_SC_Web';
   }
+  #labelBirthdayPopup {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: 'SDK_SC_Web';
+    z-index: 2;
+    border-radius: var(--border-radius);
+    background: var(--button-color);
+    color: var(--button-text-color);
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
+  #labelBirthdayPopup:hover {
+    transform: scale(0.95);
+    border-radius: var(--border-radius);
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--width-labelBirthdayPopupHover) * 1px);
+  }
+  #divBirthday {
+    display: flex;
+    justify-content: center;
+  }
   #hsr-popup, #gi-popup {
     display: none;
   }
   @keyframes snowfall {
     from {
-      transform: translateY(-100vh);
-    } to {
       transform: translateY(100vh);
+    } to {
+      transform: translateY(-100vh);
     }
-  }
-  .snowflake {
-    z-index: 1;
   }
 </style>
 </head>
@@ -107,12 +127,12 @@
   </div>
   <div id="main-popup">
     <div id="buttons-container">
-      <button id="submitGI">__MSG_submitGI__</button>
-      <button id="submitHSR">__MSG_submitHSR__</button>
+      <button id="submitGI">submitGI</button>
+      <button id="submitHSR">submitHSR</button>
     </div>
     <div id="buttons-container">
-      <button id="shareGI">__MSG_shareGI__</button>
-      <button id="shareHSR">__MSG_shareHSR__</button>
+      <button id="shareGI">shareGI</button>
+      <button id="shareHSR">shareHSR</button>
     </div>
   </div>
   <div id="hsr-popup">
@@ -128,6 +148,9 @@
     </div>
   </div>
   <div id="displayOverlay"></div>
+  <div id="divBirthday">
+    <label id="labelBirthdayPopup">labelBirthdayPopup</label>
+  </div>
   <iframe id="frame" src="" width="756" height="550" style="display: none;"></iframe>
   <script src="popup.js"></script>
 </body>

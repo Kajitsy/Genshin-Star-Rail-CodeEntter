@@ -76,5 +76,11 @@
   },
   "labelBirthday": {
     "message": "Отключить кастомизацию ко дню рождения персонажа"
+  },
+  "labelBirthdayPopup": {
+    "message": "С днём рождения, "
+  },
+  "labelNotClickable": {
+    "message": "Это не нажимается"
   }
 }
