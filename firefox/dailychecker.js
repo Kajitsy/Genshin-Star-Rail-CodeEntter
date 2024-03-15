@@ -61,16 +61,16 @@ function HSRrequest() {
 function icon(){
 	browser.storage.local.get(['iconDisable']).then(function (result) {
 		if (result.iconDisable) {
-			browser.browserAction.setIcon({path: "/pictures/icon.png"});
+			browser.browserAction.setIcon({path: "/pictures/icon.webp"});
 		} else {
 			if (GIwork == true && HSRwork == true) {
-				browser.browserAction.setIcon({path: "/pictures/icon.png"});
+				browser.browserAction.setIcon({path: "/pictures/icon.webp"});
 			} else if (GIwork == true && HSRwork == false) {
-				browser.browserAction.setIcon({path: "/pictures/icon_warn.png"});
+				browser.browserAction.setIcon({path: "/pictures/icon_warn.webp"});
 			} else if (GIwork == false && HSRwork == true) {
-				browser.browserAction.setIcon({path: "/pictures/icon_warn.png"});
+				browser.browserAction.setIcon({path: "/pictures/icon_warn.webp"});
 			} else {
-				browser.browserAction.setIcon({path: "/pictures/icon_error.png"});
+				browser.browserAction.setIcon({path: "/pictures/icon_error.webp"});
 			}
 		}
 	  })

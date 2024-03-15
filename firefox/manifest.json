@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Genshin/Star Rail CodeEntter",
-  "version": "2.2.5",
+  "name": "Genshin/Star Rail CodeEnter",
+  "version": "2.2.5.1",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "icons": {
@@ -18,7 +18,7 @@
   ],
   "browser_action": {
     "default_icon": "/pictures/icon.png",
-    "default_title": "CodeEntter",
+    "default_title": "CodeEnter",
     "default_popup": "popup.html"
   },
   "options_ui": {

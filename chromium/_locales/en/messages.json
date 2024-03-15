@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Quick entry of Genshin Impact/Honkai: Star Rail promo codes | 2.2.5"
+    "message": "Quick entry of Genshin Impact/Honkai: Star Rail promo codes | 2.2.5.1"
   },
   "sthsr": {
     "message": "Submit"
@@ -76,5 +76,11 @@
   },
   "labelBirthday": {
     "message": "Disable character birthday customization"
+  },
+  "labelBirthdayPopup": {
+    "message": "Happy birthday, "
+  },
+  "labelNotClickable": {
+    "message": "This does not press"
   }
 }

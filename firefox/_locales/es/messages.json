@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Entrada rápida de los códigos promocionales de Genshin Impact/Honkai: Star Rail | 2.2.5"
+    "message": "Entrada rápida de los códigos promocionales de Genshin Impact/Honkai: Star Rail | 2.2.5.1"
   },
   "sthsr": {
     "message": "Enviar"
@@ -76,5 +76,11 @@
   },
   "labelBirthday": {
     "message": "Desactivar la personalización del cumpleaños del personaje"
+  },
+  "labelBirthdayPopup": {
+    "message": "Feliz cumpleaños, "
+  },
+  "labelNotClickable": {
+    "message": "Esto no se presiona"
   }
 }
