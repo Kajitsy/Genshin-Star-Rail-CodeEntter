@@ -1,24 +1,33 @@
 {
   "extensionDescription": {
-    "message": "Quick entry of Genshin Impact/Honkai: Star Rail promo codes | 2.2.5.1"
-  },
-  "sthsr": {
-    "message": "Submit"
+    "message": "Quick input of promo codes for HoYoverse games | 2.2.6"
   },
   "stgi": {
     "message": "Submit"
   },
-  "sehsr": {
-    "message": "Share"
+  "sthsr": {
+    "message": "Submit"
+  },
+  "stzzz": {
+    "message": "Submit"
   },
   "segi": {
     "message": "Share"
   },
-  "labelgi": {
+  "sehsr": {
+    "message": "Share"
+  },
+  "sezzz": {
+    "message": "Share"
+  },
+  "labelGi": {
     "message": "Genshin Impact Only"
   },
   "labelHsr": {
     "message": "Honkai Star Rail Only"
+  },
+  "labelZzz": {
+    "message": "Zenless Zone Zero Only"
   },
   "options": {
     "message": "Settings"
@@ -29,11 +38,17 @@
   "submitHSR": {
     "message": "Star Rail"
   },
+  "submitZZZ": {
+    "message": "Zone Zero"
+  },
   "shareGI": {
-    "message": "Share GI"
+    "message": "GI Link"
   },
   "shareHSR": {
-    "message": "Share HSR"
+    "message": "HSR Link"
+  },
+  "shareZZZ": {
+    "message": "ZZZ Link"
   },
   "reset": {
     "message": "Reset"
@@ -73,6 +88,9 @@
   },
   "labelOnlyHsr": {
     "message": "Honkai Star Rail Mode"
+  },
+  "labelOnlyZzz": {
+    "message": "Zenless Zone Zero Mode"
   },
   "labelBirthday": {
     "message": "Disable character birthday customization"

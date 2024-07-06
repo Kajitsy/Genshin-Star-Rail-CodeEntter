@@ -1,86 +1,104 @@
-{
-  "extensionDescription": {
-    "message": "Быстрый ввод промокодов Genshin Impact/Honkai: Star Rail | 2.2.5.1"
-  },
-  "sthsr": {
-    "message": "Ввести"
-  },
-  "stgi": {
-    "message": "Ввести"
-  },
-  "sehsr": {
-    "message": "Поделиться"
-  },
-  "segi": {
-    "message": "Поделиться"
-  },
-  "labelGi": {
-    "message": "Только Genshin Impact"
-  },
-  "labelHsr": {
-    "message": "Только Honkai Star Rail"
-  },
-  "options": {
-    "message": "Настройки"
-  },
-  "submitGI": {
-    "message": "Genshin"
-  },
-  "submitHSR": {
-    "message": "Star Rail"
-  },
-  "shareGI": {
-    "message": "Поделиться GI"
-  },
-  "shareHSR": {
-    "message": "Поделиться HSR"
-  },
-  "reset": {
-    "message": "Сбросить"
-  },
-  "labelButtonColor": {
-    "message": "Цвет кнопок"
-  },
-  "labelTextColor": {
-    "message": "Цвет текста"
-  },
-  "labelBackground": {
-    "message": "Использовать цвет вместо фона"
-  },
-  "labelBackgroundColor": {
-    "message": "Цвет фона (если включено)"
-  },
-  "displayOverlay": {
-    "message": "Ссылка скопирована"
-  },
-  "labelGlobal": {
-    "message": "Глобальные настройки"
-  },
-  "labelMainPopup": {
-    "message": "Настройки основного окна"
-  },
-  "labelRounding": {
-    "message": "Отключить закругления"
-  },
-  "labelIcon": {
-    "message": "Отключить смену иконок"
-  },
-  "labelFont": {
-    "message": "Шрифт"
-  },
-  "labelOnlyGi": {
-    "message": "Режим Genshin Impact"
-  },
-  "labelOnlyHsr": {
-    "message": "Режим Honkai Star Rail"
-  },
-  "labelBirthday": {
-    "message": "Отключить кастомизацию ко дню рождения персонажа"
-  },
-  "labelBirthdayPopup": {
-    "message": "С днём рождения, "
-  },
-  "labelNotClickable": {
-    "message": "Это не нажимается"
+  {
+    "extensionDescription": {
+      "message": "Быстрый ввод промокодов игр HoYoverse | 2.2.6"
+    },
+    "stgi": {
+      "message": "Ввести"
+    },
+    "sthsr": {
+      "message": "Ввести"
+    },
+    "stzzz": {
+      "message": "Ввести"
+    },
+    "segi": {
+      "message": "Поделиться"
+    },
+    "sehsr": {
+      "message": "Поделиться"
+    },
+    "sezzz": {
+      "message": "Поделиться"
+    },
+    "labelGi": {
+      "message": "Только Genshin Impact"
+    },
+    "labelHsr": {
+      "message": "Только Honkai Star Rail"
+    },
+    "labelZzz": {
+      "message": "Только Zenless Zone Zero"
+    },
+    "options": {
+      "message": "Настройки"
+    },
+    "submitGI": {
+      "message": "Genshin"
+    },
+    "submitHSR": {
+      "message": "Star Rail"
+    },
+    "submitZZZ": {
+      "message": "Zone Zero"
+    },
+    "shareGI": {
+      "message": "GI Ссылка"
+    },
+    "shareHSR": {
+      "message": "HSR Ссылка"
+    },
+    "shareZZZ": {
+      "message": "ZZZ Ссылка"
+    },
+    "reset": {
+      "message": "Сбросить"
+    },
+    "labelButtonColor": {
+      "message": "Цвет кнопок"
+    },
+    "labelTextColor": {
+      "message": "Цвет текста"
+    },
+    "labelBackground": {
+      "message": "Использовать цвет вместо фона"
+    },
+    "labelBackgroundColor": {
+      "message": "Цвет фона (если включено)"
+    },
+    "displayOverlay": {
+      "message": "Ссылка скопирована"
+    },
+    "labelGlobal": {
+      "message": "Глобальные настройки"
+    },
+    "labelMainPopup": {
+      "message": "Настройки основного окна"
+    },
+    "labelRounding": {
+      "message": "Отключить закругления"
+    },
+    "labelIcon": {
+      "message": "Отключить смену иконок"
+    },
+    "labelFont": {
+      "message": "Шрифт"
+    },
+    "labelOnlyGi": {
+      "message": "Режим Genshin Impact"
+    },
+    "labelOnlyHsr": {
+      "message": "Режим Honkai Star Rail"
+    },
+    "labelOnlyZzz": {
+      "message": "Режим Zenless Zone Zero"
+    },
+    "labelBirthday": {
+      "message": "Отключить кастомизацию ко дню рождения персонажа"
+    },
+    "labelBirthdayPopup": {
+      "message": "С днём рождения, "
+    },
+    "labelNotClickable": {
+      "message": "Это не нажимается"
+    }
   }
-}

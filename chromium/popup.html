@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
   :root {
     --button-color: #9a609a;
     --button-text-color: white;
@@ -11,13 +12,13 @@
   }
   body {
     padding: 10px;
-    background: url("/pictures/background.png");
+    background: url("/pictures/background.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     overflow: hidden;
     max-height: 560px;
-    min-width: 300px;
+    min-width: 350px;
   }
   #input-container {
     display: flex;
@@ -35,7 +36,9 @@
     padding: 10px;
     width: 100%;
     z-index: 2;
-    font-family: 'SDK_SC_Web';
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.6);
   }
   #buttons-container {
@@ -54,10 +57,13 @@
     padding: 10px;
     transition: transform 0.3s ease;
     z-index: 2;
-    font-family: 'SDK_SC_Web';
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 15px;
     box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5);
-    width: 48%;
     margin-top: 10px;
+    width: 49%;
   }
   button:hover {
     transform: scale(1.05);
@@ -81,14 +87,15 @@
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 2;
-    font-family: 'SDK_SC_Web';
+    z-index: 3;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
   }
   #labelBirthdayPopup {
     display: none;
     align-items: center;
     justify-content: center;
-    font-family: 'SDK_SC_Web';
     z-index: 2;
     border-radius: var(--border-radius);
     background: var(--button-color);
@@ -109,8 +116,19 @@
     display: flex;
     justify-content: center;
   }
-  #hsr-popup, #gi-popup {
+  #hsr-popup, #gi-popup, #zzz-popup {
     display: none;
+  }
+  #submitGI, #shareGI {
+    width: 33%;
+  }
+  #submitHSR, #shareHSR {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 33%;
+  }
+  #submitZZZ, #shareZZZ {
+    width: 33%;
   }
   @keyframes snowfall {
     from {
@@ -129,10 +147,12 @@
     <div id="buttons-container">
       <button id="submitGI">submitGI</button>
       <button id="submitHSR">submitHSR</button>
+      <button id="submitZZZ">submitZZZ</button>
     </div>
     <div id="buttons-container">
       <button id="shareGI">shareGI</button>
       <button id="shareHSR">shareHSR</button>
+      <button id="shareZZZ">shareZZZ</button>
     </div>
   </div>
   <div id="hsr-popup">
@@ -145,6 +165,12 @@
     <div id="buttons-container">
       <button id="stgi">submit</button>
       <button id="segi">share</button>
+    </div>
+  </div>
+  <div id="zzz-popup">
+    <div id="buttons-container">
+      <button id="stzzz">submit</button>
+      <button id="sezzz">share</button>
     </div>
   </div>
   <div id="displayOverlay"></div>

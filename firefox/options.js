@@ -1,26 +1,31 @@
 const labels = {
   'labelGi': 'labelGi',
   'labelHsr': 'labelHsr',
-  'labelIcon': 'labelIcon',
+  'labelZzz': 'labelZzz',
   'labelRounding': 'labelRounding',
   'labelBackgroundGi': 'labelBackground',
-  'labelBackgroundColorGi': 'labelBackgroundColor',
   'labelBackgroundHsr': 'labelBackground',
+  'labelBackgroundZzz': 'labelBackground',
+  'labelBackgroundColorGi': 'labelBackgroundColor',
   'labelBackgroundColorHsr': 'labelBackgroundColor',
+  'labelBackgroundColorZzz': 'labelBackgroundColor',
   'resetpopup': 'reset',
   'resetGi': 'reset',
   'resetHsr': 'reset',
+  'resetZzz': 'reset',
   'labelButtonColor': 'labelButtonColor',
   'labelButtonColorGi': 'labelButtonColor',
   'labelButtonColorHsr': 'labelButtonColor',
+  'labelButtonColorZzz': 'labelButtonColor',
   'labelTextColor': 'labelTextColor',
   'labelTextColorGi': 'labelTextColor',
   'labelTextColorHsr': 'labelTextColor',
+  'labelTextColorZzz': 'labelTextColor',
   'labelGlobal-settings': 'labelGlobal',
   'labelMainPopup-settings': 'labelMainPopup',
   'labelOnlyGi-settings': 'labelOnlyGi',
   'labelOnlyHsr-settings': 'labelOnlyHsr',
-  'labelFont': 'labelFont',
+  'labelOnlyZzz-settings': 'labelOnlyZzz',
   'labelMainBirthday': 'labelBirthday',
   'labelGIBirthday': 'labelBirthday'
 };
@@ -28,7 +33,7 @@ for (let id in labels) {
   document.getElementById(id).textContent = browser.i18n.getMessage(labels[id]);
 }
 function showSettingsSection(section) {
-  var sections = ['global-settings','main-popup-settings', 'onlyGi-settings', 'onlyHsr-settings'];
+  var sections = ['global-settings','main-popup-settings', 'onlyGi-settings', 'onlyHsr-settings', 'onlyZzz-settings'];
   sections.forEach(function (s) {
       var element = document.getElementById(s);
       if (element) {
@@ -58,6 +63,12 @@ document.getElementById('buttonColorHsr').addEventListener('input', function() {
     buttonColorHsr: buttonColorHsr
   });
 });
+document.getElementById('buttonColorZzz').addEventListener('input', function() {
+  var buttonColorZzz = document.getElementById('buttonColorZzz').value;
+  browser.storage.local.set({
+    buttonColorZzz: buttonColorZzz
+  });
+});
 document.getElementById('buttonTextColorMain').addEventListener('input', function() {
   var buttonTextColorMain = document.getElementById('buttonTextColorMain').value;
   browser.storage.local.set({
@@ -76,6 +87,12 @@ document.getElementById('buttonTextColorHsr').addEventListener('input', function
     buttonTextColorHsr: buttonTextColorHsr
   });
 });
+document.getElementById('buttonTextColorZzz').addEventListener('input', function() {
+  var buttonTextColorZzz = document.getElementById('buttonTextColorZzz').value;
+  browser.storage.local.set({
+    buttonTextColorZzz: buttonTextColorZzz
+  });
+});
 document.getElementById('BackgroundColorGi').addEventListener('input', function() {
   var BackgroundColorGi = document.getElementById('BackgroundColorGi').value;
   browser.storage.local.set({
@@ -88,10 +105,10 @@ document.getElementById('BackgroundColorHsr').addEventListener('input', function
     BackgroundColorHsr: BackgroundColorHsr
   });
 });
-document.getElementById('iconDisable').addEventListener('change', function() {
-  var iconDisable = document.getElementById('iconDisable').checked;
+document.getElementById('BackgroundColorZzz').addEventListener('input', function() {
+  var BackgroundColorZzz = document.getElementById('BackgroundColorZzz').value;
   browser.storage.local.set({
-    iconDisable: iconDisable
+    BackgroundColorZzz: BackgroundColorZzz
   });
 });
 document.getElementById('mainBirthdayDisable').addEventListener('change', function() {
@@ -124,10 +141,10 @@ document.getElementById('BackgroundHsr').addEventListener('change', function() {
     BackgroundHsr: BackgroundHsr
   });
 });
-document.getElementById('mainFont').addEventListener('change', function() {
-  var mainFont = document.getElementById('mainFont').checked;
+document.getElementById('BackgroundZzz').addEventListener('change', function() {
+  var BackgroundZzz = document.getElementById('BackgroundZzz').checked;
   browser.storage.local.set({
-    mainFont: mainFont
+    BackgroundZzz: BackgroundZzz
   });
 });
 document.getElementById('resetpopup').addEventListener('click', function() {
@@ -156,6 +173,15 @@ document.getElementById('resetHsr').addEventListener('click', function() {
     buttonTextColorHsr: '#ffffff',
     BackgroundColorHsr: '#1e274e'
   })});
+document.getElementById('resetZzz').addEventListener('click', function() {
+  document.getElementById('buttonColorZzz').value = '#696d76';
+  document.getElementById('buttonTextColorZzz').value = '#ffffff';
+  document.getElementById('BackgroundColorZzz').value = '#1e274e';
+  browser.storage.local.set({
+    buttonColorZzz: '#696d76',
+    buttonTextColorZzz: '#ffffff',
+    BackgroundColorZzz: '#1e274e'
+  })});
 browser.storage.local.get(['roundingDisable']).then(function (result) {
   if (result.roundingDisable) {
   document.documentElement.style.setProperty('--border-radius', '10px')
@@ -164,25 +190,28 @@ browser.storage.local.get(['roundingDisable']).then(function (result) {
     document.documentElement.style.setProperty('--border-radius', '20px')
   }
 });
-browser.storage.local.get(['giBirthdayDisable', 'mainBirthdayDisable', 'mainFont', 'iconDisable', 'roundingDisable', 'BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi', 'BackgroundColorGi', 'buttonColorMain', 'buttonColorGi', 'buttonColorHsr', 'buttonTextColorMain', 'buttonTextColorGi', 'buttonTextColorHsr', 'onlyHsr', 'onlyGi'], function(result) {
+browser.storage.local.get(['BackgroundZzz','onlyZzz','buttonTextColorZzz','buttonColorZzz','giBirthdayDisable', 'mainBirthdayDisable', 'roundingDisable', 'BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi', 'BackgroundColorGi', 'buttonColorMain', 'buttonColorGi', 'buttonColorHsr', 'buttonTextColorMain', 'buttonTextColorGi', 'buttonTextColorHsr', 'onlyHsr', 'onlyGi'], function(result) {
   const defaults = {
     'buttonColorMain': '#9a609a',
     'buttonColorGi': '#a89f96',
     'buttonColorHsr': '#004080',
+    'buttonColorZzz': '#696d76',
     'buttonTextColorMain': '#ffffff',
     'buttonTextColorGi': '#ffffff',
     'buttonTextColorHsr': '#ffffff',
+    'buttonTextColorZzz': '#ffffff',
     'BackgroundColorGi': '#4e4b54',
     'BackgroundColorHsr': '#1e274e',
-    'onlyHsr': false,
+    'BackgroundColorZzz': '#1e274e',
     'onlyGi': false,
-    'iconDisable': false,
+    'onlyHsr': false,
+    'onlyZzz': false,
     'mainBirthdayDisable': false,
     'giBirthdayDisable': false,
     'roundingDisable': false,
     'BackgroundGi': false,
     'BackgroundHsr': false,
-    'mainFont': false
+    'BackgroundZzz': false,
   };
   for (let key in defaults) {
     window[key] = result[key] ? result[key] : defaults[key];
@@ -193,6 +222,10 @@ browser.storage.local.get(['giBirthdayDisable', 'mainBirthdayDisable', 'mainFont
       document.getElementById('onlyGi').checked = false;
       browser.storage.local.set({
         onlyGi: false
+      });
+      document.getElementById('onlyZzz').checked = false;
+      browser.storage.local.set({
+        onlyZzz: false
       });
     }
     browser.storage.local.set({
@@ -206,29 +239,52 @@ browser.storage.local.get(['giBirthdayDisable', 'mainBirthdayDisable', 'mainFont
       browser.storage.local.set({
         onlyHsr: false
       });
+      document.getElementById('onlyZzz').checked = false;
+      browser.storage.local.set({
+        onlyZzz: false
+      });
     }
     browser.storage.local.set({
       onlyGi: onlyGi
+    });
+  });
+  document.getElementById('onlyZzz').addEventListener('change', function() {
+    var onlyZzz = document.getElementById('onlyZzz').checked;
+    if (onlyZzz) {
+      document.getElementById('onlyGi').checked = false;
+      browser.storage.local.set({
+        onlyGi: false
+      });
+      document.getElementById('onlyHsr').checked = false;
+      browser.storage.local.set({
+        onlyHsr: false
+      });
+    }
+    browser.storage.local.set({
+      onlyZzz: onlyZzz
     });
   });
   const elements = {
     'buttonColorMain': buttonColorMain,
     'buttonColorGi': buttonColorGi,
     'buttonColorHsr': buttonColorHsr,
+    'buttonColorZzz': buttonColorZzz,
     'buttonTextColorMain': buttonTextColorMain,
     'buttonTextColorGi': buttonTextColorGi,
     'buttonTextColorHsr': buttonTextColorHsr,
+    'buttonTextColorZzz': buttonTextColorZzz,
     'BackgroundColorGi': BackgroundColorGi,
     'BackgroundColorHsr': BackgroundColorHsr,
-    'onlyHsr': onlyHsr,
+    'BackgroundColorZzz': BackgroundColorZzz,
     'onlyGi': onlyGi,
-    'iconDisable': iconDisable,
+    'onlyHsr': onlyHsr,
+    'onlyZzz': onlyZzz,
     'mainBirthdayDisable': mainBirthdayDisable,
     'giBirthdayDisable': giBirthdayDisable,
     'roundingDisable': roundingDisable,
-    'BackgroundHsr': BackgroundHsr,
     'BackgroundGi': BackgroundGi,
-    'mainFont': mainFont
+    'BackgroundHsr': BackgroundHsr,
+    'BackgroundZzz': BackgroundZzz,
   };
   for (let id in elements) {
     let element = document.getElementById(id);

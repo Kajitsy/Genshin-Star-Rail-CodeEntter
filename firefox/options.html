@@ -11,6 +11,7 @@
       <option value="main-popup-settings" id="labelMainPopup-settings">labelMainPopup</option>
       <option value="onlyGi-settings" id="labelOnlyGi-settings">labelOnlyGi</option>
       <option value="onlyHsr-settings" id="labelOnlyHsr-settings">labelOnlyHsr</option>
+      <option value="onlyZzz-settings" id="labelOnlyZzz-settings">labelOnlyZzz</option>
   </select>
   <div id="global-settings" class="settings-section">
     <div class="checkbox-label">
@@ -22,13 +23,14 @@
       <input type="checkbox" id="onlyHsr">
     </div>
     <div class="checkbox-label">
+      <label id="labelZzz">labelZzz</label>
+      <input type="checkbox" id="onlyZzz">
+    </div>
+    <div class="checkbox-label">
       <label id="labelRounding">labelRounding</label>
       <input type="checkbox" id="roundingDisable">
     </div>
-    <div class="checkbox-label">
-      <label id="labelIcon">labelIcon</label>
-      <input type="checkbox" id="iconDisable">
-    </div>
+
   </div>
   <div id="main-popup-settings" class="settings-section">
     <div class="checkbox-label">
@@ -42,13 +44,6 @@
     <div class="color-choice">
       <label id="labelTextColor">labelTextColor</label>
       <input type="color" id="buttonTextColorMain">
-    </div>
-    <div class="toggle-switch-container">
-      <p id="labelFont">Font:</p>
-      <label class="toggle-switch">
-          <input type="checkbox" id="mainFont">
-          <span class="slider"></span>
-      </label>
     </div>
      <button id="resetpopup">resetpopup</button>
   </div>
@@ -66,11 +61,11 @@
       <input type="color" id="buttonTextColorGi">
     </div>
     <div class="checkbox-label">
-      <label id="labelBackgroundGi">labelBackgroundGi</label>
+      <label id="labelBackgroundGi">labelBackground</label>
       <input type="checkbox" id="BackgroundGi">
     </div>
     <div class="color-choice">
-      <label id="labelBackgroundColorGi">labelBackgroundColorGi</label>
+      <label id="labelBackgroundColorGi">labelBackgroundColor</label>
       <input type="color" id="BackgroundColorGi">
     </div>
     <button id="resetGi">resetGi</button>
@@ -85,14 +80,33 @@
       <input type="color" id="buttonTextColorHsr">
     </div>
     <div class="checkbox-label">
-      <label id="labelBackgroundHsr">labelBackgroundHsr</label>
+      <label id="labelBackgroundHsr">labelBackground</label>
       <input type="checkbox" id="BackgroundHsr">
     </div>
     <div class="color-choice">
-      <label id="labelBackgroundColorHsr">labelBackgroundColorHsr</label>
+      <label id="labelBackgroundColorHsr">labelBackgroundColor</label>
       <input type="color" id="BackgroundColorHsr">
     </div>
     <button id="resetHsr">resetHsr</button>
+  </div>
+  <div id="onlyZzz-settings" class="settings-section">
+    <div class="color-choice">
+      <label id="labelButtonColorZzz">labelButtonColor</label>
+      <input type="color" id="buttonColorZzz">
+    </div>
+    <div class="color-choice">
+      <label id="labelTextColorZzz">labelTextColor</label>
+      <input type="color" id="buttonTextColorZzz">
+    </div>
+    <div class="checkbox-label">
+      <label id="labelBackgroundZzz">labelBackground</label>
+      <input type="checkbox" id="BackgroundZzz">
+    </div>
+    <div class="color-choice">
+      <label id="labelBackgroundColorZzz">labelBackgroundColor</label>
+      <input type="color" id="BackgroundColorZzz">
+    </div>
+    <button id="resetZzz">resetZzz</button>
   </div>
   <script scr="dailychecher.js" type="module"></script>
   <script src="options.js" type="module"></script>

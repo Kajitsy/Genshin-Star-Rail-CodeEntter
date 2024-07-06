@@ -1,83 +1,101 @@
 {
-  "sthsr": {
-    "message": "送信"
+  "stgi":{
+    "message":"入力"
   },
-  "stgi": {
-    "message": "送信"
+  "sthsr":{
+    "message":"入力"
   },
-  "sehsr": {
-    "message": "共有"
+  "stzzz":{
+    "message":"入力"
   },
-  "segi": {
-    "message": "共有"
+  "segi":{
+    "message":"共有"
   },
-  "labelgi": {
-    "message": "Genshin Impactのみ"
+  "sehsr":{
+    "message":"共有"
   },
-  "labelHsr": {
-    "message": "Honkai Star Railのみ"
+  "sezzz":{
+    "message":"共有"
   },
-  "options": {
-    "message": "設定"
+  "labelGi":{
+    "message":"原神インパクトのみ"
   },
-  "submitGI": {
+  "labelHsr":{
+    "message":"本海スターレールのみ"
+  },
+  "labelZzz":{
+    "message":"エンドレスゾーンゼロのみ"
+  },
+  "options":{
+    "message":"設定"
+  },
+  "submitGI":{
     "message": "Genshin"
   },
-  "submitHSR": {
-    "message": "Star Rail"
+  "submitHSR":{
+    "message":"Star Rail"
   },
-  "shareGI": {
-    "message": "GIを共有"
+  "submitZZZ":{
+    "message":"Zenless Zone"
   },
-  "shareHSR": {
-    "message": "HSRを共有"
+  "shareGI":{
+    "message":"シェアGI"
   },
-  "reset": {
-    "message": "リセット"
+  "shareHSR":{
+    "message":"シェアHSR"
   },
-  "labelButtonColor": {
-    "message": "ボタンの色"
+  "shareZZZ":{
+    "message":"シェアZZZ"
   },
-  "labelTextColor": {
-    "message": "テキストの色"
+  "reset":{
+    "message":"リセット"
   },
-  "labelBackground": {
-    "message": "背景の代わりに色を使用する"
+  "labelButtonColor":{
+    "message":"ボタンの色"
   },
-  "labelBackgroundColor": {
-    "message": "背景の色（有効になっている場合）"
+  "labelTextColor":{
+    "message":"テキストの色"
   },
-  "displayOverlay" :{
-    "message": "コピーされたリンク"
+  "labelBackground":{
+    "message":"背景の代わりに色を使用する"
+    },
+  "labelBackgroundColor":{
+    "message":"背景色(有効な場合)"
   },
-  "labelGlobal": {
-    "message": "グローバル設定"
+  "displayOverlay":{
+    "message":"リンクがコピーされました"
   },
-  "labelMainPopup": {
-    "message": "メインウィンドウの設定"
+  "labelGlobal":{
+    "message":"グローバル設定"
   },
-  "labelRounding": {
-    "message": "丸めを無効にする"
+  "labelMainPopup":{
+    "message":"メインウィンドウの設定"
   },
-  "labelIcon": {
-    "message": "アイコンの変更を無効にする"
+  "labelRounding":{
+    "message":"丸めを無効にします"
   },
-  "labelFont": {
-    "message": "フォント"
+  "labelIcon":{
+    "message":"アイコンの変更を無効にする"
   },
-  "labelOnlyGi": {
-    "message": "Genshin Impactモード"
+  "labelFont":{
+    "message":"フォント"
   },
-  "labelOnlyHsr": {
-    "message": "Honkai Star Railモード"
+  "labelOnlyGi":{
+    "message": "原神インパクトモード」"
   },
-  "labelBirthday": {
-    "message": "キャラクターの誕生日のカスタマイズを無効にする"
+  "labelOnlyHsr":{
+    "message":"本海スターレールモード"
   },
-  "labelBirthdayPopup": {
-    "message": "お誕生日おめでとう、"
+  "labelOnlyZzz":{
+    "message":"ゼンレスゾーンゼロモード"
   },
-  "labelNotClickable": {
-    "message": "これは押せません"
+  "labelBirthday":{
+    "message":"キャラクターの誕生日のカスタマイズを無効にする"
+  },
+  "labelBirthdayPopup":{
+    "message":"お誕生日おめでとう"
+  },
+  "labelNotClickable":{
+    "message":"これは押されていません"
   }
 }
