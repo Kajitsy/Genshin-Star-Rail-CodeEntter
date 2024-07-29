@@ -94,6 +94,14 @@
         "buttonColor": "#64a0c9",
         "element": "hydro"
     },
+    "03-30": {
+        "character": "sigewinne",
+        "characterEN": "Sigewinne",
+        "characterJA": "シグウィン",
+        "characterRU": "Сиджвин",
+        "buttonColor": "#e2b7c1",
+        "element": "hydro"
+    },
     "04-04": {
         "character": "aloy",
         "characterEN": "Aloy",
@@ -179,6 +187,13 @@
         "buttonColor": "#5e4d8e",
         "element": "geo"
     },
+    "05-31": {
+        "character": "sethos",
+        "characterEN": "Sethos",
+        "characterRU": "Сетос",
+        "buttonColor": "#271d47",
+        "element": "electro"
+    },
     "06-01": {
         "character": "itto",
         "characterEN": "Arataki Itto",
@@ -233,84 +248,105 @@
         "character": "barbara",
         "characterEN": "Barbara",
         "characterRU": "Барбара",
+        "buttonColor": "#55a6c6",
         "element": "hydro"
     },
     "07-09": {
         "character": "kaveh",
         "characterEN": "Kaveh",
         "characterRU": "Кавех",
+        "buttonColor": "#c1b6b5",
         "element": "dendro"
     },
     "07-14": {
         "character": "sara",
         "characterEN": "Kujou Sara",
         "characterRU": "Кудзё Сара",
+        "buttonColor": "#765a7d",
         "element": "electro"
     },
     "07-15": {
         "character": "hutao",
         "characterEN": "Hu Tao",
         "characterRU": "Ху Тао",
+        "buttonColor": "#a26255",
         "element": "pyro"
     },
     "07-20": {
         "character": "tartaglia",
         "characterEN": "Tartaglia",
         "characterRU": "Тарталья",
+        "buttonColor": "#b5b5b5",
         "element": "hydro"
     },
     "07-24": {
         "character": "heizou",
         "characterEN": "Shikanoin Heizou",
         "characterRU": "Сиканоин Хэйдзо",
+        "buttonColor": "#b79d84",
         "element": "anemo"
     },
     "07-27": {
         "character": "klee",
         "characterEN": "Klee",
         "characterRU": "Кли",
+        "buttonColor": "#c88563",
         "element": "pyro"
     },
     "07-28": {
         "character": "yanfei",
         "characterEN": "Yanfei",
         "characterRU": "Янь Фей",
+        "buttonColor": "#d67f64",
         "element": "pyro"
     },
     "08-10": {
         "character": "amber",
         "characterEN": "Amber",
         "characterRU": "Эмбер",
+        "buttonColor": "#d78a69",
         "element": "pyro"
     },
     "08-11": {
         "character": "mika",
         "characterEN": "Mika",
         "characterRU": "Мика",
+        "buttonColor": "#30406a",
         "element": "cryo"
     },
     "08-16": {
         "character": "navia",
         "characterEN": "Navia",
         "characterRU": "Навия",
+        "buttonColor": "#d6a353",
         "element": "geo"
     },
     "08-17": {
         "character": "chiori",
         "characterEN": "Chiori",
         "characterRU": "Тиори",
+        "buttonColor": "#ddbe60",
         "element": "geo"
     },
     "08-20": {
         "character": "faruzan",
         "characterEN": "Faruzan",
         "characterRU": "Фарузан",
+        "buttonColor": "#66c1be",
         "element": "anemo"
+    },
+    "08-22": {
+        "character": "arlecchino",
+        "characterEN": "Arlecchino",
+        "characterRU": "Арлекино",
+        "buttonColor": "#b3b5b6",
+        "element": "pyro"
     },
     "08-26": {
         "character": "ningguang",
         "characterEN": "Ningguang",
         "characterRU": "Нин Гуан",
+        "buttonColor": "#b98e44",
         "element": "geo"
     },
     "08-31": {
@@ -324,36 +360,49 @@
         "character": "chongyun",
         "characterEN": "Chongyun",
         "characterRU": "Чун Юнь",
+        "buttonColor": "#87afcd",
         "element": "cryo"
     },
     "09-09": {
         "character": "razor",
         "characterEN": "Razor",
         "characterRU": "Рейзор",
+        "buttonColor": "#725fac",
         "element": "electro"
     },
     "09-13": {
         "character": "albedo",
         "characterEN": "Albedo",
         "characterRU": "Альбедо",
+        "buttonColor": "#4d5190",
         "element": "geo"
+    },
+    "09-20": {
+        "character": "clorinde",
+        "characterEN": "Clorinde",
+        "characterRU": "Клоринда",
+        "buttonColor": "#4528a4",
+        "element": "electro"
     },
     "09-24": {
         "character": "freminet",
         "characterEN": "Freminet",
         "characterRU": "Фремине",
+        "buttonColor": "#6cbbef",
         "element": "cryo"
     },
     "09-28": {
         "character": "ayaka",
         "characterEN": "Kamisato Ayaka",
         "characterRU": "Камисато Аяка",
+        "buttonColor": "#5f81be",
         "element": "cryo"
     },
     "10-09": {
         "character": "xingqiu",
         "characterEN": "Xingqiu",
         "characterRU": "Син Цю",
+        "buttonColor": "#518cd3",
         "element": "hydro"
     },
     "10-13": {
@@ -367,12 +416,14 @@
         "character": "xinyan",
         "characterEN": "Xinyan",
         "characterRU": "Синь Янь",
+        "buttonColor": "#4bb2ad",
         "element": "pyro"
     },
     "10-19": {
         "character": "sayu",
         "characterEN": "Sayu",
         "characterRU": "Саю",
+        "buttonColor": "#ca9967",
         "element": "anemo"
     },
     "10-25": {
@@ -400,30 +451,35 @@
         "character": "xiangling",
         "characterEN": "Xiangling",
         "characterRU": "Сянь Линь",
+        "buttonColor": "#b7671e",
         "element": "pyro"
     },
     "11-20": {
         "character": "keqing",
         "characterEN": "Keqing",
         "characterRU": "Кэ Цин",
+        "buttonColor": "#987ddd",
         "element": "electro"
     },
     "11-23": {
         "character": "wriothesley",
         "characterEN": "Wriothesley",
         "characterRU": "Ризли",
+        "buttonColor": "#55535f",
         "element": "cryo"
     },
     "11-26": {
         "character": "sucrose",
         "characterEN": "Sucrose",
         "characterRU": "Сахароза",
+        "buttonColor": "#39b1a8",
         "element": "anemo"
     },
     "11-30": {
         "character": "kaeya",
         "characterEN": "Kaeya",
         "characterRU": "Кейа",
+        "buttonColor": "#6799d1",
         "element": "cryo"
     },
     "12-02": {
@@ -437,36 +493,42 @@
         "character": "nilou",
         "characterEN": "Nilou",
         "characterRU": "Нилу",
+        "buttonColor": "#afb4d0",
         "element": "hydro"
     },
     "12-18": {
         "character": "neuvillette",
         "characterEN": "Neuvillette",
         "characterRU": "Нёвиллетт",
+        "buttonColor": "#2850ab",
         "element": "hydro"
     },
     "12-19": {
         "character": "layla",
         "characterEN": "Layla",
         "characterRU": "Лайла",
+        "buttonColor": "#64accf",
         "element": "cryo"
     },
     "12-21": {
         "character": "dori",
         "characterEN": "Dori",
         "characterRU": "Дори",
+        "buttonColor": "#9d5ab2",
         "element": "electro"
     },
     "12-22": {
         "character": "gaming",
         "characterEN": "Gaming",
         "characterRU": "Ка Мин",
+        "buttonColor": "#b74b46",
         "element": "pyro"
     },
     "12-29": {
         "character": "tighnari",
         "characterEN": "Tighnari",
         "characterRU": "Тигнари",
+        "buttonColor": "#6fa175",
         "element": "dendro"
     },
     "12-31": {
