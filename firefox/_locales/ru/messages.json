@@ -1,6 +1,6 @@
   {
     "extensionDescription": {
-      "message": "Быстрый ввод промокодов игр HoYoverse | 2.2.6"
+      "message": "Быстрый ввод промокодов игр HoYoverse | 2.2.7"
     },
     "stgi": {
       "message": "Ввести"
@@ -100,5 +100,20 @@
     },
     "labelNotClickable": {
       "message": "Это не нажимается"
+    },
+    "success_all": {
+      "message": "Промокод успешно активирован на всех серверах!"
+    },
+    "fail_all": {
+      "message": "Не удалось активировать промокод на всех серверах."
+    },
+    "partial_success": {
+      "message": "Промокод активирован на {successful} сервер(ах), но возникли ошибки на {failed} сервер(ах)."
+    },
+    "account_data_error": {
+      "message": "Не удалось получить данные об аккаунте."
+    },
+    "api_request_error": {
+      "message": "Ошибка при запросе к API."
     }
   }

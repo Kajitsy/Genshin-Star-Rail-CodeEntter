@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Entrada rápida de códigos promocionales para juegos de HoYoverse | 2.2.6"
+    "message": "Entrada rápida de códigos promocionales para juegos de HoYoverse | 2.2.7"
   },
   "stgi": {
     "message": "Enviar"
@@ -100,5 +100,20 @@
   },
   "labelNotClickable": {
     "message": "Esto no se presiona"
+  },
+  "success_all": {
+    "message": "¡Código promocional activado exitosamente en todos los servidores!"
+  },
+  "fail_all": {
+    "message": "No se pudo activar el código promocional en todos los servidores."
+  },
+  "partial_success": {
+    "message": "Código promocional activado en {successful} servidor(es), pero hubo errores en {failed} servidor(es)."
+  },
+  "account_data_error": {
+    "message": "No se pudieron obtener los datos de la cuenta."
+  },
+  "api_request_error": {
+    "message": "Error al realizar la solicitud a la API."
   }
 }

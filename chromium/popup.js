@@ -24,7 +24,8 @@ chrome.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (result
           let url;
           switch (buttonId) {
             case 'sthsr':
-              url = `https://hsr.hoyoverse.com/gift?code=${code}`;
+              gameBiz = 'hkrpg_global';
+              promoBaseUrl = 'https://sg-hkrpg-api.hoyoverse.com/common/apicdkey/api/webExchangeCdkey';
               break;
             case 'sehsr':
               url = `https://hsr.hoyoverse.com/gift?code=${code}`;
@@ -34,12 +35,85 @@ chrome.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (result
             default:
               break;
           }
-          if (buttonId === 'sthsr') {
-            frame.src = url;
-            frame.style.display = 'block';
-            codeElement.style.display = 'none';
-            buttonIds.forEach((id) => {
-              document.getElementById(id).style.display = 'none';
+          if (gameBiz && promoBaseUrl && code) {
+            const apiUrl = `https://api-account-os.hoyoverse.com/account/binding/api/getUserGameRolesByCookieToken?game_biz=${gameBiz}`;
+            
+            fetch(apiUrl, {
+              method: 'GET',
+              credentials: 'include'
+            })
+
+            .then(response => response.json())
+            .then(data => {    
+              if (data.retcode === 0 && data.data && data.data.list && data.data.list.length > 0) {
+                const results = [];
+                let successful = 0;
+                let failed = 0;
+    
+                data.data.list.forEach((userData, index) => {
+                  const uid = userData.game_uid;
+                  const region = userData.region;
+                  const lang = navigator.language || navigator.userLanguage;
+
+                  const promoUrl = `${promoBaseUrl}?game_biz=${gameBiz}&uid=${uid}&region=${region}&lang=${lang}&cdkey=${code}`;
+                  
+                  fetch(promoUrl, {
+                    method: 'GET',
+                    credentials: 'include'
+                  })
+                  .then(response => response.json())
+                  .then(promoData => {                    
+                    if (promoData.retcode === 0) {
+                      successful++;
+                    } else {
+                      failed++;
+                    }
+
+                    results.push({
+                      region: userData.region_name,
+                      success: promoData.retcode === 0,
+                      message: promoData.message
+                    });
+
+                    if (index === data.data.list.length - 1) {
+                      if (successful > 0 && failed === 0) {
+                        alert(chrome.i18n.getMessage("success_all"));
+                      } else if (successful === 0 && failed > 0) {
+                        alert(chrome.i18n.getMessage("fail_all"));
+                      } else {
+                        alert(chrome.i18n.getMessage("partial_success", [successful, failed]));
+                      }
+                      window.close();
+                    }
+                  })
+                  .catch(error => {
+                    failed++;
+                    results.push({
+                      region: userData.region_name,
+                      success: false,
+                      message: error.message
+                    });
+    
+                    if (index === data.data.list.length - 1) {
+                      if (successful > 0 && failed === 0) {
+                        alert(chrome.i18n.getMessage("success_all"));
+                      } else if (successful === 0 && failed > 0) {
+                        alert(chrome.i18n.getMessage("fail_all"));
+                      } else {
+                        alert(chrome.i18n.getMessage("partial_success", [successful, failed]));
+                      }
+                      window.close();
+                    }
+                  });
+                });
+              } else {
+                alert(chrome.i18n.getMessage("account_data_error"));
+                window.close();
+              }
+            })
+            .catch(error => {
+              alert(chrome.i18n.getMessage("api_request_error"));
+              window.close();
             });
           }
         });
@@ -69,7 +143,8 @@ chrome.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (result
           let url;
           switch (buttonId) {
             case 'stzzz':
-              url = `https://zenless.hoyoverse.com/redemption?code=${code}`;
+              gameBiz = 'nap_global';
+              promoBaseUrl = 'https://public-operation-nap.hoyoverse.com/common/apicdkey/api/webExchangeCdkey';
               break;
             case 'sezzz':
               url = `https://zenless.hoyoverse.com/redemption?code=${code}`;
@@ -79,12 +154,85 @@ chrome.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (result
             default:
               break;
           }
-          if (buttonId === 'stzzz') {
-            frame.src = url;
-            frame.style.display = 'block';
-            codeElement.style.display = 'none';
-            buttonIds.forEach((id) => {
-              document.getElementById(id).style.display = 'none';
+          if (gameBiz && promoBaseUrl && code) {
+            const apiUrl = `https://api-account-os.hoyoverse.com/account/binding/api/getUserGameRolesByCookieToken?game_biz=${gameBiz}`;
+            
+            fetch(apiUrl, {
+              method: 'GET',
+              credentials: 'include'
+            })
+
+            .then(response => response.json())
+            .then(data => {    
+              if (data.retcode === 0 && data.data && data.data.list && data.data.list.length > 0) {
+                const results = [];
+                let successful = 0;
+                let failed = 0;
+    
+                data.data.list.forEach((userData, index) => {
+                  const uid = userData.game_uid;
+                  const region = userData.region;
+                  const lang = navigator.language || navigator.userLanguage;
+
+                  const promoUrl = `${promoBaseUrl}?game_biz=${gameBiz}&uid=${uid}&region=${region}&lang=${lang}&cdkey=${code}`;
+                  
+                  fetch(promoUrl, {
+                    method: 'GET',
+                    credentials: 'include'
+                  })
+                  .then(response => response.json())
+                  .then(promoData => {                    
+                    if (promoData.retcode === 0) {
+                      successful++;
+                    } else {
+                      failed++;
+                    }
+
+                    results.push({
+                      region: userData.region_name,
+                      success: promoData.retcode === 0,
+                      message: promoData.message
+                    });
+
+                    if (index === data.data.list.length - 1) {
+                      if (successful > 0 && failed === 0) {
+                        alert(chrome.i18n.getMessage("success_all"));
+                      } else if (successful === 0 && failed > 0) {
+                        alert(chrome.i18n.getMessage("fail_all"));
+                      } else {
+                        alert(chrome.i18n.getMessage("partial_success", [successful, failed]));
+                      }
+                      window.close();
+                    }
+                  })
+                  .catch(error => {
+                    failed++;
+                    results.push({
+                      region: userData.region_name,
+                      success: false,
+                      message: error.message
+                    });
+    
+                    if (index === data.data.list.length - 1) {
+                      if (successful > 0 && failed === 0) {
+                        alert(chrome.i18n.getMessage("success_all"));
+                      } else if (successful === 0 && failed > 0) {
+                        alert(chrome.i18n.getMessage("fail_all"));
+                      } else {
+                        alert(chrome.i18n.getMessage("partial_success", [successful, failed]));
+                      }
+                      window.close();
+                    }
+                  });
+                });
+              } else {
+                alert(chrome.i18n.getMessage("account_data_error"));
+                window.close();
+              }
+            })
+            .catch(error => {
+              alert(chrome.i18n.getMessage("api_request_error"));
+              window.close();
             });
           }
         });
@@ -113,7 +261,8 @@ chrome.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (result
           let url;
           switch (buttonId) {
             case 'stgi':
-              url = `https://genshin.hoyoverse.com/${locales}/gift?code=${code}`;
+              gameBiz = 'hk4e_global';
+              promoBaseUrl = 'https://sg-hk4e-api.hoyoverse.com/common/apicdkey/api/webExchangeCdkey';
               break;
             case 'segi':
               url = `https://genshin.hoyoverse.com/${locales}/gift?code=${code}`;
@@ -123,12 +272,85 @@ chrome.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (result
             default:
               break;
           }
-          if (buttonId === 'stgi') {
-            frame.src = url;
-            frame.style.display = 'block';
-            codeElement.style.display = 'none';
-            buttonIds.forEach((id) => {
-              document.getElementById(id).style.display = 'none';
+          if (gameBiz && promoBaseUrl && code) {
+            const apiUrl = `https://api-account-os.hoyoverse.com/account/binding/api/getUserGameRolesByCookieToken?game_biz=${gameBiz}`;
+            
+            fetch(apiUrl, {
+              method: 'GET',
+              credentials: 'include'
+            })
+
+            .then(response => response.json())
+            .then(data => {    
+              if (data.retcode === 0 && data.data && data.data.list && data.data.list.length > 0) {
+                const results = [];
+                let successful = 0;
+                let failed = 0;
+    
+                data.data.list.forEach((userData, index) => {
+                  const uid = userData.game_uid;
+                  const region = userData.region;
+                  const lang = navigator.language || navigator.userLanguage;
+
+                  const promoUrl = `${promoBaseUrl}?game_biz=${gameBiz}&uid=${uid}&region=${region}&lang=${lang}&cdkey=${code}`;
+                  
+                  fetch(promoUrl, {
+                    method: 'GET',
+                    credentials: 'include'
+                  })
+                  .then(response => response.json())
+                  .then(promoData => {                    
+                    if (promoData.retcode === 0) {
+                      successful++;
+                    } else {
+                      failed++;
+                    }
+
+                    results.push({
+                      region: userData.region_name,
+                      success: promoData.retcode === 0,
+                      message: promoData.message
+                    });
+
+                    if (index === data.data.list.length - 1) {
+                      if (successful > 0 && failed === 0) {
+                        alert(chrome.i18n.getMessage("success_all"));
+                      } else if (successful === 0 && failed > 0) {
+                        alert(chrome.i18n.getMessage("fail_all"));
+                      } else {
+                        alert(chrome.i18n.getMessage("partial_success", [successful, failed]));
+                      }
+                      window.close();
+                    }
+                  })
+                  .catch(error => {
+                    failed++;
+                    results.push({
+                      region: userData.region_name,
+                      success: false,
+                      message: error.message
+                    });
+    
+                    if (index === data.data.list.length - 1) {
+                      if (successful > 0 && failed === 0) {
+                        alert(chrome.i18n.getMessage("success_all"));
+                      } else if (successful === 0 && failed > 0) {
+                        alert(chrome.i18n.getMessage("fail_all"));
+                      } else {
+                        alert(chrome.i18n.getMessage("partial_success", [successful, failed]));
+                      }
+                      window.close();
+                    }
+                  });
+                });
+              } else {
+                alert(chrome.i18n.getMessage("account_data_error"));
+                window.close();
+              }
+            })
+            .catch(error => {
+              alert(chrome.i18n.getMessage("api_request_error"));
+              window.close();
             });
           }
         });
@@ -198,11 +420,11 @@ chrome.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (result
                 }
                 const label = document.getElementById("labelBirthdayPopup");
                 var characterLANG = characterData.characterEN;
-                if (navigator.language === 'ru-RU' && characterData.characterRU) {
+                if (navigator.language === 'ru' && characterData.characterRU) {
                     characterLANG = characterData.characterRU;
-                } else if (navigator.language === 'es-ES' && characterData.characterES) {
+                } else if (navigator.language === 'es' && characterData.characterES) {
                     characterLANG = characterData.characterES;
-                } else if (navigator.language === 'ja-JP' && characterData.characterJA) {
+                } else if (navigator.language === 'ja' && characterData.characterJA) {
                     characterLANG = characterData.characterJA;
                 }
                 label.textContent = chrome.i18n.getMessage("labelBirthdayPopup") + characterLANG + "!";                  
@@ -221,59 +443,129 @@ chrome.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (result
       }
     });
   } else {
-      buttonIds.forEach((buttonId) => {
-        const buttonElement = document.getElementById(buttonId);
+    buttonIds.forEach((buttonId) => {
+      const buttonElement = document.getElementById(buttonId);
+      if (buttonElement) {
         buttonElement.textContent = chrome.i18n.getMessage(buttonId);
-        if (buttonElement) {
-          buttonElement.addEventListener('click', () => {
-            const code = codeElement.value;
-            const locales = navigator.language.slice(0, 2);
-            let url;
-            switch (buttonId) {
-              case 'submitGI':
-                document.body.style.backgroundImage = "url(/pictures/backgroundGI.webp)";
-                url = `https://genshin.hoyoverse.com/${locales}/gift?code=${code}`;
-                break;
-              case 'submitHSR':
-                url = `https://hsr.hoyoverse.com/gift?code=${code}`;
-                document.body.style.backgroundImage = "url(/pictures/backgroundHSR.webp)";
-                break;
-              case 'submitZZZ':
-                url = `https://zenless.hoyoverse.com/redemption?code=${code}`;
-                document.body.style.backgroundImage = "url(/pictures/backgroundZZZ.webp)";
-                break;
-              case 'shareGI':
-                url = `https://genshin.hoyoverse.com/${locales}/gift?code=${code}`;
-                navigator.clipboard.writeText(url);
-                displayOverlay();
-                break;
-              case 'shareHSR':
-                url = `https://hsr.hoyoverse.com/gift?code=${code}`;
-                navigator.clipboard.writeText(url);
-                displayOverlay();
-                break;
-              case 'shareZZZ':
-                url = `https://zenless.hoyoverse.com/redemption?code=${code}`;
-                navigator.clipboard.writeText(url);
-                displayOverlay();
-                break;
-              default:
-                break;    
-            }
-            if (buttonId === 'submitGI' || buttonId === 'submitHSR' || buttonId === 'submitZZZ') {
-              frame.src = url;
-              frame.style.display = 'block';
-              codeElement.style.display = 'none';
-              document.getElementById("labelBirthdayPopup").style.display = 'none';
-              effectVision = false;
-              buttonIds.forEach((id) => {
-                document.getElementById(id).style.display = 'none';
-              });
-            }
-          });
-        }
-      });
-      chrome.storage.local.get(['buttonColorMain', 'buttonTextColorMain']).then((result) => {
+        buttonElement.addEventListener('click', () => {
+          const code = codeElement.value;
+          let gameBiz;
+          switch (buttonId) {
+            case 'submitGI':
+              gameBiz = 'hk4e_global';
+              promoBaseUrl = 'https://sg-hk4e-api.hoyoverse.com/common/apicdkey/api/webExchangeCdkey';
+              break;
+            case 'shareGI':
+              url = `https://genshin.hoyoverse.com/${locales}/gift?code=${code}`;
+              navigator.clipboard.writeText(url);
+              displayOverlay();
+              break;
+            case 'submitHSR':
+              gameBiz = 'hkrpg_global';
+              promoBaseUrl = 'https://sg-hkrpg-api.hoyoverse.com/common/apicdkey/api/webExchangeCdkey';
+              break;
+            case 'shareHSR':
+              url = `https://hsr.hoyoverse.com/gift?code=${code}`;
+              navigator.clipboard.writeText(url);
+              displayOverlay();
+              break;
+            case 'submitZZZ':
+              gameBiz = 'nap_global';
+              promoBaseUrl = 'https://public-operation-nap.hoyoverse.com/common/apicdkey/api/webExchangeCdkey';
+              break;
+            case 'shareZZZ':
+              url = `https://zenless.hoyoverse.com/redemption?code=${code}`;
+              navigator.clipboard.writeText(url);
+              displayOverlay();
+              break;
+            default:
+              break;
+          }
+          if (gameBiz && promoBaseUrl && code) {
+            const apiUrl = `https://api-account-os.hoyoverse.com/account/binding/api/getUserGameRolesByCookieToken?game_biz=${gameBiz}`;
+            
+            fetch(apiUrl, {
+              method: 'GET',
+              credentials: 'include'
+            })
+
+            .then(response => response.json())
+            .then(data => {    
+              if (data.retcode === 0 && data.data && data.data.list && data.data.list.length > 0) {
+                const results = [];
+                let successful = 0;
+                let failed = 0;
+    
+                data.data.list.forEach((userData, index) => {
+                  const uid = userData.game_uid;
+                  const region = userData.region;
+                  const lang = navigator.language || navigator.userLanguage;
+
+                  const promoUrl = `${promoBaseUrl}?game_biz=${gameBiz}&uid=${uid}&region=${region}&lang=${lang}&cdkey=${code}`;
+                  
+                  fetch(promoUrl, {
+                    method: 'GET',
+                    credentials: 'include'
+                  })
+                  .then(response => response.json())
+                  .then(promoData => {                    
+                    if (promoData.retcode === 0) {
+                      successful++;
+                    } else {
+                      failed++;
+                    }
+
+                    results.push({
+                      region: userData.region_name,
+                      success: promoData.retcode === 0,
+                      message: promoData.message
+                    });
+
+                    if (index === data.data.list.length - 1) {
+                      if (successful > 0 && failed === 0) {
+                        alert(chrome.i18n.getMessage("success_all"));
+                      } else if (successful === 0 && failed > 0) {
+                        alert(chrome.i18n.getMessage("fail_all"));
+                      } else {
+                        alert(chrome.i18n.getMessage("partial_success", [successful, failed]));
+                      }
+                      window.close();
+                    }
+                  })
+                  .catch(error => {
+                    failed++;
+                    results.push({
+                      region: userData.region_name,
+                      success: false,
+                      message: error.message
+                    });
+    
+                    if (index === data.data.list.length - 1) {
+                      if (successful > 0 && failed === 0) {
+                        alert(chrome.i18n.getMessage("success_all"));
+                      } else if (successful === 0 && failed > 0) {
+                        alert(chrome.i18n.getMessage("fail_all"));
+                      } else {
+                        alert(chrome.i18n.getMessage("partial_success", [successful, failed]));
+                      }
+                      window.close();
+                    }
+                  });
+                });
+              } else {
+                alert(chrome.i18n.getMessage("account_data_error"));
+                window.close();
+              }
+            })
+            .catch(error => {
+              alert(chrome.i18n.getMessage("api_request_error"));
+              window.close();
+            });
+          }
+        });
+      }
+    });
+        chrome.storage.local.get(['buttonColorMain', 'buttonTextColorMain']).then((result) => {
         if (result.buttonColorMain) {
           document.documentElement.style.setProperty('--button-color', result.buttonColorMain);
         }
@@ -333,11 +625,11 @@ chrome.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (result
                   }
                   const label = document.getElementById("labelBirthdayPopup");
                   var characterLANG = characterData.characterEN;
-                  if (navigator.language === 'ru-RU' && characterData.characterRU) {
+                  if (navigator.language === 'ru' && characterData.characterRU) {
                       characterLANG = characterData.characterRU;
-                  } else if (navigator.language === 'es-ES' && characterData.characterES) {
+                  } else if (navigator.language === 'es' && characterData.characterES) {
                       characterLANG = characterData.characterES;
-                  } else if (navigator.language === 'ja-JP' && characterData.characterJA) {
+                  } else if (navigator.language === 'ja' && characterData.characterJA) {
                       characterLANG = characterData.characterJA;
                   }
                   label.textContent = chrome.i18n.getMessage("labelBirthdayPopup") + characterLANG + "!";                  

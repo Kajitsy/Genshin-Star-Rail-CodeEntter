@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Quick input of promo codes for HoYoverse games | 2.2.6"
+    "message": "Quick input of promo codes for HoYoverse games | 2.2.7"
   },
   "stgi": {
     "message": "Submit"
@@ -100,5 +100,20 @@
   },
   "labelNotClickable": {
     "message": "This does not press"
+  },
+  "success_all": {
+    "message": "The code has been successfully redeemed on all servers!"
+  },
+  "fail_all": {
+    "message": "Failed to redeem the code on all servers."
+  },
+  "partial_success": {
+    "message": "The code was redeemed on {successful} server(s), but errors occurred on {failed} server(s)."
+  },
+  "account_data_error": {
+    "message": "Failed to retrieve account data."
+  },
+  "api_request_error": {
+    "message": "Error occurred while making the API request."
   }
 }

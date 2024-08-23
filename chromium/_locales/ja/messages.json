@@ -97,5 +97,20 @@
   },
   "labelNotClickable":{
     "message":"これは押されていません"
+  },
+  "success_all": {
+    "message": "プロモコードがすべてのサーバーで正常にアクティブ化されました！"
+  },
+  "fail_all": {
+    "message": "すべてのサーバーでプロモコードをアクティブ化できませんでした。"
+  },
+  "partial_success": {
+    "message": "プロモコードが{successful}サーバーでアクティブ化されましたが、{failed}サーバーでエラーが発生しました。"
+  },
+  "account_data_error": {
+    "message": "アカウントデータを取得できませんでした。"
+  },
+  "api_request_error": {
+    "message": "APIリクエスト中にエラーが発生しました。"
   }
 }
