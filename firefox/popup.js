@@ -3,8 +3,8 @@ const frame = document.getElementById('frame');
 const codeElement = document.getElementById('code');
 const overlay = document.getElementById('displayOverlay');
 effectVision = true;
-function displayOverlay() {
-  overlay.textContent = browser.i18n.getMessage("displayOverlay")
+function displayOverlay(text) {
+  overlay.textContent = text
   overlay.style.display = 'flex';
   setTimeout(() => {
     overlay.style.display = 'none';
@@ -30,7 +30,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
             case 'sehsr':
               url = `https://hsr.hoyoverse.com/gift?code=${code}`;
               navigator.clipboard.writeText(url);
-              displayOverlay();
+              displayOverlay(chrome.i18n.getMessage("displayOverlay"));
               break;
             default:
               break;
@@ -77,13 +77,12 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
 
                     if (index === data.data.list.length - 1) {
                       if (successful > 0 && failed === 0) {
-                        alert(browser.i18n.getMessage("success_all"));
+                        displayOverlay(chrome.i18n.getMessage("success_all"));
                       } else if (successful === 0 && failed > 0) {
-                        alert(browser.i18n.getMessage("fail_all"));
+                        displayOverlay(chrome.i18n.getMessage("fail_all"));
                       } else {
-                        alert(browser.i18n.getMessage("partial_success", [successful, failed]));
+                        displayOverlay(chrome.i18n.getMessage("partial_success", [successful, failed]));
                       }
-                      window.close();
                     }
                   })
                   .catch(error => {
@@ -96,24 +95,21 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
     
                     if (index === data.data.list.length - 1) {
                       if (successful > 0 && failed === 0) {
-                        alert(browser.i18n.getMessage("success_all"));
+                        displayOverlay(chrome.i18n.getMessage("success_all"));
                       } else if (successful === 0 && failed > 0) {
-                        alert(browser.i18n.getMessage("fail_all"));
+                        displayOverlay(chrome.i18n.getMessage("fail_all"));
                       } else {
-                        alert(browser.i18n.getMessage("partial_success", [successful, failed]));
+                        displayOverlay(chrome.i18n.getMessage("partial_success", [successful, failed]));
                       }
-                      window.close();
                     }
                   });
                 });
               } else {
-                alert(browser.i18n.getMessage("account_data_error"));
-                window.close();
+                displayOverlay(chrome.i18n.getMessage("account_data_error"));
               }
             })
             .catch(error => {
-              alert(browser.i18n.getMessage("api_request_error"));
-              window.close();
+              displayOverlay(chrome.i18n.getMessage("api_request_error"), error);
             });
           }
         });
@@ -149,7 +145,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
             case 'sezzz':
               url = `https://zenless.hoyoverse.com/redemption?code=${code}`;
               navigator.clipboard.writeText(url);
-              displayOverlay();
+              displayOverlay(chrome.i18n.getMessage("displayOverlay"));
               break;
             default:
               break;
@@ -196,13 +192,12 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
 
                     if (index === data.data.list.length - 1) {
                       if (successful > 0 && failed === 0) {
-                        alert(browser.i18n.getMessage("success_all"));
+                        displayOverlay(chrome.i18n.getMessage("success_all"));
                       } else if (successful === 0 && failed > 0) {
-                        alert(browser.i18n.getMessage("fail_all"));
+                        displayOverlay(chrome.i18n.getMessage("fail_all"));
                       } else {
-                        alert(browser.i18n.getMessage("partial_success", [successful, failed]));
+                        displayOverlay(chrome.i18n.getMessage("partial_success", [successful, failed]));
                       }
-                      window.close();
                     }
                   })
                   .catch(error => {
@@ -215,24 +210,21 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
     
                     if (index === data.data.list.length - 1) {
                       if (successful > 0 && failed === 0) {
-                        alert(browser.i18n.getMessage("success_all"));
+                        displayOverlay(chrome.i18n.getMessage("success_all"));
                       } else if (successful === 0 && failed > 0) {
-                        alert(browser.i18n.getMessage("fail_all"));
+                        displayOverlay(chrome.i18n.getMessage("fail_all"));
                       } else {
-                        alert(browser.i18n.getMessage("partial_success", [successful, failed]));
+                        displayOverlay(chrome.i18n.getMessage("partial_success", [successful, failed]));
                       }
-                      window.close();
                     }
                   });
                 });
               } else {
-                alert(browser.i18n.getMessage("account_data_error"));
-                window.close();
+                displayOverlay(chrome.i18n.getMessage("account_data_error"));
               }
             })
             .catch(error => {
-              alert(browser.i18n.getMessage("api_request_error"));
-              window.close();
+              displayOverlay(chrome.i18n.getMessage("api_request_error"), error);
             });
           }
         });
@@ -267,7 +259,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
             case 'segi':
               url = `https://genshin.hoyoverse.com/${locales}/gift?code=${code}`;
               navigator.clipboard.writeText(url);
-              displayOverlay();
+              displayOverlay(chrome.i18n.getMessage("displayOverlay"));
               break;
             default:
               break;
@@ -314,13 +306,12 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
 
                     if (index === data.data.list.length - 1) {
                       if (successful > 0 && failed === 0) {
-                        alert(browser.i18n.getMessage("success_all"));
+                        displayOverlay(chrome.i18n.getMessage("success_all"));
                       } else if (successful === 0 && failed > 0) {
-                        alert(browser.i18n.getMessage("fail_all"));
+                        displayOverlay(chrome.i18n.getMessage("fail_all"));
                       } else {
-                        alert(browser.i18n.getMessage("partial_success", [successful, failed]));
+                        displayOverlay(chrome.i18n.getMessage("partial_success", [successful, failed]));
                       }
-                      window.close();
                     }
                   })
                   .catch(error => {
@@ -333,24 +324,21 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
     
                     if (index === data.data.list.length - 1) {
                       if (successful > 0 && failed === 0) {
-                        alert(browser.i18n.getMessage("success_all"));
+                        displayOverlay(chrome.i18n.getMessage("success_all"));
                       } else if (successful === 0 && failed > 0) {
-                        alert(browser.i18n.getMessage("fail_all"));
+                        displayOverlay(chrome.i18n.getMessage("fail_all"));
                       } else {
-                        alert(browser.i18n.getMessage("partial_success", [successful, failed]));
+                        displayOverlay(chrome.i18n.getMessage("partial_success", [successful, failed]));
                       }
-                      window.close();
                     }
                   });
                 });
               } else {
-                alert(browser.i18n.getMessage("account_data_error"));
-                window.close();
+                displayOverlay(chrome.i18n.getMessage("account_data_error"));
               }
             })
             .catch(error => {
-              alert(browser.i18n.getMessage("api_request_error"));
-              window.close();
+              displayOverlay(chrome.i18n.getMessage("api_request_error"), error);
             });
           }
         });
@@ -458,7 +446,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
             case 'shareGI':
               url = `https://genshin.hoyoverse.com/${locales}/gift?code=${code}`;
               navigator.clipboard.writeText(url);
-              displayOverlay();
+              displayOverlay(chrome.i18n.getMessage("displayOverlay"));
               break;
             case 'submitHSR':
               gameBiz = 'hkrpg_global';
@@ -467,7 +455,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
             case 'shareHSR':
               url = `https://hsr.hoyoverse.com/gift?code=${code}`;
               navigator.clipboard.writeText(url);
-              displayOverlay();
+              displayOverlay(chrome.i18n.getMessage("displayOverlay"));
               break;
             case 'submitZZZ':
               gameBiz = 'nap_global';
@@ -476,7 +464,7 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
             case 'shareZZZ':
               url = `https://zenless.hoyoverse.com/redemption?code=${code}`;
               navigator.clipboard.writeText(url);
-              displayOverlay();
+              displayOverlay(chrome.i18n.getMessage("displayOverlay"));
               break;
             default:
               break;
@@ -523,13 +511,12 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
 
                     if (index === data.data.list.length - 1) {
                       if (successful > 0 && failed === 0) {
-                        alert(browser.i18n.getMessage("success_all"));
+                        displayOverlay(chrome.i18n.getMessage("success_all"));
                       } else if (successful === 0 && failed > 0) {
-                        alert(browser.i18n.getMessage("fail_all"));
+                        displayOverlay(chrome.i18n.getMessage("fail_all"));
                       } else {
-                        alert(browser.i18n.getMessage("partial_success", [successful, failed]));
+                        displayOverlay(chrome.i18n.getMessage("partial_success", [successful, failed]));
                       }
-                      window.close();
                     }
                   })
                   .catch(error => {
@@ -542,24 +529,21 @@ browser.storage.local.get(['onlyHsr', 'onlyGi', 'onlyZzz']).then(function (resul
     
                     if (index === data.data.list.length - 1) {
                       if (successful > 0 && failed === 0) {
-                        alert(browser.i18n.getMessage("success_all"));
+                        displayOverlay(chrome.i18n.getMessage("success_all"));
                       } else if (successful === 0 && failed > 0) {
-                        alert(browser.i18n.getMessage("fail_all"));
+                        displayOverlay(chrome.i18n.getMessage("fail_all"));
                       } else {
-                        alert(browser.i18n.getMessage("partial_success", [successful, failed]));
+                        displayOverlay(chrome.i18n.getMessage("partial_success", [successful, failed]));
                       }
-                      window.close();
                     }
                   });
                 });
               } else {
-                alert(browser.i18n.getMessage("account_data_error"));
-                window.close();
+                displayOverlay(chrome.i18n.getMessage("account_data_error"));
               }
             })
             .catch(error => {
-              alert(browser.i18n.getMessage("api_request_error"));
-              window.close();
+              displayOverlay(chrome.i18n.getMessage("api_request_error"), error);
             });
           }
         });
