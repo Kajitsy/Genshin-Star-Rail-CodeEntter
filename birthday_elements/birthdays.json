@@ -145,6 +145,13 @@
         "buttonColor": "#54c4e9",
         "element": "hydro"
     },
+    "04-22": {
+        "character": "kachina",
+        "characterEN": "Kachina",
+        "characterRU": "Качина",
+        "buttonColor": "#edb32e",
+        "element": "geo"
+    },
     "04-25": {
         "character": "baizhu",
         "characterEN": "Baizhu",
@@ -299,6 +306,13 @@
         "characterRU": "Янь Фей",
         "buttonColor": "#d67f64",
         "element": "pyro"
+    },
+    "08-03": {
+        "character": "mualani",
+        "characterEN": "Mualani",
+        "characterRU": "Муалани",
+        "buttonColor": "#3682f2",
+        "element": "hydro"
     },
     "08-10": {
         "character": "amber",
@@ -495,6 +509,13 @@
         "characterRU": "Нилу",
         "buttonColor": "#afb4d0",
         "element": "hydro"
+    },
+    "12-11": {
+        "character": "kinich",
+        "characterEN": "Kinich",
+        "characterRU": "Кинич",
+        "buttonColor": "#78d797",
+        "element": "dendro"
     },
     "12-18": {
         "character": "neuvillette",
