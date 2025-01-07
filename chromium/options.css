@@ -52,6 +52,19 @@ button:hover {
 .checkbox-label label{
     margin-bottom: 0;
 }
+.region-selection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.region-selection select {
+    margin: 10;
+}
+.region-selection label{
+    margin-bottom: 0;
+    margin-right: 10px;
+}
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #292a2d;

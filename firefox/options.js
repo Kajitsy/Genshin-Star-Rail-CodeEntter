@@ -27,7 +27,22 @@ const labels = {
   'labelOnlyHsr-settings': 'labelOnlyHsr',
   'labelOnlyZzz-settings': 'labelOnlyZzz',
   'labelMainBirthday': 'labelBirthday',
-  'labelGIBirthday': 'labelBirthday'
+  'labelGIBirthday': 'labelBirthday',
+  'labelRegionGi': 'labelRegionGi',
+  'labelRegionHsr': 'labelRegionHsr',
+  'labelRegionZzz': 'labelRegionZzz',
+  'eugi': 'eu',
+  'euhsr': 'eu',
+  'euzzz': 'eu',
+  'usgi': 'usa',
+  'ushsr': 'usa',
+  'uszzz': 'usa',
+  'asgi': 'asia',
+  'ashsr': 'asia',
+  'aszzz': 'asia',
+  'chtgi': 'cht',
+  'chthsr': 'cht',
+  'chtzzz': 'cht',
 };
 for (let id in labels) {
   document.getElementById(id).textContent = browser.i18n.getMessage(labels[id]);
@@ -45,152 +60,62 @@ document.getElementById('settingsSectionSelector').addEventListener('change', fu
   var selectedSection = this.value;
   showSettingsSection(selectedSection);
 });
-document.getElementById('buttonColorMain').addEventListener('input', function() {
-  var buttonColorMain = document.getElementById('buttonColorMain').value;
-  browser.storage.local.set({
-    buttonColorMain: buttonColorMain
-  }
-)});
-document.getElementById('buttonColorGi').addEventListener('input', function() {
-  var buttonColorGi = document.getElementById('buttonColorGi').value;
-  browser.storage.local.set({
-    buttonColorGi: buttonColorGi
-  });
-});
-document.getElementById('buttonColorHsr').addEventListener('input', function() {
-  var buttonColorHsr = document.getElementById('buttonColorHsr').value;
-  browser.storage.local.set({
-    buttonColorHsr: buttonColorHsr
-  });
-});
-document.getElementById('buttonColorZzz').addEventListener('input', function() {
-  var buttonColorZzz = document.getElementById('buttonColorZzz').value;
-  browser.storage.local.set({
-    buttonColorZzz: buttonColorZzz
-  });
-});
-document.getElementById('buttonTextColorMain').addEventListener('input', function() {
-  var buttonTextColorMain = document.getElementById('buttonTextColorMain').value;
-  browser.storage.local.set({
-    buttonTextColorMain: buttonTextColorMain
-  }
-)});
-document.getElementById('buttonTextColorGi').addEventListener('input', function() {
-  var buttonTextColorGi = document.getElementById('buttonTextColorGi').value;
-  browser.storage.local.set({
-    buttonTextColorGi: buttonTextColorGi
-  });
-});
-document.getElementById('buttonTextColorHsr').addEventListener('input', function() {
-  var buttonTextColorHsr = document.getElementById('buttonTextColorHsr').value;
-  browser.storage.local.set({
-    buttonTextColorHsr: buttonTextColorHsr
-  });
-});
-document.getElementById('buttonTextColorZzz').addEventListener('input', function() {
-  var buttonTextColorZzz = document.getElementById('buttonTextColorZzz').value;
-  browser.storage.local.set({
-    buttonTextColorZzz: buttonTextColorZzz
-  });
-});
-document.getElementById('BackgroundColorGi').addEventListener('input', function() {
-  var BackgroundColorGi = document.getElementById('BackgroundColorGi').value;
-  browser.storage.local.set({
-    BackgroundColorGi: BackgroundColorGi
-  });
-});
-document.getElementById('BackgroundColorHsr').addEventListener('input', function() {
-  var BackgroundColorHsr = document.getElementById('BackgroundColorHsr').value;
-  browser.storage.local.set({
-    BackgroundColorHsr: BackgroundColorHsr
-  });
-});
-document.getElementById('BackgroundColorZzz').addEventListener('input', function() {
-  var BackgroundColorZzz = document.getElementById('BackgroundColorZzz').value;
-  browser.storage.local.set({
-    BackgroundColorZzz: BackgroundColorZzz
-  });
-});
-document.getElementById('mainBirthdayDisable').addEventListener('change', function() {
-  var mainBirthdayDisable = document.getElementById('mainBirthdayDisable').checked;
-  browser.storage.local.set({
-    mainBirthdayDisable: mainBirthdayDisable
-  });
-});
-document.getElementById('giBirthdayDisable').addEventListener('change', function() {
-  var giBirthdayDisable = document.getElementById('giBirthdayDisable').checked;
-  browser.storage.local.set({
-    giBirthdayDisable: giBirthdayDisable
-  });
-});
-document.getElementById('roundingDisable').addEventListener('change', function() {
-  var roundingDisable = document.getElementById('roundingDisable').checked;
-  browser.storage.local.set({
-    roundingDisable: roundingDisable
-  });
-});
-document.getElementById('BackgroundGi').addEventListener('change', function() {
-  var BackgroundGi = document.getElementById('BackgroundGi').checked;
-  browser.storage.local.set({
-    BackgroundGi: BackgroundGi
-  });
-});
-document.getElementById('BackgroundHsr').addEventListener('change', function() {
-  var BackgroundHsr = document.getElementById('BackgroundHsr').checked;
-  browser.storage.local.set({
-    BackgroundHsr: BackgroundHsr
-  });
-});
-document.getElementById('BackgroundZzz').addEventListener('change', function() {
-  var BackgroundZzz = document.getElementById('BackgroundZzz').checked;
-  browser.storage.local.set({
-    BackgroundZzz: BackgroundZzz
-  });
-});
-document.getElementById('resetpopup').addEventListener('click', function() {
-  document.getElementById('buttonColorMain').value = '#9a609a';
-  document.getElementById('buttonTextColorMain').value = '#ffffff';
-  browser.storage.local.set({
-    buttonColorMain: '#9a609a',
-    buttonTextColorMain: '#ffffff',
-  });
-});
-document.getElementById('resetGi').addEventListener('click', function() {
-  document.getElementById('buttonColorGi').value = '#a89f96';
-  document.getElementById('buttonTextColorGi').value = '#ffffff';
-  document.getElementById('BackgroundColorGi').value = '#4e4b54';
-  browser.storage.local.set({
-    buttonColorGi: '#a89f96',
-    buttonTextColorGi: '#ffffff',
-    BackgroundColorGi: '#4e4b54'
-  })});
-document.getElementById('resetHsr').addEventListener('click', function() {
-  document.getElementById('buttonColorHsr').value = '#004080';
-  document.getElementById('buttonTextColorHsr').value = '#ffffff';
-  document.getElementById('BackgroundColorHsr').value = '#1e274e';
-  browser.storage.local.set({
-    buttonColorHsr: '#004080',
-    buttonTextColorHsr: '#ffffff',
-    BackgroundColorHsr: '#1e274e'
-  })});
-document.getElementById('resetZzz').addEventListener('click', function() {
-  document.getElementById('buttonColorZzz').value = '#696d76';
-  document.getElementById('buttonTextColorZzz').value = '#ffffff';
-  document.getElementById('BackgroundColorZzz').value = '#1e274e';
-  browser.storage.local.set({
-    buttonColorZzz: '#696d76',
-    buttonTextColorZzz: '#ffffff',
-    BackgroundColorZzz: '#1e274e'
-  })});
-browser.storage.local.get(['roundingDisable']).then(function (result) {
-  if (result.roundingDisable) {
-  document.documentElement.style.setProperty('--border-radius', '10px')
-  }
-  else {
-    document.documentElement.style.setProperty('--border-radius', '20px')
+const settings = [
+  'buttonColorMain', 'buttonColorGi', 'buttonColorHsr', 'buttonColorZzz',
+  'buttonTextColorMain', 'buttonTextColorGi', 'buttonTextColorHsr', 'buttonTextColorZzz',
+  'BackgroundColorGi', 'BackgroundColorHsr', 'BackgroundColorZzz',
+  'mainBirthdayDisable', 'giBirthdayDisable', 'roundingDisable',
+  'BackgroundGi', 'BackgroundHsr', 'BackgroundZzz'
+];
+
+settings.forEach(setting => {
+  const element = document.getElementById(setting);
+  if (element.type === 'checkbox') {
+    element.addEventListener('change', function() {
+      browser.storage.local.set({ [setting]: element.checked });
+    });
+  } else {
+    element.addEventListener('input', function() {
+      browser.storage.local.set({ [setting]: element.value });
+    });
   }
 });
-browser.storage.local.get(['BackgroundZzz','onlyZzz','buttonTextColorZzz','buttonColorZzz','giBirthdayDisable', 'mainBirthdayDisable', 'roundingDisable', 'BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi', 'BackgroundColorGi', 'buttonColorMain', 'buttonColorGi', 'buttonColorHsr', 'buttonTextColorMain', 'buttonTextColorGi', 'buttonTextColorHsr', 'onlyHsr', 'onlyGi'], function(result) {
+
+const resetButtons = [
+  { id: 'resetpopup', values: { buttonColorMain: '#9a609a', buttonTextColorMain: '#ffffff' } },
+  { id: 'resetGi', values: { buttonColorGi: '#a89f96', buttonTextColorGi: '#ffffff', BackgroundColorGi: '#4e4b54' } },
+  { id: 'resetHsr', values: { buttonColorHsr: '#004080', buttonTextColorHsr: '#ffffff', BackgroundColorHsr: '#1e274e' } },
+  { id: 'resetZzz', values: { buttonColorZzz: '#696d76', buttonTextColorZzz: '#ffffff', BackgroundColorZzz: '#404040' } }
+];
+
+resetButtons.forEach(reset => {
+  document.getElementById(reset.id).addEventListener('click', function() {
+    for (let key in reset.values) {
+      document.getElementById(key).value = reset.values[key];
+    }
+    browser.storage.local.set(reset.values);
+  });
+});
+
+browser.storage.local.get(['roundingDisable']).then(result => {
+  document.documentElement.style.setProperty('--border-radius', result.roundingDisable ? '10px' : '20px');
+});
+
+['regionGi', 'regionHsr', 'regionZzz'].forEach(region => {
+  document.getElementById(region).addEventListener('change', function() {
+    browser.storage.local.set({ [region]: this.value });
+  });
+});
+
+browser.storage.local.get(['regionGi', 'regionHsr', 'regionZzz'], function(result) {
+  ['regionGi', 'regionHsr', 'regionZzz'].forEach(region => {
+    if (result[region]) {
+      document.getElementById(region).value = result[region];
+    }
+  });
+});
+
+browser.storage.local.get(['BackgroundZzz','BackgroundColorZzz','onlyZzz','buttonTextColorZzz','buttonColorZzz','giBirthdayDisable', 'mainBirthdayDisable', 'roundingDisable', 'BackgroundHsr', 'BackgroundColorHsr', 'BackgroundGi', 'BackgroundColorGi', 'buttonColorMain', 'buttonColorGi', 'buttonColorHsr', 'buttonTextColorMain', 'buttonTextColorGi', 'buttonTextColorHsr', 'onlyHsr', 'onlyGi'], function(result) {
   const defaults = {
     'buttonColorMain': '#9a609a',
     'buttonColorGi': '#a89f96',
@@ -202,7 +127,7 @@ browser.storage.local.get(['BackgroundZzz','onlyZzz','buttonTextColorZzz','butto
     'buttonTextColorZzz': '#ffffff',
     'BackgroundColorGi': '#4e4b54',
     'BackgroundColorHsr': '#1e274e',
-    'BackgroundColorZzz': '#1e274e',
+    'BackgroundColorZzz': '#404040',
     'onlyGi': false,
     'onlyHsr': false,
     'onlyZzz': false,
@@ -216,52 +141,18 @@ browser.storage.local.get(['BackgroundZzz','onlyZzz','buttonTextColorZzz','butto
   for (let key in defaults) {
     window[key] = result[key] ? result[key] : defaults[key];
   }  
-  document.getElementById('onlyHsr').addEventListener('change', function() {
-    var onlyHsr = document.getElementById('onlyHsr').checked;
-    if (onlyHsr) {
-      document.getElementById('onlyGi').checked = false;
-      browser.storage.local.set({
-        onlyGi: false
-      });
-      document.getElementById('onlyZzz').checked = false;
-      browser.storage.local.set({
-        onlyZzz: false
-      });
-    }
-    browser.storage.local.set({
-      onlyHsr: onlyHsr
-    });
-  });
-  document.getElementById('onlyGi').addEventListener('change', function() {
-    var onlyGi = document.getElementById('onlyGi').checked;
-    if (onlyGi) {
-      document.getElementById('onlyHsr').checked = false;
-      browser.storage.local.set({
-        onlyHsr: false
-      });
-      document.getElementById('onlyZzz').checked = false;
-      browser.storage.local.set({
-        onlyZzz: false
-      });
-    }
-    browser.storage.local.set({
-      onlyGi: onlyGi
-    });
-  });
-  document.getElementById('onlyZzz').addEventListener('change', function() {
-    var onlyZzz = document.getElementById('onlyZzz').checked;
-    if (onlyZzz) {
-      document.getElementById('onlyGi').checked = false;
-      browser.storage.local.set({
-        onlyGi: false
-      });
-      document.getElementById('onlyHsr').checked = false;
-      browser.storage.local.set({
-        onlyHsr: false
-      });
-    }
-    browser.storage.local.set({
-      onlyZzz: onlyZzz
+  ['onlyHsr', 'onlyGi', 'onlyZzz'].forEach(id => {
+    document.getElementById(id).addEventListener('change', function() {
+      const checked = this.checked;
+      if (checked) {
+        ['onlyHsr', 'onlyGi', 'onlyZzz'].forEach(otherId => {
+          if (otherId !== id) {
+            document.getElementById(otherId).checked = false;
+            browser.storage.local.set({ [otherId]: false });
+          }
+        });
+      }
+      browser.storage.local.set({ [id]: checked });
     });
   });
   const elements = {
@@ -294,10 +185,15 @@ browser.storage.local.get(['BackgroundZzz','onlyZzz','buttonTextColorZzz','butto
       element.value = elements[id];
     }
   }  
-  if (result.buttonColorGi & result.buttonColorHsr) {
-  } else if (result.buttonColorHsr) {} 
-  else if (result.buttonColorGi) {} 
-  else {
-    browser.storage.local.set({buttonColorGi: '#a89f96', buttonColorHsr: '#004080'})
-  }
+  browser.storage.local.set({
+    buttonColorGi: result.buttonColorGi || '#a89f96',
+    buttonColorHsr: result.buttonColorHsr ||'#004080',
+    buttonColorZzz: result.buttonColorZzz || '#696d76',
+    buttonTextColorGi: result.buttonTextColorGi || '#ffffff',
+    buttonTextColorHsr: result.buttonTextColorHsr || '#ffffff',
+    buttonTextColorZzz: result.buttonTextColorZzz || '#ffffff',
+    BackgroundColorGi: result.BackgroundColorGi || '#4e4b54',
+    BackgroundColorHsr: result.BackgroundColorHsr || '#1e274e',
+    BackgroundColorZzz: result.BackgroundColorZzz || '#404040',
+  });
 });

@@ -1,119 +1,140 @@
-  {
-    "extensionDescription": {
-      "message": "Быстрый ввод промокодов игр HoYoverse | 2.2.7.1"
-    },
-    "stgi": {
-      "message": "Ввести"
-    },
-    "sthsr": {
-      "message": "Ввести"
-    },
-    "stzzz": {
-      "message": "Ввести"
-    },
-    "segi": {
-      "message": "Поделиться"
-    },
-    "sehsr": {
-      "message": "Поделиться"
-    },
-    "sezzz": {
-      "message": "Поделиться"
-    },
-    "labelGi": {
-      "message": "Только Genshin Impact"
-    },
-    "labelHsr": {
-      "message": "Только Honkai Star Rail"
-    },
-    "labelZzz": {
-      "message": "Только Zenless Zone Zero"
-    },
-    "options": {
-      "message": "Настройки"
-    },
-    "submitGI": {
-      "message": "Genshin"
-    },
-    "submitHSR": {
-      "message": "Star Rail"
-    },
-    "submitZZZ": {
-      "message": "Zone Zero"
-    },
-    "shareGI": {
-      "message": "GI Ссылка"
-    },
-    "shareHSR": {
-      "message": "HSR Ссылка"
-    },
-    "shareZZZ": {
-      "message": "ZZZ Ссылка"
-    },
-    "reset": {
-      "message": "Сбросить"
-    },
-    "labelButtonColor": {
-      "message": "Цвет кнопок"
-    },
-    "labelTextColor": {
-      "message": "Цвет текста"
-    },
-    "labelBackground": {
-      "message": "Использовать цвет вместо фона"
-    },
-    "labelBackgroundColor": {
-      "message": "Цвет фона (если включено)"
-    },
-    "displayOverlay": {
-      "message": "Ссылка скопирована"
-    },
-    "labelGlobal": {
-      "message": "Глобальные настройки"
-    },
-    "labelMainPopup": {
-      "message": "Настройки основного окна"
-    },
-    "labelRounding": {
-      "message": "Отключить закругления"
-    },
-    "labelIcon": {
-      "message": "Отключить смену иконок"
-    },
-    "labelFont": {
-      "message": "Шрифт"
-    },
-    "labelOnlyGi": {
-      "message": "Режим Genshin Impact"
-    },
-    "labelOnlyHsr": {
-      "message": "Режим Honkai Star Rail"
-    },
-    "labelOnlyZzz": {
-      "message": "Режим Zenless Zone Zero"
-    },
-    "labelBirthday": {
-      "message": "Отключить кастомизацию ко дню рождения персонажа"
-    },
-    "labelBirthdayPopup": {
-      "message": "С днём рождения, "
-    },
-    "labelNotClickable": {
-      "message": "Это не нажимается"
-    },
-    "success_all": {
-      "message": "Промокод успешно активирован на всех серверах!"
-    },
-    "fail_all": {
-      "message": "Не удалось активировать промокод на всех серверах."
-    },
-    "partial_success": {
-      "message": "Промокод активирован на {successful} сервер(ах), но возникли ошибки на {failed} сервер(ах)."
-    },
-    "account_data_error": {
-      "message": "Не удалось получить данные об аккаунте."
-    },
-    "api_request_error": {
-      "message": "Ошибка при запросе к API."
-    }
+{
+  "extensionDescription": {
+    "message": "Быстрый ввод промокодов игр HoYoverse | 2.2.8"
+  },
+  "stgi": {
+    "message": "Ввести"
+  },
+  "sthsr": {
+    "message": "Ввести"
+  },
+  "stzzz": {
+    "message": "Ввести"
+  },
+  "segi": {
+    "message": "Поделиться"
+  },
+  "sehsr": {
+    "message": "Поделиться"
+  },
+  "sezzz": {
+    "message": "Поделиться"
+  },
+  "labelGi": {
+    "message": "Только Genshin Impact"
+  },
+  "labelHsr": {
+    "message": "Только Honkai Star Rail"
+  },
+  "labelZzz": {
+    "message": "Только Zenless Zone Zero"
+  },
+  "options": {
+    "message": "Настройки"
+  },
+  "submitGI": {
+    "message": "Genshin"
+  },
+  "submitHSR": {
+    "message": "Star Rail"
+  },
+  "submitZZZ": {
+    "message": "Zone Zero"
+  },
+  "shareGI": {
+    "message": "GI Ссылка"
+  },
+  "shareHSR": {
+    "message": "HSR Ссылка"
+  },
+  "shareZZZ": {
+    "message": "ZZZ Ссылка"
+  },
+  "reset": {
+    "message": "Сбросить"
+  },
+  "labelButtonColor": {
+    "message": "Цвет кнопок"
+  },
+  "labelTextColor": {
+    "message": "Цвет текста"
+  },
+  "labelBackground": {
+    "message": "Использовать цвет вместо фона"
+  },
+  "labelBackgroundColor": {
+    "message": "Цвет фона (если включено)"
+  },
+  "displayOverlay": {
+    "message": "Ссылка скопирована"
+  },
+  "labelGlobal": {
+    "message": "Глобальные настройки"
+  },
+  "labelMainPopup": {
+    "message": "Настройки основного окна"
+  },
+  "labelRounding": {
+    "message": "Отключить закругления"
+  },
+  "labelIcon": {
+    "message": "Отключить смену иконок"
+  },
+  "labelFont": {
+    "message": "Шрифт"
+  },
+  "labelOnlyGi": {
+    "message": "Режим Genshin Impact"
+  },
+  "labelOnlyHsr": {
+    "message": "Режим Honkai Star Rail"
+  },
+  "labelOnlyZzz": {
+    "message": "Режим Zenless Zone Zero"
+  },
+  "labelBirthday": {
+    "message": "Отключить кастомизацию ко дню рождения персонажа"
+  },
+  "labelBirthdayPopup": {
+    "message": "С днём рождения, "
+  },
+  "labelNotClickable": {
+    "message": "Это не нажимается"
+  },
+  "success_all": {
+    "message": "Промокод успешно активирован!"
+  },
+  "fail_all": {
+    "message": "Не удалось активировать промокод"
+  },
+  "account_data_error": {
+    "message": "Не удалось получить данные об аккаунте."
+  },
+  "api_request_error": {
+    "message": "Ошибка при запросе к API."
+  },
+  "api_request_login_expired": {
+    "message": "Срок действия входа истек. Пожалуйста, перезайдите."
+  },
+  "labelRegionGi": {
+    "message": "Выберите регион для Genshin Impact"
+  },
+  "labelRegionHsr": {
+    "message": "Выберите регион для Honkai Star Rail"
+  },
+  "labelRegionZzz": {
+    "message": "Выберите регион для Zenless Zone Zero"
+  },
+  "eu": {
+    "message": "Европа"
+  },
+  "usa": {
+    "message": "Америка"
+  },
+  "asia": {
+    "message": "Азия"
+  },
+  "cht": {
+    "message": "Тайвань"
   }
+}

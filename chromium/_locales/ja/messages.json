@@ -99,18 +99,39 @@
     "message":"これは押されていません"
   },
   "success_all": {
-    "message": "プロモコードがすべてのサーバーで正常にアクティブ化されました！"
+    "message": "プロモコードが正常にアクティブ化されました！"
   },
   "fail_all": {
-    "message": "すべてのサーバーでプロモコードをアクティブ化できませんでした。"
-  },
-  "partial_success": {
-    "message": "プロモコードが{successful}サーバーでアクティブ化されましたが、{failed}サーバーでエラーが発生しました。"
+    "message": "プロモコードをアクティブ化できませんでした"
   },
   "account_data_error": {
     "message": "アカウントデータを取得できませんでした。"
   },
   "api_request_error": {
     "message": "APIリクエスト中にエラーが発生しました。"
+  },
+  "api_request_login_expired": {
+    "message": "ログインが期限切れになりました。"
+  },
+  "labelRegionGi": {
+    "message": "原神インパクトの地域を選択"
+  },
+  "labelRegionHsr": {
+    "message": "本海スターレールの地域を選択"
+  },
+  "labelRegionZzz": {
+    "message": "ゼンレスゾーンゼロの地域を選択"
+  },
+  "eu": {
+    "message": "ヨーロッパ"
+  },
+  "usa": {
+    "message": "アメリカ"
+  },
+  "asia": {
+    "message": "アジア"
+  },
+  "cht": {
+    "message": "台湾"
   }
 }

@@ -6,12 +6,15 @@ function getCurrDay() {
 }
 function GIrequest() {
 	var currDay = getCurrDay();
-	fetch("https://sg-hk4e-api.hoyolab.com/event/sol/sign?act_id=e202102251931481", {
+	fetch("https://sg-hk4e-api.hoyolab.com/event/sol/sign", {
 		method : "POST",
 		headers: {
 			"Content-Type": "application/json"
 		},
-		credentials: "include"
+		credentials: "include",
+		body: JSON.stringify({
+			"act_id": "e202102251931481"
+		})
 	})
 	.then(response => response.json())
 	.then(data => {
@@ -29,12 +32,15 @@ function GIrequest() {
 }
 function HSRrequest() {
 	var currDay = getCurrDay();
-	fetch("https://sg-public-api.hoyolab.com/event/luna/os/sign?act_id=e202303301540311", {
+	fetch("https://sg-public-api.hoyolab.com/event/luna/os/sign", {
 		method : "POST",
 		headers: {
 			"Content-Type": "application/json"
 		},
-		credentials: "include"
+		credentials: "include",
+		body: JSON.stringify({
+			"act_id": "e202303301540311"
+		})
 	})
 	.then(response => response.json())
 	.then(data => {
@@ -52,12 +58,16 @@ function HSRrequest() {
 }
 function ZZZrequest() {
 	var currDay = getCurrDay();
-	fetch("https://sg-act-nap-api.hoyolab.com/event/luna/os/sign?act_id=e202406031448091", {
+	fetch("https://sg-public-api.hoyolab.com/event/luna/os/sign", {
 		method : "POST",
 		headers: {
-			"Content-Type": "application/json"
+			"Content-Type": "application/json",
+			"X-RPC-Signgame": "zzz"
 		},
-		credentials: "include"
+		credentials: "include",
+		body: JSON.stringify({
+			"act_id": "e202406031448091"
+		})
 	})
 	.then(response => response.json())
 	.then(data => {

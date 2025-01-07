@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Entrada rápida de códigos promocionales para juegos de HoYoverse | 2.2.7.1"
+    "message": "Entrada rápida de códigos promocionales para juegos de HoYoverse | 2.2.8"
   },
   "stgi": {
     "message": "Enviar"
@@ -102,18 +102,39 @@
     "message": "Esto no se presiona"
   },
   "success_all": {
-    "message": "¡Código promocional activado exitosamente en todos los servidores!"
+    "message": "¡Código promocional activado con éxito!"
   },
   "fail_all": {
-    "message": "No se pudo activar el código promocional en todos los servidores."
-  },
-  "partial_success": {
-    "message": "Código promocional activado en {successful} servidor(es), pero hubo errores en {failed} servidor(es)."
+    "message": "No se pudo activar el código promocional"
   },
   "account_data_error": {
     "message": "No se pudieron obtener los datos de la cuenta."
   },
   "api_request_error": {
     "message": "Error al realizar la solicitud a la API."
+  },
+  "api_request_login_expired": {
+    "message": "La sesión ha expirado. Vuelva a iniciar sesión."
+  },
+  "labelRegionGi": {
+    "message": "Seleccione la región para Genshin Impact"
+  },
+  "labelRegionHsr": {
+    "message": "Seleccione la región para Honkai Star Rail"
+  },
+  "labelRegionZzz": {
+    "message": "Seleccione la región para Zenless Zone Zero"
+  },
+  "eu": {
+    "message": "Europa"
+  },
+  "usa": {
+    "message": "América"
+  },
+  "asia": {
+    "message": "Asia"
+  },
+  "cht": {
+    "message": "Taiwán"
   }
 }

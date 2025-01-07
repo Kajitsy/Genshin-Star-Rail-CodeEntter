@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Quick input of promo codes for HoYoverse games | 2.2.7.1"
+    "message": "Quick input of promo codes for HoYoverse games | 2.2.8"
   },
   "stgi": {
     "message": "Submit"
@@ -102,18 +102,39 @@
     "message": "This does not press"
   },
   "success_all": {
-    "message": "The code has been successfully redeemed on all servers!"
+    "message": "Promo code successfully activated!"
   },
   "fail_all": {
-    "message": "Failed to redeem the code on all servers."
-  },
-  "partial_success": {
-    "message": "The code was redeemed on {successful} server(s), but errors occurred on {failed} server(s)."
+    "message": "Failed to activate promo code."
   },
   "account_data_error": {
     "message": "Failed to retrieve account data."
   },
   "api_request_error": {
     "message": "Error occurred while making the API request."
+  },
+  "api_request_login_expired": {
+    "message": "Login expired. Please log in again."
+  },
+  "labelRegionGi": {
+    "message": "Select region for Genshin Impact"
+  },
+  "labelRegionHsr": {
+    "message": "Select region for Honkai Star Rail"
+  },
+  "labelRegionZzz": {
+    "message": "Select region for Zenless Zone Zero"
+  },
+  "eu": {
+    "message": "Europe"
+  },
+  "usa": {
+    "message": "America"
+  },
+  "asia": {
+    "message": "Asia"
+  },
+  "cht": {
+    "message": "Taiwan"
   }
 }
