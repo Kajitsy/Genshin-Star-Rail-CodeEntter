@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Быстрый ввод промокодов игр HoYoverse | 2.2.8"
+    "message": "Быстрый ввод промокодов игр HoYoverse | 2.2.8.1"
   },
   "stgi": {
     "message": "Ввести"
@@ -65,7 +65,7 @@
   "labelBackgroundColor": {
     "message": "Цвет фона (если включено)"
   },
-  "displayOverlay": {
+  "copied_to_clipboard": {
     "message": "Ссылка скопирована"
   },
   "labelGlobal": {

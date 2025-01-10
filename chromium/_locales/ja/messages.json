@@ -62,7 +62,7 @@
   "labelBackgroundColor":{
     "message":"背景色(有効な場合)"
   },
-  "displayOverlay":{
+  "copied_to_clipboard":{
     "message":"リンクがコピーされました"
   },
   "labelGlobal":{

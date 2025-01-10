@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Quick input of promo codes for HoYoverse games | 2.2.8"
+    "message": "Quick input of promo codes for HoYoverse games | 2.2.8.1"
   },
   "stgi": {
     "message": "Submit"
@@ -65,7 +65,7 @@
   "labelBackgroundColor": {
     "message": "Background Color (if enabled)"
   },
-  "displayOverlay" :{
+  "copied_to_clipboard" :{
     "message": "Link copied"
   },
   "labelGlobal": {

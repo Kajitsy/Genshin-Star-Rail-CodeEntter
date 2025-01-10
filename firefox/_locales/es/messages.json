@@ -1,6 +1,6 @@
 {
   "extensionDescription": {
-    "message": "Entrada rápida de códigos promocionales para juegos de HoYoverse | 2.2.8"
+    "message": "Entrada rápida de códigos promocionales para juegos de HoYoverse | 2.2.8.1"
   },
   "stgi": {
     "message": "Enviar"
@@ -65,7 +65,7 @@
   "labelBackgroundColor": {
     "message": "Color de fondo (si está habilitado)"
   },
-  "displayOverlay" :{
+  "copied_to_clipboard" :{
     "message": "Enlace copiado"
   },
   "labelGlobal": {
